@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Portal - Élu 2021 · Conseiller des Français de l'Étranger</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../auth.js"></script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>Louis Portal</h1>
+                <p>Conseiller des Français de l'Étranger – 2021/2026</p>
+                <p>🇨🇭 Suisse alémanique · 🇱🇮 Liechtenstein</p>
+            </div>
+            <a href="consulaire.html" class="campaign-link" style="color: white !important;">Page campagne 2026 &#x27A1;</a>
+            <div class="lang-switcher">
+                <button class="lang-switcher-toggle" onclick="document.querySelector('.lang-switcher-menu').classList.toggle('open')">🇫🇷</button>
+                <div class="lang-switcher-menu">
+                    <a href="../fr/elu_2021.html">🇫🇷</a>
+                    <a href="../en/elu_2021.html">🇬🇧</a>
+                    <a href="../de/elu_2021.html">🇩🇪</a>
+                    <a href="../it/elu_2021.html">🇮🇹</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SECTION 1: Activité (Timeline) -->
+        <div class="collapsible-section" id="activite">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Activité</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 30px; font-size: 1.1em;">
+                    Retrouvez ci-dessous les principales actions et événements de mon mandat depuis 2021.
+                </p>
+
+                <div class="timeline-scroll">
+
+                    <!-- === 2026 === -->
+                    <div class="year-section">
+                        <div class="year-header" onclick="toggleYear(this)">
+                            <span class="year-label">2026</span>
+                            <span class="year-toggle">▼</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Janvier 2026</span>
+                                        <h3>Cérémonie des vœux au LFiZ</h3>
+                                        <p>Cérémonie des vœux au LFiZ, aux côtés de Monsieur le Consul Général de France à Zürich.</p>
+                                        <img src="../assets/Activité/2601_voeux_lfiz.jpeg" alt="Cérémonie des vœux au LFiZ" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Janvier 2026</span>
+                                        <h3>Déjeuner avec la Sénatrice ASFE</h3>
+                                        <p>Déjeuner à Paris avec la Sénatrice ASFE Sophie Briante-Guillemont.</p>
+                                        <img src="../assets/Activité/2601_dejeuner_senat.JPG" alt="Déjeuner avec la Sénatrice ASFE Sophie Briante-Guillemont" class="timeline-photo" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === 2025 === -->
+                    <div class="year-section">
+                        <div class="year-header" onclick="toggleYear(this)">
+                            <span class="year-label">2025</span>
+                            <span class="year-toggle">▼</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Novembre 2025</span>
+                                        <h3>Visite ASFE à Vienne</h3>
+                                        <p>Visite de ma collègue et tête de liste ASFE à Vienne, Autriche.</p>
+                                        <img src="../assets/Activité/2511_ASFE_Wien.jpeg" alt="Visite ASFE à Vienne" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Novembre 2025</span>
+                                        <h3>Assemblée Générale de l'UFS</h3>
+                                        <p>Assemblée Générale de l'Union des Français de Suisse (UFS) à la Résidence de l'Ambassade de France à Berne.</p>
+                                        <img src="../assets/Activité/2511_UFS_AG.jpeg" alt="Assemblée Générale de l'UFS à Berne" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Novembre 2025</span>
+                                        <h3>Rencontre ASFE à Barcelone</h3>
+                                        <p>Rencontre avec les collègues ASFE à Barcelone, Espagne.</p>
+                                        <img src="../assets/Activité/2511_ASFE_Barcelona.jpeg" alt="Rencontre ASFE à Barcelone" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Octobre 2025</span>
+                                        <h3>Assemblée des Français de l'Étranger</h3>
+                                        <p>Participation à l'Assemblée des Français de l'Étranger (AFE).</p>
+                                        <img src="../assets/Activité/2510_AFE.JPG" alt="Assemblée des Français de l'Étranger" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Octobre 2025</span>
+                                        <h3>Théâtre Français de Zurich</h3>
+                                        <p>Soirée au Théâtre Français de Zurich.</p>
+                                        <img src="../assets/Activité/2510_Theatre_Francais.jpeg" alt="Théâtre Français de Zurich" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Septembre 2025</span>
+                                        <h3>Forum d'Affaires Franco-Suisse</h3>
+                                        <p>Participation au Forum d'Affaires Franco-Suisse (FAFS).</p>
+                                        <img src="../assets/Activité/2509_FAFS.jpg" alt="Forum d'Affaires Franco-Suisse" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Août 2025</span>
+                                        <h3>Départ de Sibyle</h3>
+                                        <p>Départ de Sibyle.</p>
+                                        <img src="../assets/Activité/2508_depart_Sbile.jpeg" alt="Départ de Sibyle" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juillet 2025</span>
+                                        <h3>Célébration du 14 Juillet</h3>
+                                        <p>Célébration de la Fête Nationale du 14 Juillet.</p>
+                                        <img src="../assets/Activité/2507_14_Juillet.jpeg" alt="Célébration du 14 Juillet" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juillet 2025</span>
+                                        <h3>14 Juillet au Club Nautique Français</h3>
+                                        <p>Célébration du 14 Juillet au Club Nautique Français (CNF).</p>
+                                        <img src="../assets/Activité/2507_14_Juillet_CNF1.jpeg" alt="14 Juillet au Club Nautique Français" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juillet 2025</span>
+                                        <h3>14 Juillet au Club Nautique Français (2)</h3>
+                                        <p>Célébration du 14 Juillet au Club Nautique Français (CNF).</p>
+                                        <img src="../assets/Activité/2507_14_Juillet_CNF2.jpeg.jpeg" alt="14 Juillet au Club Nautique Français" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juin 2025</span>
+                                        <h3>Chambre de Commerce et d'Industrie Franco-Suisse</h3>
+                                        <p>Événement de la Chambre de Commerce et d'Industrie Franco-Suisse (CCIFS).</p>
+                                        <img src="../assets/Activité/2506_CCIFS.jpeg" alt="CCIFS" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juin 2025</span>
+                                        <h3>Conseil Consulaire à Berne</h3>
+                                        <p>Conseil Consulaire à Berne.</p>
+                                        <img src="../assets/Activité/2506_CC_Berne.jpeg" alt="Conseil Consulaire à Berne" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juin 2025</span>
+                                        <h3>Rencontre ASFE en Italie</h3>
+                                        <p>Rencontre avec les collègues ASFE en Italie.</p>
+                                        <img src="../assets/Activité/2506_ASFE_Italie.jpeg" alt="Rencontre ASFE en Italie" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juin 2025</span>
+                                        <h3>Assemblée Générale de l'ACFZ</h3>
+                                        <p>Assemblée Générale de l'Association des Anciens Combattants Français de Zurich (ACFZ).</p>
+                                        <img src="../assets/Activité/2506_AG_ACFZ.jpeg" alt="AG de l'ACFZ" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mai 2025</span>
+                                        <h3>Conférence AFZ</h3>
+                                        <p>Conférence de l'Association des Français de Zurich (AFZ).</p>
+                                        <img src="../assets/Activité/2505_AFZ_conference.jpeg" alt="Conférence AFZ" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mai 2025</span>
+                                        <h3>CCIFS – Événement de networking</h3>
+                                        <p>Événement de la Chambre de Commerce et d'Industrie Franco-Suisse (CCIFS).</p>
+                                        <img src="../assets/Activité/2505_CCIFS.jpeg" alt="CCIFS" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mai 2025</span>
+                                        <h3>Concert du Chœur Français</h3>
+                                        <p>Concert du Chœur Français de Zurich.</p>
+                                        <img src="../assets/Activité/2505_Choeur1.jpeg" alt="Concert du Chœur Français" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Avril 2025</span>
+                                        <h3>French Tech Zurich</h3>
+                                        <p>Événement French Tech à Zurich.</p>
+                                        <img src="../assets/Activité/2504_FRENCHTECH.jpeg" alt="French Tech Zurich" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Avril 2025</span>
+                                        <h3>Concert de Céline Dion au Liechtenstein</h3>
+                                        <p>Concert de Céline Dion au Liechtenstein.</p>
+                                        <img src="../assets/Activité/2504_concert_Celine_Dion_LIECHTENSTEIN.jpeg" alt="Concert de Céline Dion au Liechtenstein" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Avril 2025</span>
+                                        <h3>École Française de Thessalonique</h3>
+                                        <p>Visite de l'École Française de Thessalonique.</p>
+                                        <img src="../assets/Activité/2504_Thessalonique_ecole_francaise.jpeg" alt="École Française de Thessalonique" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Avril 2025</span>
+                                        <h3>Assemblée Générale SFB</h3>
+                                        <p>Assemblée Générale de la Société Française de Bienfaisance (SFB).</p>
+                                        <img src="../assets/Activité/2504_AG_SFB.jpeg" alt="AG SFB" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mars 2025</span>
+                                        <h3>AFE – Rencontre avec le Ministre délégué à Saint-Martin</h3>
+                                        <p>Assemblée des Français de l'Étranger (AFE) – Rencontre avec le Ministre délégué à Saint-Martin.</p>
+                                        <img src="../assets/Activité/2503_AFE_Ministre_Saint_Martin.JPG" alt="AFE – Ministre délégué à Saint-Martin" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mars 2025</span>
+                                        <h3>AFE – Avec la Sénatrice et les collègues de Genève</h3>
+                                        <p>Assemblée des Français de l'Étranger (AFE) – Avec la Sénatrice et les collègues de Genève.</p>
+                                        <img src="../assets/Activité/2503_AFE_Senatrice_et_Geneve.JPG" alt="AFE – Sénatrice et collègues de Genève" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mars 2025</span>
+                                        <h3>Trophées des Français de l'Étranger</h3>
+                                        <p>Cérémonie des Trophées des Français de l'Étranger.</p>
+                                        <img src="../assets/Activité/2503_AFE_trophees_Francias_etragner.jpeg" alt="Trophées des Français de l'Étranger" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mars 2025</span>
+                                        <h3>Rencontre avec les Français de Munich</h3>
+                                        <p>Rencontre avec les Français de Munich.</p>
+                                        <img src="../assets/Activité/2503_Francais_a_Munich.jpeg" alt="Français à Munich" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Janvier 2025</span>
+                                        <h3>Galette des Rois avec l'Ambassadrice</h3>
+                                        <p>Galette des Rois avec Madame l'Ambassadrice de France.</p>
+                                        <img src="../assets/Activité/2501_Galette_des_rois_Ambassadrice.jpeg" alt="Galette des Rois avec l'Ambassadrice" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Janvier 2025</span>
+                                        <h3>Rencontre ASFE à Singapour</h3>
+                                        <p>Rencontre avec les collègues ASFE à Singapour.</p>
+                                        <img src="../assets/Activité/2501_ASFE_Singapore.jpeg" alt="Rencontre ASFE à Singapour" class="timeline-photo" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === 2024 === -->
+                    <div class="year-section">
+                        <div class="year-header" onclick="toggleYear(this)">
+                            <span class="year-label">2024</span>
+                            <span class="year-toggle">▼</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Décembre 2024</span>
+                                        <h3>Cocktail CCIFS</h3>
+                                        <p>Cocktail de fin d'année de la Chambre de Commerce et d'Industrie Franco-Suisse (CCIFS).</p>
+                                        <img src="../assets/Activité/2412_Cocktail_CCIFS.jpeg" alt="Cocktail CCIFS" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Octobre 2024</span>
+                                        <h3>Cité de la Langue Française à Villers-Cotterêts</h3>
+                                        <p>Visite de la Cité Internationale de la Langue Française à Villers-Cotterêts.</p>
+                                        <img src="../assets/Activité/2410_Cite_Langue_Francaise_Villers_Coterets.jpeg" alt="Cité de la Langue Française" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Octobre 2024</span>
+                                        <h3>Rencontre avec le Ministre des Français de l'Étranger</h3>
+                                        <p>Rencontre avec le Ministre chargé des Français de l'Étranger.</p>
+                                        <img src="../assets/Activité/2410_Ministre_Francais_Etrangers.jpeg" alt="Ministre des Français de l'Étranger" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Octobre 2024</span>
+                                        <h3>Rencontre avec la Sénatrice Briante-Guillemont</h3>
+                                        <p>Rencontre avec la Sénatrice ASFE Sophie Briante-Guillemont.</p>
+                                        <img src="../assets/Activité/2410_Senatrice_Briante-Guillemont.jpeg" alt="Sénatrice Briante-Guillemont" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Octobre 2024</span>
+                                        <h3>AFE – Avec le Président du Sénat Gérard Larcher</h3>
+                                        <p>Assemblée des Français de l'Étranger (AFE) – Rencontre avec le Président du Sénat Gérard Larcher.</p>
+                                        <img src="../assets/Activité/2410_AFE_Gerard_Larcher_President_Senat.jpeg" alt="AFE – Gérard Larcher" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Octobre 2024</span>
+                                        <h3>AFE – Avec le Ministre de l'Intérieur Bruno Retailleau</h3>
+                                        <p>Assemblée des Français de l'Étranger (AFE) – Rencontre avec le Ministre de l'Intérieur Bruno Retailleau.</p>
+                                        <img src="../assets/Activité/2410_AFE_Bruno_Retailleau_Ministre_Interieur.jpeg" alt="AFE – Bruno Retailleau" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Septembre 2024</span>
+                                        <h3>Pétanque entre Français</h3>
+                                        <p>Partie de pétanque entre Français.</p>
+                                        <img src="../assets/Activité/2409_Petanque_entre_Francias.jpeg" alt="Pétanque entre Français" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Septembre 2024</span>
+                                        <h3>Spectacle de Benjamin Delahaye</h3>
+                                        <p>Spectacle de Benjamin Delahaye.</p>
+                                        <img src="../assets/Activité/2409_Benjamin_Delahaye_spectacle.jpeg" alt="Spectacle de Benjamin Delahaye" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Septembre 2024</span>
+                                        <h3>Pose de la première pierre du nouveau bâtiment du LFiZ</h3>
+                                        <p>Pose de la première pierre du nouveau bâtiment du Lycée Français international de Zurich (LFiZ).</p>
+                                        <img src="../assets/Activité/2409_Pose_premiere_pierre_mouveau_batiment_LFiZ.jpeg" alt="Pose première pierre LFiZ" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Septembre 2024</span>
+                                        <h3>50 ans de l'UFEZ</h3>
+                                        <p>Célébration des 50 ans de l'Union des Français de l'Étranger de Zurich (UFEZ).</p>
+                                        <img src="../assets/Activité/2409_50_ans_UFEZ.jpeg" alt="50 ans de l'UFEZ" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juillet 2024</span>
+                                        <h3>Élections législatives – Vote au LFiZ</h3>
+                                        <p>Journée de vote au Lycée Français de Zürich pour les élections européenes.</p>
+                                        <img src="../assets/Activité/2407_VOTE.jpg" alt="Vote au Consulat" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juillet 2024</span>
+                                        <h3>Élections européennes – Vote</h3>
+                                        <p>Journée de vote pour les élections européennes.</p>
+                                        <img src="../assets/Activité/2407_VOTE_Europeenes.jpeg" alt="Vote élections européennes" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juillet 2024</span>
+                                        <h3>Canelé de Bordeaux à Zurich</h3>
+                                        <p>Les canelés de Bordeaux s'invitent à Zurich !</p>
+                                        <img src="../assets/Activité/2407_Canelé_Bordeaux_a_Zurich_MIAM.jpeg" alt="Canelé de Bordeaux à Zurich" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mai 2024</span>
+                                        <h3>Lycée Français de Vienne</h3>
+                                        <p>Visite du Lycée Français de Vienne.</p>
+                                        <img src="../assets/Activité/2405_Lycee_Francias_Vienne.jpeg" alt="Lycée Français de Vienne" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mai 2024</span>
+                                        <h3>Déplacement à Londres</h3>
+                                        <p>Déplacement à Londres.</p>
+                                        <img src="../assets/Activité/2405_Londres.jpeg" alt="Déplacement à Londres" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Avril 2024</span>
+                                        <h3>Visite ASFE Uruguay – Martin Biurrun à Zurich</h3>
+                                        <p>Visite de mon collègue ASFE élu en Uruguay, Martin Biurrun à Zurich.</p>
+                                        <img src="../assets/Activité/2404_ASFE_Uruguay_Visite_Zurich_Martin_Biurrun.jpeg" alt="Visite ASFE Uruguay à Zurich" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Avril 2024</span>
+                                        <h3>Rencontre avec l'Ambassadrice à Berne</h3>
+                                        <p>Rencontre avec Madame l'Ambassadrice de France à Berne.</p>
+                                        <img src="../assets/Activité/2404_Ambassadrice_a_Berne.jpeg" alt="Ambassadrice à Berne" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mars 2024</span>
+                                        <h3>Les Petits Lutins de Winterthour</h3>
+                                        <p>Célébration des 20 ans de l'association des Petits Lutins de Winterthour avec  leur présidente Dominique Constantin.</p>
+                                        <img src="../assets/Activité/2403_Petits_Lutins_de_Wintertour_Dominique_Constantin.jpeg" alt="Petits Lutins de Winterthour" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mars 2024</span>
+                                        <h3>Sénateurs ASFE</h3>
+                                        <p>Rencontre avec les Sénateurs ASFE.</p>
+                                        <img src="../assets/Activité/2403_Senateurs_ASFE.jpeg" alt="Sénateurs ASFE" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Mars 2024</span>
+                                        <h3>Assemblée des Français de l'Étranger à Paris</h3>
+                                        <p>Participation à l'Assemblée des Français de l'Étranger (AFE) à Paris.</p>
+                                        <img src="../assets/Activité/2403_AFE_Paris.jpg" alt="AFE à Paris" class="timeline-photo" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === 2021 === -->
+                    <div class="year-section">
+                        <div class="year-header" onclick="toggleYear(this)">
+                            <span class="year-label">2021</span>
+                            <span class="year-toggle">▼</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Juin 2021</span>
+                                        <h3>Élection comme Conseiller des Français de l'Étranger</h3>
+                                        <p>Élu sur la liste ASFE pour la circonscription Suisse alémanique & Liechtenstein.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: CFE -->
+        <div class="collapsible-section" id="cfe">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Conseiller des Français de l'Étranger – C'est quoi ?</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content" data-include="cfe-description.html">
+            </div>
+        </div>
+
+        <!-- SECTION 3: Liens Utiles -->
+        <div class="collapsible-section" id="liens">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Liens Utiles</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content" data-include="liens-utiles.html">
+            </div>
+        </div>
+
+        <!-- SECTION 4: Qui suis-je ? -->
+        <div class="collapsible-section" id="quisuisje">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Qui suis-je ?</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="about-grid">
+                    <div>
+                        <img src="../assets/Profils/Profil_Louis_Portal.jpg" alt="Portrait de Louis Portal" class="profile-photo" />
+                    </div>
+                    <div class="about-content">
+                        <p>Originaire de Bordeaux, j'ai vécu à Paris, New York puis Zurich, où je me suis installé en 2014 pour finir mes études. Basé depuis douze ans en Suisse alémanique, j'y ai fondé une startup dans le digital et évolué pendant dix ans dans l'écosystème tech/capital-risque, avec lequel je collabore encore, représentant d'un club d'investisseur international pour la Suisse.</p>
+                        <p>Aujourd'hui dans le secteur aérien, je voyage régulièrement pour le travail, autant d'occasions d'échanger avec les élus consulaires de monde entier et de rester au contact des réalités des Français de l'Étranger.</p>
+                        <p>Engagé au sein de l'ASFE lors des dernières élections consulaires, et au contact de nombreuses associations françaises et francophones, j'ai été élu avec la conviction qu'à l'étranger, l'engagement doit dépasser les clivages partisans et rassembler tous les Français. Il est essentiel de rappeler que l'indépendance de l'ASFE est un atout majeur. Faire de la politique française est important, mais nous devons avant tout nous concentrer sur les réalités locales de notre pays d'accueil. Cela nous permet de répondre efficacement à vos besoins.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section" data-include="contact.html">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>ASFE - Alliance Solidaire des Français de l'Étranger</strong></p>
+        <p>© 2026 – Louis Portal. Conseiller des Français de l'Étranger.</p>
+        <p>Suisse alémanique & Liechtenstein</p>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            <a href="consulaire.html">← Retour au site de campagne 2026</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

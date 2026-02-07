@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background: #fafafa;
+    color: #111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Language dropdown - top right */
+.lang-dropdown {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.lang-toggle {
+    font-size: 1.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    line-height: 1;
+}
+
+.lang-toggle:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.lang-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 6px;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 100;
+}
+
+.lang-menu.open {
+    display: flex;
+}
+
+.lang-menu a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+    line-height: 1;
+    text-align: center;
+}
+
+.lang-menu a:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+header {
+    width: 100%;
+    padding: 60px 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #111;
+}
+
+main {
+    width: 100%;
+    max-width: 720px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.welcome {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 48px;
+    letter-spacing: 0.3px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 32px;
+    height: 200px;
+    border-radius: 16px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.card-consulaire {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.card-startups {
+    background: linear-gradient(135deg, #0f3443, #34e89e);
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 40px 20px 28px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: 160px;
+    }
+}

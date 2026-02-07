@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Portal - ASFE-Kandidat Zürich 2026</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../auth.js"></script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>Louis Portal – ASFE-Spitzenkandidat</h1>
+                <p>Wahl der Berater der Auslandsfranzosen – 2026</p>
+                <p>🇨🇭 Deutschschweiz · 🇱🇮 Liechtenstein</p>
+            </div>
+            <div class="lang-switcher">
+                <button class="lang-switcher-toggle" onclick="document.querySelector('.lang-switcher-menu').classList.toggle('open')">🇩🇪</button>
+                <div class="lang-switcher-menu">
+                    <a href="../fr/consulaire.html">🇫🇷</a>
+                    <a href="../en/consulaire.html">🇬🇧</a>
+                    <a href="../de/consulaire.html">🇩🇪</a>
+                    <a href="../it/consulaire.html">🇮🇹</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 1. Election Info -->
+        <div class="section" id="elections">
+            <h2>Wahl am 31. Mai 2026</h2>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Zu besetzende Sitze</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">+1</span>
+                    <span class="stat-label">Konsulardelegierter</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">31. Mai</span>
+                    <span class="stat-label">Wahltag</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <div class="info-card-wrapper">
+                    <div class="info-card">
+                        <h3>Praktische Informationen - Zum Wählen</h3>
+                        <ul>
+                            <li>Melden Sie sich auf der konsularischen Wählerliste an</li>
+                            <li>Anmeldefrist: Ende April 2026 (zu bestätigen)</li>
+                            <li>Elektronische Abstimmung verfügbar</li>
+                            <li>Abstimmung im Konsulat am 31. Mai 2026</li>
+                        </ul>
+                    </div>
+                    <div class="info-card-buttons">
+                        <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R51788" target="_blank" class="round-btn" title="Konsularische Anmeldung">📋 Anmeldung</a>
+                        <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F33307" target="_blank" class="round-btn" title="Rechte und Verfahren">📄 Verfahren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. La Liste -->
+        <div class="collapsible-section" id="liste">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Die Liste</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 30px; font-size: 1.1em;">
+                    <a href="elu_2021.html" style="color: #2C4A6E; font-weight: 600;">Seit 2021 gewählt</a>, kandidiere ich erneut für die Wahl 2026 mit einer repräsentativen Liste unserer Gemeinschaft.
+                </p>
+
+                <div class="logo-grid team-grid">
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/Profils/Profil_Louis_Portal.jpg" alt="Louis Portal" />
+                        </div>
+                        <span class="logo-label">Louis Portal</span>
+                        <span class="team-role">Zurich</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-02.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-03.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-04.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-05.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-06.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-07.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-08.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-09.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-10.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-11.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-image">
+                            <img src="../assets/colistier-12.jpg" alt="Prénom Nom" />
+                        </div>
+                        <span class="logo-label">Prénom Nom</span>
+                        <span class="team-role">Ville</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Programme -->
+        <div class="collapsible-section" id="programme">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Unser Programm</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="info-grid">
+                    <div class="priority-card">
+                        <h3>ℹ️ Informieren & Verteidigen</h3>
+                        <p>Die Rechte und Interessen der Gemeinschaft durch das Engagement der ASFE verteidigen und zuverlässige, hochwertige Informationen zu Themen verbreiten, die Auslandsfranzosen betreffen, insbesondere in unserem Wahlkreis.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>🌍 Vernetzen</h3>
+                        <p>Die Integration in der Schweiz fördern und die Verbindung zu Frankreich durch Netzwerke, Austausch und lokale Initiativen stärken.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>🤝 Begleiten</h3>
+                        <p>Diejenigen unterstützen, die es brauchen, und konkrete Lösungen für gegenseitige Hilfe und Solidarität anbieten.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>🎭 Frankophone Kultur</h3>
+                        <p>Die französische Sprache fördern und das frankophone Vereins- und Kulturleben unterstützen.</p>
+                    </div>
+                    <div class="priority-card large">
+                        <h3>💼 Wirtschaftliche Entwicklung</h3>
+                        <p>Das wirtschaftliche Potenzial entwickeln, indem der Austausch und die Vernetzung zwischen Unternehmern, Talenten, Investoren, Handelskammern und Wirtschaftsakteuren erleichtert werden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. CFE Description -->
+        <div class="collapsible-section" id="cfe">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Berater der Auslandsfranzosen – Was ist das?</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content" data-include="cfe-description.html">
+            </div>
+        </div>
+
+        <!-- 5. Liens Utiles -->
+        <div class="collapsible-section" id="liens">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Nützliche Links</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content" data-include="liens-utiles.html">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section" data-include="contact.html">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>ASFE - Alliance Solidaire des Français de l'Étranger</strong></p>
+        <p>&copy; 2026 – Louis Portal. Kampagnenwebsite für die Konsularwahlen.</p>
+        <p>Konsularwahlen 2026 - Deutschschweiz & Liechtenstein</p>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            Vergessen Sie nicht, sich auf der konsularischen Wählerliste einzutragen
+        </p>
+        <p style="margin-top: 10px;">
+            <a href="https://alliancesolidaire.org" target="_blank">Alliance Solidaire</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

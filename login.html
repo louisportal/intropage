@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-box">
+        <h1>Access Protected</h1>
+        <p>Enter the password to continue.</p>
+        <form id="login-form">
+            <input type="password" id="pw" placeholder="Password" autofocus>
+            <button type="submit">Enter</button>
+            <div class="error-msg" id="error"></div>
+        </form>
+    </div>
+    <script>
+        var HASH = 'c09855236b11cd50ce06be0b7525d63f1ea04c5d10f4a8839dd68536a9dd43a1';
+        var TOKEN_KEY = '__site_auth';
+
+        // If already authenticated, go to index
+        if (sessionStorage.getItem(TOKEN_KEY) === HASH) {
+            window.location.replace('index.html');
+        }
+
+        document.getElementById('login-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var pw = document.getElementById('pw').value;
+            var encoded = new TextEncoder().encode(pw);
+            var hashBuffer = await crypto.subtle.digest('SHA-256', encoded);
+            var hashArray = Array.from(new Uint8Array(hashBuffer));
+            var hashHex = hashArray.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+
+            if (hashHex === HASH) {
+                sessionStorage.setItem(TOKEN_KEY, HASH);
+                window.location.replace('index.html');
+            } else {
+                document.getElementById('error').textContent = 'Incorrect password.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Portal - ASFE 2026</title>
+    <script>
+        // Detect browser language and redirect to consulaire.html
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var langCode = userLang.toLowerCase().substring(0, 2);
+            var supportedLangs = ['fr', 'en', 'de', 'it'];
+
+            // Default to French if language not supported
+            if (supportedLangs.indexOf(langCode) === -1) {
+                langCode = 'fr';
+            }
+
+            // Redirect to the appropriate language version
+            window.location.href = langCode + '/consulaire.html';
+        })();
+    </script>
+</head>
+<body>
+    <p style="text-align: center; padding: 50px; font-family: Arial, sans-serif; color: #2563EB;">
+        Redirection en cours... / Redirecting... / Weiterleitung... / Reindirizzamento...
+    </p>
+</body>
+</html>

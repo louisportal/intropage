@@ -9,74 +9,49 @@
 </head>
 <body>
     <!-- Header with Navigation -->
-    <header class="header">
+    <header class="header" style="position:sticky; top:0; z-index:1000;">
         <div class="header-content">
             <div class="header-title">
                 <h1>Louis Portal</h1>
-                <p>Conseiller des Français de l'Étranger – 2021/2026</p>
-                <p>🇨🇭 Suisse alémanique  🇱🇮 Liechtenstein</p>
+                <p>Conseiller des Français de l'Étranger en Suisse alémanique et au Liechtenstein</p>
             </div>
-            <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
-                <div style="position:relative;">
-                    <button id="hamburgerBtn" style="display:flex; flex-direction:column; justify-content:center; align-items:center; gap:5px; width:42px; height:42px; background:rgba(255,255,255,0.1); border:2px solid rgba(255,255,255,0.4); border-radius:8px; cursor:pointer; padding:0;" aria-label="Menu">
-                        <span style="display:block; width:20px; height:2px; background:white; border-radius:1px;"></span>
-                        <span style="display:block; width:20px; height:2px; background:white; border-radius:1px;"></span>
-                        <span style="display:block; width:20px; height:2px; background:white; border-radius:1px;"></span>
+            <div class="header-controls">
+                <a href="consulaire.html" class="election-btn">Élections Consulaires 2026</a>
+                <div class="header-separator"></div>
+                <div class="hamburger-container">
+                    <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
                     </button>
-                    <nav id="navMenu" style="display:none; position:absolute; top:calc(100% + 8px); right:0; background:#1E3554; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.3); z-index:1000; min-width:240px; flex-direction:column;">
-                        <a href="#quisuisje" style="color:white; text-decoration:none; padding:14px 20px; font-size:0.95em; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">Qui suis-je ?</a>
-                        <a href="#activite" style="color:white; text-decoration:none; padding:14px 20px; font-size:0.95em; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">Activité</a>
-                        <a href="#liens" style="color:white; text-decoration:none; padding:14px 20px; font-size:0.95em; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">Liens Utiles</a>
-                        <a href="#cfe" style="color:white; text-decoration:none; padding:14px 20px; font-size:0.95em; display:block;">Conseiller des Français</a>
+                    <nav id="navMenu" class="nav-menu">
+                        <a href="#quisuisje" class="nav-link">Votre élu consulaire</a>
+                        <a href="#activite" class="nav-link">Activité</a>
+                        <a href="#liens" class="nav-link">Liens Utiles</a>
+                        <a href="#cfe" class="nav-link nav-link-last">Conseiller des Français</a>
                     </nav>
                 </div>
-                <div style="width:1px; height:28px; background:rgba(255,255,255,0.5);"></div>
+                <div class="header-separator"></div>
                 <div class="lang-switcher">
-                    <button class="lang-switcher-toggle" onclick="document.querySelector('.lang-switcher-menu').classList.toggle('open')">🇫🇷</button>
+                    <button class="lang-switcher-toggle">FR</button>
                     <div class="lang-switcher-menu">
-                        <a href="../fr/elu_2021.html">🇫🇷</a>
-                        <a href="../en/elu_2021.html">🇬🇧</a>
-                        <a href="../de/elu_2021.html">🇩🇪</a>
-                        <a href="../it/elu_2021.html">🇮🇹</a>
+                        <a href="../fr/elu_2021.html">FR</a>
+                        <a href="../en/elu_2021.html">EN</a>
+                        <a href="../de/elu_2021.html">DE</a>
+                        <a href="../it/elu_2021.html">IT</a>
                     </div>
                 </div>
             </div>
-            <script>
-                document.getElementById('hamburgerBtn').addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    var menu = document.getElementById('navMenu');
-                    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-                });
-                document.addEventListener('click', function(e) {
-                    var menu = document.getElementById('navMenu');
-                    if (!e.target.closest('#navMenu') && !e.target.closest('#hamburgerBtn')) {
-                        menu.style.display = 'none';
-                    }
-                });
-                document.querySelectorAll('#navMenu a').forEach(function(a) {
-                    a.addEventListener('click', function() {
-                        document.getElementById('navMenu').style.display = 'none';
-                    });
-                });
-            </script>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- Lien vers la page de campagne 2026 -->
-        <a href="consulaire.html" class="collapsible-section" style="display:flex; align-items:center; justify-content:space-between; border-color:#2D6A4F; text-decoration:none; cursor:pointer; margin-bottom:30px;">
-            <div class="section-header" style="background:white; width:100%; display:flex; align-items:center; justify-content:space-between; border-radius:6px;">
-                <h2 style="color:#2D6A4F; margin:0; font-size:1.8em;">Élections Consulaires 2026</h2>
-                <span style="font-size:2em; color:#2D6A4F; font-weight:bold;">➜</span>
-            </div>
-        </a>
-
-        <!-- SECTION 1: Qui suis-je ? -->
+        <!-- SECTION 1: Votre élu consulaire -->
         <div class="collapsible-section" id="quisuisje">
             <div class="section-header" onclick="toggleSection(this)">
-                <h2>Qui suis-je ?</h2>
-                <span class="toggle-icon open">▼</span>
+                <h2>Votre élu consulaire</h2>
+                <span class="toggle-icon open">v</span>
             </div>
             <div class="section-content open">
                 <div class="about-grid">
@@ -96,20 +71,16 @@
         <div class="collapsible-section" id="activite">
             <div class="section-header" onclick="toggleSection(this)">
                 <h2>Activité</h2>
-                <span class="toggle-icon open">▼</span>
+                <span class="toggle-icon">v</span>
             </div>
-            <div class="section-content open">
-                <p style="margin-bottom: 30px; font-size: 1.1em;">
-                    Retrouvez ci-dessous les principales actions et événements de mon mandat depuis 2021.
-                </p>
-
+            <div class="section-content">
                 <div class="timeline-scroll">
 
                     <!-- === 2026 === -->
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2026</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -119,7 +90,7 @@
                                         <span class="timeline-date">Janvier 2026</span>
                                         <h3>Cérémonie des vœux au LFiZ</h3>
                                         <p>Cérémonie des vœux au LFiZ, aux côtés de Monsieur le Consul Général de France à Zürich.</p>
-                                        <img src="../assets/Activité/2601_voeux_lfiz.jpeg" alt="Cérémonie des vœux au LFiZ" class="timeline-photo" />
+                                        <img src="../assets/Activité/2601_voeux_lfiz_avec_Consul_Général_Zurich.jpeg" alt="Cérémonie des vœux au LFiZ" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -128,7 +99,7 @@
                                         <span class="timeline-date">Janvier 2026</span>
                                         <h3>Déjeuner avec la Sénatrice ASFE</h3>
                                         <p>Déjeuner à Paris avec la Sénatrice ASFE Sophie Briante-Guillemont.</p>
-                                        <img src="../assets/Activité/2601_dejeuner_senat.JPG" alt="Déjeuner avec la Sénatrice ASFE Sophie Briante-Guillemont" class="timeline-photo" />
+                                        <img src="../assets/Activité/2601_dejeuner_senat_avec_Sénatrice_Briante_Guillemont.JPG" alt="Déjeuner avec la Sénatrice ASFE Sophie Briante-Guillemont" class="timeline-photo" />
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +110,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2025</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -148,8 +119,8 @@
                                     <div class="timeline-content">
                                         <span class="timeline-date">Novembre 2025</span>
                                         <h3>Visite ASFE à Vienne</h3>
-                                        <p>Visite de ma collègue et tête de liste ASFE à Vienne, Autriche.</p>
-                                        <img src="../assets/Activité/2511_ASFE_Wien.jpeg" alt="Visite ASFE à Vienne" class="timeline-photo" />
+                                        <p>Visite de ma collègue et tête de liste ASFE Claire Guérin à Vienne, Autriche.</p>
+                                        <img src="../assets/Activité/2511_ASFE_Wien_Claire_Guerin.jpeg" alt="Visite ASFE à Vienne avec Claire Guérin" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -166,8 +137,8 @@
                                     <div class="timeline-content">
                                         <span class="timeline-date">Novembre 2025</span>
                                         <h3>Rencontre ASFE à Barcelone</h3>
-                                        <p>Rencontre avec les collègues ASFE à Barcelone, Espagne.</p>
-                                        <img src="../assets/Activité/2511_ASFE_Barcelona.jpeg" alt="Rencontre ASFE à Barcelone" class="timeline-photo" />
+                                        <p>Rencontre avec Pascal Bourbon et les collègues ASFE à Barcelone, Espagne.</p>
+                                        <img src="../assets/Activité/2511_ASFE_Barcelone_PAscal_Bourbon.jpeg" alt="Rencontre ASFE à Barcelone avec Pascal Bourbon" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -184,8 +155,8 @@
                                     <div class="timeline-content">
                                         <span class="timeline-date">Octobre 2025</span>
                                         <h3>Théâtre Français de Zurich</h3>
-                                        <p>Soirée au Théâtre Français de Zurich.</p>
-                                        <img src="../assets/Activité/2510_Theatre_Francais.jpeg" alt="Théâtre Français de Zurich" class="timeline-photo" />
+                                        <p>Soirée au Théâtre Français de Zurich avec le Collectif Le Lion Au Balcon.</p>
+                                        <img src="../assets/Activité/2510_Theatre_Francais_Collectif_Le_Lion_Au_Balcon.jpeg" alt="Théâtre Français de Zurich - Collectif Le Lion Au Balcon" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -194,7 +165,7 @@
                                         <span class="timeline-date">Septembre 2025</span>
                                         <h3>Forum d'Affaires Franco-Suisse</h3>
                                         <p>Participation au Forum d'Affaires Franco-Suisse (FAFS).</p>
-                                        <img src="../assets/Activité/2509_FAFS.jpg" alt="Forum d'Affaires Franco-Suisse" class="timeline-photo" />
+                                        <img src="../assets/Activité/2509_Forum_Affaire_Franco_Suisse_AFS.jpg" alt="Forum d'Affaires Franco-Suisse" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -221,7 +192,7 @@
                                         <span class="timeline-date">Juillet 2025</span>
                                         <h3>14 Juillet au Club Nautique Français</h3>
                                         <p>Célébration du 14 Juillet au Club Nautique Français (CNF).</p>
-                                        <img src="../assets/Activité/2507_14_Juillet_CNF1.jpeg" alt="14 Juillet au Club Nautique Français" class="timeline-photo" />
+                                        <img src="../assets/Activité/2507_14_Juillet_au_Club_Nautique_Francais_CNF_1.jpeg" alt="14 Juillet au Club Nautique Français" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -230,7 +201,7 @@
                                         <span class="timeline-date">Juillet 2025</span>
                                         <h3>14 Juillet au Club Nautique Français (2)</h3>
                                         <p>Célébration du 14 Juillet au Club Nautique Français (CNF).</p>
-                                        <img src="../assets/Activité/2507_14_Juillet_CNF2.jpeg.jpeg" alt="14 Juillet au Club Nautique Français" class="timeline-photo" />
+                                        <img src="../assets/Activité/2507_14_Juillet_au_Club_Nautique_Francais_CNF_2.jpeg" alt="14 Juillet au Club Nautique Français" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -264,18 +235,18 @@
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">Juin 2025</span>
-                                        <h3>Assemblée Générale de l'ACFZ</h3>
-                                        <p>Assemblée Générale de l'Association des Anciens Combattants Français de Zurich (ACFZ).</p>
-                                        <img src="../assets/Activité/2506_AG_ACFZ.jpeg" alt="AG de l'ACFZ" class="timeline-photo" />
+                                        <h3>Assemblée Générale des Anciens Combattants</h3>
+                                        <p>Assemblée Générale de l'Association des Anciens Combattants Français de Zurich.</p>
+                                        <img src="../assets/Activité/2506_AG_Anciens_Combatans_Français_de_Zurich.jpeg" alt="AG des Anciens Combattants Français de Zurich" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">Mai 2025</span>
-                                        <h3>Conférence AFZ</h3>
-                                        <p>Conférence de l'Association des Français de Zurich (AFZ).</p>
-                                        <img src="../assets/Activité/2505_AFZ_conference.jpeg" alt="Conférence AFZ" class="timeline-photo" />
+                                        <h3>Conférence Alliance Française de Zurich</h3>
+                                        <p>Conférence à l'Alliance Française de Zurich.</p>
+                                        <img src="../assets/Activité/2505_Aliance_Francaise_de_Zurich_conference_1.jpeg" alt="Conférence Alliance Française de Zurich" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -293,25 +264,25 @@
                                         <span class="timeline-date">Mai 2025</span>
                                         <h3>Concert du Chœur Français</h3>
                                         <p>Concert du Chœur Français de Zurich.</p>
-                                        <img src="../assets/Activité/2505_Choeur1.jpeg" alt="Concert du Chœur Français" class="timeline-photo" />
+                                        <img src="../assets/Activité/2505_Choeur_1.jpeg" alt="Concert du Chœur Français de Zurich" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">Avril 2025</span>
-                                        <h3>French Tech Zurich</h3>
-                                        <p>Événement French Tech à Zurich.</p>
-                                        <img src="../assets/Activité/2504_FRENCHTECH.jpeg" alt="French Tech Zurich" class="timeline-photo" />
+                                        <h3>Conférence French Tech Zurich</h3>
+                                        <p>Conférence French Tech à Zurich.</p>
+                                        <img src="../assets/Activité/2504_Conférence_French_Tech_Zurich.jpeg" alt="Conférence French Tech Zurich" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">Avril 2025</span>
-                                        <h3>Concert de Céline Dion au Liechtenstein</h3>
-                                        <p>Concert de Céline Dion au Liechtenstein.</p>
-                                        <img src="../assets/Activité/2504_concert_Celine_Dion_LIECHTENSTEIN.jpeg" alt="Concert de Céline Dion au Liechtenstein" class="timeline-photo" />
+                                        <h3>Concert double de Céline Dion au Liechtenstein</h3>
+                                        <p>Concert double de Céline Dion au Liechtenstein.</p>
+                                        <img src="../assets/Activité/2504_concert_double_de_Celine_Dion_Liechtenstein.jpeg" alt="Concert double de Céline Dion au Liechtenstein" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -394,7 +365,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2024</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -586,7 +557,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2023</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -598,7 +569,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2022</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -610,7 +581,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2021</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -634,19 +605,19 @@
         <div class="collapsible-section" id="liens">
             <div class="section-header" onclick="toggleSection(this)">
                 <h2>Liens Utiles</h2>
-                <span class="toggle-icon open">▼</span>
+                <span class="toggle-icon">v</span>
             </div>
-            <div class="section-content open" data-include="liens-utiles.html">
+            <div class="section-content" data-include="liens-utiles.html">
             </div>
         </div>
 
         <!-- SECTION 4: CFE -->
         <div class="collapsible-section" id="cfe">
             <div class="section-header" onclick="toggleSection(this)">
-                <h2>Conseiller des Français de l'Étranger – C'est quoi ?</h2>
-                <span class="toggle-icon open">▼</span>
+                <h2>Conseiller des Français de l'Étranger - C'est quoi ?</h2>
+                <span class="toggle-icon">v</span>
             </div>
-            <div class="section-content open" data-include="cfe-description.html">
+            <div class="section-content" data-include="cfe-description.html">
             </div>
         </div>
 
@@ -661,9 +632,6 @@
         <p><strong>ASFE - Alliance Solidaire des Français de l'Étranger</strong></p>
         <p>© 2026 – Louis Portal. Conseiller des Français de l'Étranger.</p>
         <p>Suisse alémanique & Liechtenstein</p>
-        <p style="margin-top: 15px; font-size: 0.9em;">
-            N'oubliez pas de vous inscrire sur la liste électorale consulaire
-        </p>
     </footer>
 
     <script src="../script.js"></script>

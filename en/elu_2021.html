@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Portal - Elected 2021 · Councillor for French Citizens Abroad</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Louis Portal - Cdfe</title>
+    <link rel="stylesheet" href="../styles.css?v=2">
     <script src="../auth.js"></script>
 </head>
 <body>
@@ -13,17 +13,35 @@
         <div class="header-content">
             <div class="header-title">
                 <h1>Louis Portal</h1>
-                <p>Councillor for French Citizens Abroad – 2021/2026</p>
-                <p>🇨🇭 German-speaking Switzerland · 🇱🇮 Liechtenstein</p>
+                <p>French Councillor Abroad in German-speaking Switzerland and Liechtenstein</p>
             </div>
-            <a href="consulaire.html" class="campaign-link" style="color: white !important;">2026 campaign page &#x27A1;</a>
-            <div class="lang-switcher">
-                <button class="lang-switcher-toggle" onclick="document.querySelector('.lang-switcher-menu').classList.toggle('open')">🇬🇧</button>
-                <div class="lang-switcher-menu">
-                    <a href="../fr/elu_2021.html">🇫🇷</a>
-                    <a href="../en/elu_2021.html">🇬🇧</a>
-                    <a href="../de/elu_2021.html">🇩🇪</a>
-                    <a href="../it/elu_2021.html">🇮🇹</a>
+            <div class="header-controls">
+                <a href="consulaire.html" class="election-btn">
+                    2026 Consular Elections
+                </a>
+                <div class="header-separator"></div>
+                <div class="hamburger-container">
+                    <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <nav id="navMenu" class="nav-menu">
+                        <a href="#quisuisje" class="nav-link">Your elected councillor</a>
+                        <a href="#activite" class="nav-link">Activity</a>
+                        <a href="#liens" class="nav-link">Useful Links</a>
+                        <a href="#cfe" class="nav-link nav-link-last">French Councillor</a>
+                    </nav>
+                </div>
+                <div class="header-separator"></div>
+                <div class="lang-switcher">
+                    <button class="lang-switcher-toggle">EN</button>
+                    <div class="lang-switcher-menu">
+                        <a href="../fr/elu_2021.html">FR</a>
+                        <a href="../en/elu_2021.html">EN</a>
+                        <a href="../de/elu_2021.html">DE</a>
+                        <a href="../it/elu_2021.html">IT</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -31,16 +49,33 @@
 
     <div class="container">
 
-        <!-- SECTION 1: Activity (Timeline) -->
+        <!-- SECTION 1: Your elected councillor -->
+        <div class="collapsible-section" id="quisuisje">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Your elected councillor</h2>
+                <span class="toggle-icon open">v</span>
+            </div>
+            <div class="section-content open">
+                <div class="about-grid">
+                    <div>
+                        <img src="../assets/Profils/Louis_Portal_Picture.jpg" alt="Portrait of Louis Portal" class="profile-photo" />
+                    </div>
+                    <div class="about-content">
+                        <p>Originally from Bordeaux, I lived in Paris, New York, and then Zurich, where I settled in 2014 to finish my studies. Based in German-speaking Switzerland for twelve years, I founded a digital startup and spent ten years in the tech/venture capital ecosystem, with which I still collaborate, representing an international investor club for Switzerland.</p>
+                        <p>Today I work in the aviation sector. I travel regularly for work, which gives me many opportunities to interact with consular representatives from around the world and stay in touch with the realities of French citizens abroad.</p>
+                        <p>Committed to ASFE during the last consular elections, and in contact with many French and French-speaking associations, I was elected with the conviction that abroad, civic engagement must transcend partisan divisions and unite all French citizens. It is essential to remember that ASFE's independence is a major asset. French politics is important, but we must above all focus on the local realities of our host country. This allows us to respond effectively to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Activity (Timeline) -->
         <div class="collapsible-section" id="activite">
             <div class="section-header" onclick="toggleSection(this)">
                 <h2>Activity</h2>
-                <span class="toggle-icon">▼</span>
+                <span class="toggle-icon">v</span>
             </div>
             <div class="section-content">
-                <p style="margin-bottom: 30px; font-size: 1.1em;">
-                    Below you will find the main actions and events of my mandate since 2021.
-                </p>
 
                 <div class="timeline-scroll">
 
@@ -48,7 +83,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2026</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -58,7 +93,7 @@
                                         <span class="timeline-date">January 2026</span>
                                         <h3>New Year Ceremony at LFiZ</h3>
                                         <p>New Year ceremony at LFiZ, alongside the Consul General of France in Zurich.</p>
-                                        <img src="../assets/Activité/2601_voeux_lfiz.jpeg" alt="New Year Ceremony at LFiZ" class="timeline-photo" />
+                                        <img src="../assets/Activité/2601_voeux_lfiz_avec_Consul_Général_Zurich.jpeg" alt="New Year Ceremony at LFiZ" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -67,7 +102,7 @@
                                         <span class="timeline-date">January 2026</span>
                                         <h3>Lunch with ASFE Senator</h3>
                                         <p>Lunch in Paris with ASFE Senator Sophie Briante-Guillemont.</p>
-                                        <img src="../assets/Activité/2601_dejeuner_senat.JPG" alt="Lunch with ASFE Senator" class="timeline-photo" />
+                                        <img src="../assets/Activité/2601_dejeuner_senat_avec_Sénatrice_Briante_Guillemont.JPG" alt="Lunch with ASFE Senator" class="timeline-photo" />
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +113,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2025</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -87,8 +122,8 @@
                                     <div class="timeline-content">
                                         <span class="timeline-date">November 2025</span>
                                         <h3>ASFE Visit to Vienna</h3>
-                                        <p>Visit of my ASFE colleague and list leader to Vienna, Austria.</p>
-                                        <img src="../assets/Activité/2511_ASFE_Wien.jpeg" alt="ASFE Visit to Vienna" class="timeline-photo" />
+                                        <p>Visit of my ASFE colleague and list leader Claire Guérin to Vienna, Austria.</p>
+                                        <img src="../assets/Activité/2511_ASFE_Wien_Claire_Guerin.jpeg" alt="ASFE Visit to Vienna with Claire Guérin" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -105,8 +140,8 @@
                                     <div class="timeline-content">
                                         <span class="timeline-date">November 2025</span>
                                         <h3>ASFE Meeting in Barcelona</h3>
-                                        <p>Meeting with ASFE colleagues in Barcelona, Spain.</p>
-                                        <img src="../assets/Activité/2511_ASFE_Barcelona.jpeg" alt="ASFE Meeting in Barcelona" class="timeline-photo" />
+                                        <p>Meeting with ASFE colleague Pascal Bourbon in Barcelona, Spain.</p>
+                                        <img src="../assets/Activité/2511_ASFE_Barcelone_PAscal_Bourbon.jpeg" alt="ASFE Meeting in Barcelona with Pascal Bourbon" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -123,8 +158,8 @@
                                     <div class="timeline-content">
                                         <span class="timeline-date">October 2025</span>
                                         <h3>French Theatre of Zurich</h3>
-                                        <p>Evening at the French Theatre of Zurich.</p>
-                                        <img src="../assets/Activité/2510_Theatre_Francais.jpeg" alt="French Theatre of Zurich" class="timeline-photo" />
+                                        <p>Evening at the French Theatre of Zurich featuring the Collectif Le Lion Au Balcon.</p>
+                                        <img src="../assets/Activité/2510_Theatre_Francais_Collectif_Le_Lion_Au_Balcon.jpeg" alt="French Theatre of Zurich - Collectif Le Lion Au Balcon" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -133,16 +168,16 @@
                                         <span class="timeline-date">September 2025</span>
                                         <h3>Franco-Swiss Business Forum</h3>
                                         <p>Participation in the Franco-Swiss Business Forum (FAFS).</p>
-                                        <img src="../assets/Activité/2509_FAFS.jpg" alt="Franco-Swiss Business Forum" class="timeline-photo" />
+                                        <img src="../assets/Activité/2509_Forum_Affaire_Franco_Suisse_AFS.jpg" alt="Franco-Swiss Business Forum" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">August 2025</span>
-                                        <h3>Sibyle's Departure</h3>
-                                        <p>Sibyle's departure.</p>
-                                        <img src="../assets/Activité/2508_depart_Sbile.jpeg" alt="Sibyle's Departure" class="timeline-photo" />
+                                        <h3>Farewell to Mr. Sbile</h3>
+                                        <p>Farewell to Mr. Sbile.</p>
+                                        <img src="../assets/Activité/2508_depart_Thierry_Sbile.jpeg" alt="Farewell to Mr. Sbile" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -160,7 +195,7 @@
                                         <span class="timeline-date">July 2025</span>
                                         <h3>Bastille Day at the French Nautical Club</h3>
                                         <p>Bastille Day celebration at the French Nautical Club (CNF).</p>
-                                        <img src="../assets/Activité/2507_14_Juillet_CNF1.jpeg" alt="Bastille Day at the French Nautical Club" class="timeline-photo" />
+                                        <img src="../assets/Activité/2507_14_Juillet_au_Club_Nautique_Francais_CNF_1.jpeg" alt="Bastille Day at the French Nautical Club" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -169,7 +204,7 @@
                                         <span class="timeline-date">July 2025</span>
                                         <h3>Bastille Day at the French Nautical Club (2)</h3>
                                         <p>Bastille Day celebration at the French Nautical Club (CNF).</p>
-                                        <img src="../assets/Activité/2507_14_Juillet_CNF2.jpeg.jpeg" alt="Bastille Day at the French Nautical Club" class="timeline-photo" />
+                                        <img src="../assets/Activité/2507_14_Juillet_au_Club_Nautique_Francais_CNF_2.jpeg" alt="Bastille Day at the French Nautical Club" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -178,7 +213,16 @@
                                         <span class="timeline-date">June 2025</span>
                                         <h3>Franco-Swiss Chamber of Commerce and Industry</h3>
                                         <p>Event of the Franco-Swiss Chamber of Commerce and Industry (CCIFS).</p>
-                                        <img src="../assets/Activité/2506_CCIFS.jpeg" alt="CCIFS" class="timeline-photo" />
+                                        <img src="../assets/Activité/2506_CCIFS.jpg" alt="CCIFS" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">June 2025</span>
+                                        <h3>Consular Council in Bern</h3>
+                                        <p>Consular Council in Bern.</p>
+                                        <img src="../assets/Activité/2506_CC_BERN_tous.jpeg" alt="Consular Council in Bern" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -203,25 +247,34 @@
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">June 2025</span>
-                                        <h3>ACFZ General Assembly</h3>
-                                        <p>General Assembly of the Association of French Veterans of Zurich (ACFZ).</p>
-                                        <img src="../assets/Activité/2506_AG_ACFZ.jpeg" alt="ACFZ General Assembly" class="timeline-photo" />
+                                        <h3>General Assembly of War Veterans</h3>
+                                        <p>General Assembly of the Association of French War Veterans of Zurich (ACFZ).</p>
+                                        <img src="../assets/Activité/2506_AG_Anciens_Combatans_Français_de_Zurich.jpeg" alt="General Assembly of French War Veterans of Zurich" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">May 2025</span>
-                                        <h3>AFZ Conference</h3>
-                                        <p>Conference of the Association of French Citizens of Zurich (AFZ).</p>
-                                        <img src="../assets/Activité/2505_AFZ_conference.jpeg" alt="AFZ Conference" class="timeline-photo" />
+                                        <h3>Alliance Française de Zurich Conference</h3>
+                                        <p>Conference at the Alliance Française de Zurich.</p>
+                                        <img src="../assets/Activité/2505_Aliance_Francaise_de_Zurich_conference_1.jpeg" alt="Alliance Française de Zurich Conference" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">May 2025</span>
-                                        <h3>CCIFS – Networking Event</h3>
+                                        <h3>Alliance Française de Zurich Conference</h3>
+                                        <p>Conference at the Alliance Française de Zurich.</p>
+                                        <img src="../assets/Activité/2505_AFZ_conference2.jpeg" alt="Alliance Française de Zurich Conference" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">May 2025</span>
+                                        <h3>CCIFS - Networking Event</h3>
                                         <p>Event of the Franco-Swiss Chamber of Commerce and Industry (CCIFS).</p>
                                         <img src="../assets/Activité/2505_CCIFS.jpeg" alt="CCIFS" class="timeline-photo" />
                                     </div>
@@ -232,25 +285,34 @@
                                         <span class="timeline-date">May 2025</span>
                                         <h3>French Choir Concert</h3>
                                         <p>Concert of the French Choir of Zurich.</p>
-                                        <img src="../assets/Activité/2505_Choeur1.jpeg" alt="French Choir Concert" class="timeline-photo" />
+                                        <img src="../assets/Activité/2505_Choeur_1.jpeg" alt="French Choir Concert" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">May 2025</span>
+                                        <h3>French Choir Concert</h3>
+                                        <p>Concert of the French Choir of Zurich.</p>
+                                        <img src="../assets/Activité/2505_Choeur2.jpeg" alt="French Choir Concert" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">April 2025</span>
-                                        <h3>French Tech Zurich</h3>
-                                        <p>French Tech event in Zurich.</p>
-                                        <img src="../assets/Activité/2504_FRENCHTECH.jpeg" alt="French Tech Zurich" class="timeline-photo" />
+                                        <h3>French Tech Zurich Conference</h3>
+                                        <p>French Tech conference in Zurich.</p>
+                                        <img src="../assets/Activité/2504_Conférence_French_Tech_Zurich.jpeg" alt="French Tech Zurich Conference" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">April 2025</span>
-                                        <h3>Céline Dion Concert in Liechtenstein</h3>
-                                        <p>Céline Dion concert in Liechtenstein.</p>
-                                        <img src="../assets/Activité/2504_concert_Celine_Dion_LIECHTENSTEIN.jpeg" alt="Céline Dion Concert in Liechtenstein" class="timeline-photo" />
+                                        <h3>Double Concert by Celine Dion in Liechtenstein</h3>
+                                        <p>Double concert by Céline Dion in Liechtenstein.</p>
+                                        <img src="../assets/Activité/2504_concert_double_de_Celine_Dion_Liechtenstein.jpeg" alt="Double Concert by Celine Dion in Liechtenstein" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -275,18 +337,18 @@
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">March 2025</span>
-                                        <h3>AFE – Meeting with the Minister for Saint-Martin</h3>
-                                        <p>Assembly of French Citizens Abroad (AFE) – Meeting with the Minister for Saint-Martin.</p>
-                                        <img src="../assets/Activité/2503_AFE_Ministre_Saint_Martin.JPG" alt="AFE – Minister for Saint-Martin" class="timeline-photo" />
+                                        <h3>AFE - Meeting with Laurent Saint-Martin</h3>
+                                        <p>Assembly of French Citizens Abroad (AFE) - Meeting with Laurent Saint-Martin, Minister Delegate for Foreign Trade and French Citizens Abroad.</p>
+                                        <img src="../assets/Activité/2503_AFE_Ministre_Laurent_Saint_Martin.JPG" alt="AFE - Laurent Saint-Martin" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">March 2025</span>
-                                        <h3>AFE – With the Senator and Geneva Colleagues</h3>
-                                        <p>Assembly of French Citizens Abroad (AFE) – With the Senator and Geneva colleagues.</p>
-                                        <img src="../assets/Activité/2503_AFE_Senatrice_et_Geneve.JPG" alt="AFE – Senator and Geneva colleagues" class="timeline-photo" />
+                                        <h3>AFE - With the Senator and Geneva Colleagues</h3>
+                                        <p>Assembly of French Citizens Abroad (AFE) - With the Senator and Geneva colleagues.</p>
+                                        <img src="../assets/Activité/2503_AFE_Senatrice_et_Geneve.JPG" alt="AFE - Senator and Geneva colleagues" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -333,7 +395,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2024</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -359,9 +421,9 @@
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">October 2024</span>
-                                        <h3>Meeting with the Minister for French Citizens Abroad</h3>
-                                        <p>Meeting with the Minister for French Citizens Abroad.</p>
-                                        <img src="../assets/Activité/2410_Ministre_Francais_Etrangers.jpeg" alt="Minister for French Citizens Abroad" class="timeline-photo" />
+                                        <h3>Meeting with Sophie Primas</h3>
+                                        <p>Meeting with Sophie Primas, Minister Delegate for Foreign Trade and French Citizens Abroad.</p>
+                                        <img src="../assets/Activité/2410_Ministre_Francais_Etrangers_Sophie_Primas.jpeg" alt="Sophie Primas - Minister Delegate" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -377,18 +439,27 @@
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">October 2024</span>
-                                        <h3>AFE – With Senate President Gérard Larcher</h3>
-                                        <p>Assembly of French Citizens Abroad (AFE) – Meeting with Senate President Gérard Larcher.</p>
-                                        <img src="../assets/Activité/2410_AFE_Gerard_Larcher_President_Senat.jpeg" alt="AFE – Gérard Larcher" class="timeline-photo" />
+                                        <h3>AFE - With Senate President Gérard Larcher</h3>
+                                        <p>Assembly of French Citizens Abroad (AFE) - Meeting with Senate President Gérard Larcher.</p>
+                                        <img src="../assets/Activité/2410_AFE_Gerard_Larcher_President_Senat.jpeg" alt="AFE - Gérard Larcher" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">October 2024</span>
-                                        <h3>AFE – With Interior Minister Bruno Retailleau</h3>
-                                        <p>Assembly of French Citizens Abroad (AFE) – Meeting with Interior Minister Bruno Retailleau.</p>
-                                        <img src="../assets/Activité/2410_AFE_Bruno_Retailleau_Ministre_Interieur.jpeg" alt="AFE – Bruno Retailleau" class="timeline-photo" />
+                                        <h3>AFE - With Interior Minister Bruno Retailleau</h3>
+                                        <p>Assembly of French Citizens Abroad (AFE) - Meeting with Interior Minister Bruno Retailleau.</p>
+                                        <img src="../assets/Activité/2410_AFE_Bruno_Retailleau_Ministre_Interieur.jpeg" alt="AFE - Bruno Retailleau" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">September 2024</span>
+                                        <h3>UFS General Assembly</h3>
+                                        <p>General Assembly of the Union of French Citizens in Switzerland (UFS).</p>
+                                        <img src="../assets/Activité/2409_AG_UFS.jpg" alt="UFS General Assembly" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -422,6 +493,15 @@
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">September 2024</span>
+                                        <h3>Cornerstone Ceremony for the New LFiZ Building (2)</h3>
+                                        <p>Cornerstone ceremony for the new building of the French International School of Zurich (LFiZ).</p>
+                                        <img src="../assets/Activité/2409_Pose_premiere_pierre_mouveau_batiment_LFiZ2.jpeg" alt="LFiZ Cornerstone Ceremony" class="timeline-photo" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">September 2024</span>
                                         <h3>50th Anniversary of UFEZ</h3>
                                         <p>Celebration of the 50th anniversary of the Union of French Citizens Abroad of Zurich (UFEZ).</p>
                                         <img src="../assets/Activité/2409_50_ans_UFEZ.jpeg" alt="50th Anniversary of UFEZ" class="timeline-photo" />
@@ -431,16 +511,16 @@
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">July 2024</span>
-                                        <h3>Legislative Elections – Voting at the Consulate</h3>
-                                        <p>Voting day at the Consulate for the legislative elections.</p>
-                                        <img src="../assets/Activité/2407_VOTE.jpg" alt="Voting at the Consulate" class="timeline-photo" />
+                                        <h3>Legislative Elections - Voting at LFiZ</h3>
+                                        <p>Voting day at the French School of Zurich for the European elections.</p>
+                                        <img src="../assets/Activité/2407_VOTE_Legislatives.jpg" alt="Voting at the Consulate" class="timeline-photo" />
                                     </div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-dot"></div>
                                     <div class="timeline-content">
                                         <span class="timeline-date">July 2024</span>
-                                        <h3>European Elections – Voting</h3>
+                                        <h3>European Elections - Voting</h3>
                                         <p>Voting day for the European elections.</p>
                                         <img src="../assets/Activité/2407_VOTE_Europeenes.jpeg" alt="European Elections Vote" class="timeline-photo" />
                                     </div>
@@ -495,7 +575,7 @@
                                     <div class="timeline-content">
                                         <span class="timeline-date">March 2024</span>
                                         <h3>Les Petits Lutins of Winterthur</h3>
-                                        <p>Meeting with Les Petits Lutins of Winterthur and Dominique Constantin.</p>
+                                        <p>Celebration of the 20th anniversary of Les Petits Lutins of Winterthur association with their president Dominique Constantin.</p>
                                         <img src="../assets/Activité/2403_Petits_Lutins_de_Wintertour_Dominique_Constantin.jpeg" alt="Petits Lutins of Winterthur" class="timeline-photo" />
                                     </div>
                                 </div>
@@ -525,7 +605,7 @@
                     <div class="year-section">
                         <div class="year-header" onclick="toggleYear(this)">
                             <span class="year-label">2021</span>
-                            <span class="year-toggle">▼</span>
+                            <span class="year-toggle">v</span>
                         </div>
                         <div class="year-content">
                             <div class="timeline">
@@ -545,43 +625,23 @@
             </div>
         </div>
 
-        <!-- SECTION 2: CFE -->
-        <div class="collapsible-section" id="cfe">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Councillor for French Citizens Abroad – What is it?</h2>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="section-content" data-include="cfe-description.html">
-            </div>
-        </div>
-
         <!-- SECTION 3: Useful Links -->
         <div class="collapsible-section" id="liens">
             <div class="section-header" onclick="toggleSection(this)">
                 <h2>Useful Links</h2>
-                <span class="toggle-icon">▼</span>
+                <span class="toggle-icon">v</span>
             </div>
             <div class="section-content" data-include="liens-utiles.html">
             </div>
         </div>
 
-        <!-- SECTION 4: About me -->
-        <div class="collapsible-section" id="quisuisje">
+        <!-- SECTION 4: CFE -->
+        <div class="collapsible-section" id="cfe">
             <div class="section-header" onclick="toggleSection(this)">
-                <h2>About me</h2>
-                <span class="toggle-icon">▼</span>
+                <h2>French Councillor Abroad - What is it?</h2>
+                <span class="toggle-icon">v</span>
             </div>
-            <div class="section-content">
-                <div class="about-grid">
-                    <div>
-                        <img src="../assets/Profils/Profil_Louis_Portal.jpg" alt="Portrait of Louis Portal" class="profile-photo" />
-                    </div>
-                    <div class="about-content">
-                        <p>Born in Bordeaux, I lived in Paris, New York then Zurich, where I settled in 2014 to finish my studies. Based for twelve years in German-speaking Switzerland, I founded a digital startup and spent ten years in the tech/venture capital ecosystem, with which I still collaborate, representing an international investor club for Switzerland.</p>
-                        <p>Now in the aviation sector, I travel regularly for work, providing opportunities to exchange with consular representatives worldwide and stay in touch with the realities facing French citizens abroad.</p>
-                        <p>Committed to ASFE during the last consular elections, and in contact with numerous French and Francophone associations, I was elected with the conviction that abroad, civic engagement must transcend partisan divides and unite all French citizens. It is essential to remember that ASFE's independence is a major asset. French politics matters, but we must above all focus on the local realities of our host country. This allows us to respond effectively to your needs.</p>
-                    </div>
-                </div>
+            <div class="section-content" data-include="cfe-description.html">
             </div>
         </div>
 
@@ -594,11 +654,8 @@
     <!-- Footer -->
     <footer>
         <p><strong>ASFE - Alliance Solidaire des Français de l'Étranger</strong></p>
-        <p>© 2026 – Louis Portal. Councillor for French Citizens Abroad.</p>
+        <p>© 2026 – Louis Portal. French Councillor Abroad.</p>
         <p>German-speaking Switzerland & Liechtenstein</p>
-        <p style="margin-top: 15px; font-size: 0.9em;">
-            <a href="consulaire.html">← Back to the 2026 campaign site</a>
-        </p>
     </footer>
 
     <script src="../script.js"></script>

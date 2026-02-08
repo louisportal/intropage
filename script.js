@@ -9,14 +9,15 @@ function toggleSection(header) {
 
 // Toggle year sub-sections in timeline
 function toggleYear(header) {
-    var content = header.nextElementSibling;
-    var icon = header.querySelector('.year-toggle');
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.year-toggle');
     content.classList.toggle('open');
     icon.classList.toggle('open');
 }
 
 // Load shared HTML fragments (data-include="filename.html")
 document.addEventListener('DOMContentLoaded', function() {
+    // Load HTML includes
     document.querySelectorAll('[data-include]').forEach(function(el) {
         var file = el.getAttribute('data-include');
         fetch(file)
@@ -28,26 +29,131 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.warn('Could not load ' + file, err);
             });
     });
-});
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
+    // Hamburger menu functionality
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-menu') && !e.target.closest('#hamburgerBtn')) {
+                navMenu.classList.remove('open');
+            }
+        });
+
+        // Close menu and smooth scroll when clicking nav links
+        document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                navMenu.classList.remove('open');
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const header = document.querySelector('.header');
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    // Language switcher functionality
+    const langToggle = document.querySelector('.lang-switcher-toggle');
+    const langMenu = document.querySelector('.lang-switcher-menu');
+
+    if (langToggle && langMenu) {
+        langToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            langMenu.classList.toggle('open');
+        });
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-switcher')) {
+                langMenu.classList.remove('open');
+            }
+        });
+    }
+
+    // Bio popup handler (delegated event listener)
+    document.addEventListener('click', function(e) {
+        const member = e.target.closest('.team-member');
+        if (!member) return;
+
+        const bioPopup = document.getElementById('bioPopup');
+        if (!bioPopup) return;
+
+        const bioPhoto = document.getElementById('bioPhoto');
+        const bioName = document.getElementById('bioName');
+        const bioBio = document.getElementById('bioBio');
+        const bioLinkedin = document.getElementById('bioLinkedin');
+        const bioElu = document.getElementById('bioElu');
+
+        if (bioPhoto) bioPhoto.src = member.getAttribute('data-photo') || '';
+        if (bioName) bioName.textContent = member.getAttribute('data-name') || '';
+        if (bioBio) bioBio.textContent = member.getAttribute('data-bio') || '';
+
+        const linkedin = member.getAttribute('data-linkedin');
+        if (bioLinkedin) {
+            bioLinkedin.style.display = linkedin ? 'inline-flex' : 'none';
+            if (linkedin) bioLinkedin.href = linkedin;
+        }
+
+        const elu = member.getAttribute('data-elu');
+        if (bioElu) {
+            bioElu.style.display = elu ? 'inline-flex' : 'none';
+            if (elu) bioElu.href = elu;
+        }
+
+        bioPopup.style.display = 'flex';
+    });
+
+    // Bio popup close functionality
+    const bioPopup = document.getElementById('bioPopup');
+    if (bioPopup) {
+        // Close button
+        const bioCloseBtn = bioPopup.querySelector('.bio-popup-close');
+        if (bioCloseBtn) {
+            bioCloseBtn.addEventListener('click', function() {
+                bioPopup.style.display = 'none';
             });
         }
-    });
-});
 
-// Close language dropdown when clicking outside
-document.addEventListener('click', function(e) {
-    var menu = document.querySelector('.lang-switcher-menu');
-    if (menu && !e.target.closest('.lang-switcher')) {
-        menu.classList.remove('open');
+        // Close when clicking overlay
+        bioPopup.addEventListener('click', function(e) {
+            if (e.target === bioPopup) {
+                bioPopup.style.display = 'none';
+            }
+        });
+    }
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    if (lightbox && lightboxImg) {
+        // Close lightbox when clicking anywhere
+        lightbox.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+
+        // Open lightbox when clicking timeline photos
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('timeline-photo')) {
+                lightboxImg.src = e.target.src;
+                lightbox.style.display = 'flex';
+            }
+        });
     }
 });
 

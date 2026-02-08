@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Portal - ASFE Candidate Zurich 2026</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>ASFE List 2026</title>
+    <link rel="stylesheet" href="../styles.css?v=2">
     <script src="../auth.js"></script>
 </head>
 <body>
@@ -12,210 +12,209 @@
     <header class="header">
         <div class="header-content">
             <div class="header-title">
-                <h1>Louis Portal – ASFE Lead Candidate</h1>
-                <p>Election of Councillors for French Citizens Abroad – 2026</p>
-                <p>🇨🇭 German-speaking Switzerland · 🇱🇮 Liechtenstein</p>
+                <p>Election of Councillors for French Citizens Abroad - May 2026</p>
+                <p>German-speaking Switzerland - Liechtenstein</p>
             </div>
-            <div class="lang-switcher">
-                <button class="lang-switcher-toggle" onclick="document.querySelector('.lang-switcher-menu').classList.toggle('open')">🇬🇧</button>
-                <div class="lang-switcher-menu">
-                    <a href="../fr/consulaire.html">🇫🇷</a>
-                    <a href="../en/consulaire.html">🇬🇧</a>
-                    <a href="../de/consulaire.html">🇩🇪</a>
-                    <a href="../it/consulaire.html">🇮🇹</a>
+            <div class="header-controls">
+                <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R51788" target="_blank" class="election-btn">
+                    Check my status
+                </a>
+                <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F33307" target="_blank" class="election-btn">
+                    Register on the list
+                </a>
+                <div class="header-separator"></div>
+                <div class="hamburger-container">
+                    <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <nav id="navMenu" class="nav-menu">
+                        <a href="#liste" class="nav-link">VOTE ASFE!</a>
+                        <a href="#programme" class="nav-link">Our Programme</a>
+                        <a href="#liens" class="nav-link">Useful Links</a>
+                        <a href="#cfe" class="nav-link nav-link-last">French Councillor</a>
+                    </nav>
+                </div>
+                <div class="header-separator"></div>
+                <div class="lang-switcher">
+                    <button class="lang-switcher-toggle">EN</button>
+                    <div class="lang-switcher-menu">
+                        <a href="../fr/consulaire.html">FR</a>
+                        <a href="../en/consulaire.html">EN</a>
+                        <a href="../de/consulaire.html">DE</a>
+                        <a href="../it/consulaire.html">IT</a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <!-- 1. Election Info -->
-        <div class="section" id="elections">
-            <h2>Election of May 31, 2026</h2>
-
-            <div class="stats">
-                <div class="stat-box">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Seats to fill</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">+1</span>
-                    <span class="stat-label">Consular delegate</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">May 31</span>
-                    <span class="stat-label">Election date</span>
-                </div>
-            </div>
-
-            <div style="margin-top: 40px;">
-                <div class="info-card-wrapper">
-                    <div class="info-card">
-                        <h3>Practical Information - How to Vote</h3>
-                        <ul>
-                            <li>Register on the consular electoral roll</li>
-                            <li>Registration deadline: end of April 2026 (to be confirmed)</li>
-                            <li>Electronic voting available</li>
-                            <li>Vote at the consulate on May 31, 2026</li>
-                        </ul>
-                    </div>
-                    <div class="info-card-buttons">
-                        <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R51788" target="_blank" class="round-btn" title="Consular registration">📋 Register</a>
-                        <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F33307" target="_blank" class="round-btn" title="Rights and procedures">📄 Procedures</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. The Ticket -->
+        <!-- 1. The List -->
         <div class="collapsible-section" id="liste">
             <div class="section-header" onclick="toggleSection(this)">
-                <h2>The Ticket</h2>
-                <span class="toggle-icon">▼</span>
+                <h2>VOTE ASFE!</h2>
+                <span class="toggle-icon open">v</span>
             </div>
-            <div class="section-content">
-                <p style="margin-bottom: 30px; font-size: 1.1em;">
-                    <a href="elu_2021.html" style="color: #2C4A6E; font-weight: 600;">Elected since 2021</a>, I am running again for the 2026 election with a ticket representative of our community.
-                </p>
-
+            <div class="section-content open">
                 <div class="logo-grid team-grid">
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Louis Portal" data-bio="Elected since 2021, Louis is running again with a For-mi-dable team!!! The goal is simple: at least 2 seats! And why not 3? Click on our faces, and... let's update these bios together!" data-elu="elu_2021.html" data-linkedin="https://www.linkedin.com/in/louis-portal-7bb22040/" data-photo="../assets/Profils/Louis_Portal_Picture.jpg">
                         <div class="logo-image">
-                            <img src="../assets/Profils/Profil_Louis_Portal.jpg" alt="Louis Portal" />
+                            <img src="../assets/Profils/Louis_Portal_Picture.jpg" alt="Louis Portal" />
                         </div>
                         <span class="logo-label">Louis Portal</span>
                         <span class="team-role">Zurich</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Marie Galy-Dejean" data-bio="Should we introduce Marie? If LFiZ is an institution, then Marie is an institution within the institution. Lawyer, education expert, and above all with deep knowledge of the local French community, Marie is known by everyone. A good dose of humor too... so Marie for president!" data-photo="../assets/Profils/Marie_Galy_Dejean_Picture.png">
                         <div class="logo-image">
-                            <img src="../assets/colistier-02.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Marie_Galy_Dejean_Picture.png" alt="Marie Galy-Dejean" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Marie Galy-Dejean</span>
+                        <span class="team-role">Zurich</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Nourane Aleyan" data-bio="Nourane is a wonderful man. President of the Bern Football Club, he organizes super friendly events for the Bern community. Nourane knows consular workings well. He also knows scotch well, yes yes, the adhesive, but he's not sticky ;) Nourane for president!" data-photo="../assets/Profils/Nourane_Aleyan_Picture.jpeg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-03.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Nourane_Aleyan_Picture.jpeg" alt="Nourane Aleyan" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Nourane Aleyan</span>
+                        <span class="team-role">Bern</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Elisabeth Lefebvre" data-bio="Elisabeth is an incredible woman! Her favorite day is Thursday, well yes, she's on the board of the Francophone Thursdays, but you mustn't say it too loud, otherwise everyone will know. However, no doubt about her exceptional personality to boost our team gently. Elisabeth for president!" data-photo="../assets/Profils/Elisabeth_Lefebvre_Picture.jpg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-04.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Elisabeth_Lefebvre_Picture.jpg" alt="Elisabeth Lefebvre" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Elisabeth Lefebvre</span>
+                        <span class="team-role">Zurich</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Benjamin Delahaye" data-bio="Benjamin Delahaye is an incredible man, a talented comedian who has been making us laugh at the Comedy Haus for several years. French people know him well in this role, but others also know him for his public speaking training activities, and his professional background in education and management. Benjamin for president!" data-photo="../assets/Profils/Benjamin_Delahaye_Picture.jpg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-05.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Benjamin_Delahaye_Picture.jpg" alt="Benjamin Delahaye" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Benjamin Delahaye</span>
+                        <span class="team-role">Zurich</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Deborah Schiestel" data-bio="Deborah is an incredible woman. Deborah thinks of others with kindness, and not just with little pills, but with a big heart and always a message at the right time. Active in pharma, she supported the 2021 list and continues to represent us in the Basel region. Thank you Deborah. Deborah for president!" data-photo="../assets/Profils/Deborah_Schiestel_Picture.jpeg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-06.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Deborah_Schiestel_Picture.jpeg" alt="Deborah Schiestel" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Deborah Schiestel</span>
+                        <span class="team-role">Basel</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Thierry Cercle" data-bio="Thierry, he's an incrediiiible man. Yes, when we say we represent the ENTIRE constituency, we think of Thierry who is in Ticino. And he does a lot there, with a political role in his commune, he is of precious help to us in knowing the Swiss workings. Alora Forza Thierry! E Grazie a lei!" data-photo="../assets/Profils/Thierry_Cercle_Picture.jpg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-07.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Thierry_Cercle_Picture.jpg" alt="Thierry Cercle" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Thierry Cercle</span>
+                        <span class="team-role">Lugano</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Fabiola Jaymond" data-bio="Fabiola is an incredible woman! Few are as active as her, and her expertise as a member of French Tech Zurich is essential for us. Fabiola comes from the automotive and aerospace sectors, and... she loves Golf! Fabiola for president!" data-photo="../assets/Profils/Fabiola_Jaymond_Picture.jpeg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-08.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Fabiola_Jaymond_Picture.jpeg" alt="Fabiola Jaymond" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Fabiola Jaymond</span>
+                        <span class="team-role">Zurich</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="Jean-Marc Lhermine" data-bio="Jean-Marc, a man of gold, already a supporter during the first election. Thank you Jean-Marc for your calm, your expertise, and your support with your wife. Always someone to talk to, and full of projects, music, business, travel... Jean Marc for president?" data-photo="../assets/Profils/Jean_Marc_Lhermine_Picture.jpeg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-09.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Jean_Marc_Lhermine_Picture.jpeg" alt="Jean-Marc Lhermine" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">Jean-Marc Lhermine</span>
+                        <span class="team-role">Bern</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="XXX YYY" data-bio="Biography coming soon! Thank you for your support!" data-photo="../assets/Profils/Woman.jpg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-10.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Woman.jpg" alt="XXX YYY" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">XXX YYY</span>
+                        <span class="team-role">Vaduz</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="XXX YYY" data-bio="Biography coming soon! Thank you for your support!" data-photo="../assets/Profils/Man.jpg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-11.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Man.jpg" alt="XXX YYY" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">XXX YYY</span>
+                        <span class="team-role">Chur</span>
                     </div>
-                    <div class="logo-block">
+                    <div class="logo-block team-member" data-name="XXX YYY" data-bio="Biography coming soon! Thank you for your support!" data-photo="../assets/Profils/Woman.jpg">
                         <div class="logo-image">
-                            <img src="../assets/colistier-12.jpg" alt="Prénom Nom" />
+                            <img src="../assets/Profils/Woman.jpg" alt="XXX YYY" />
                         </div>
-                        <span class="logo-label">Prénom Nom</span>
-                        <span class="team-role">Ville</span>
+                        <span class="logo-label">XXX YYY</span>
+                        <span class="team-role">Zurich</span>
+                    </div>
+                </div>
+
+                <div class="vote-section">
+                    <h3>To vote</h3>
+                    <ul class="vote-list">
+                        <li class="vote-list-item">
+                            Register on the Consular Electoral List (LEC) until April 24, 2026
+                        </li>
+                        <li class="vote-list-item">
+                            Online electronic vote from May 22 to 27, 2026
+                        </li>
+                        <li class="vote-list-item">
+                            In-person vote on May 31, 2026 at the Consulate General of France in Zurich
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Programme -->
+        <div class="collapsible-section" id="programme">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Our Programme</h2>
+                <span class="toggle-icon">v</span>
+            </div>
+            <div class="section-content">
+                <div class="info-grid">
+                    <div class="priority-card" style="background:#2563EB; color:white;">
+                        <h3 style="color:#D6336C; margin-bottom:15px; font-size:1.2em;">ASFE</h3>
+                        <p>Defend, Support and Accompany French Citizens Abroad - ASFE is the only party whose sole objective is to protect the interests of French citizens living outside France.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Inform & Defend</h3>
+                        <p>Defend the rights and interests of the community through ASFE's action and by disseminating reliable, high-quality information on issues concerning French citizens abroad, particularly in our constituency.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Connect</h3>
+                        <p>Foster integration in Switzerland and strengthen the bond with France through networking, exchanges, and local initiatives.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Support</h3>
+                        <p>Help those in need and offer concrete solutions for mutual aid and solidarity.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Francophone Culture</h3>
+                        <p>Promote the French language and support the Francophone associative and cultural network.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Economic Development</h3>
+                        <p>Develop economic potential by facilitating exchanges and connections between entrepreneurs, talents, investors, chambers of commerce, and economic stakeholders.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 3. Platform -->
-        <div class="collapsible-section" id="programme">
+        <!-- 3. Useful Links -->
+        <div class="collapsible-section" id="liens">
             <div class="section-header" onclick="toggleSection(this)">
-                <h2>Our Platform</h2>
-                <span class="toggle-icon">▼</span>
+                <h2>Useful Links</h2>
+                <span class="toggle-icon">v</span>
             </div>
-            <div class="section-content">
-                <div class="info-grid">
-                    <div class="priority-card">
-                        <h3>ℹ️ Inform & Defend</h3>
-                        <p>Defend the rights and interests of the community through ASFE's action and by providing reliable, high-quality information on issues affecting French citizens abroad, particularly in our constituency.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>🌍 Connect</h3>
-                        <p>Foster integration in Switzerland and strengthen the bond with France through networking, exchanges, and local initiatives.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>🤝 Support</h3>
-                        <p>Help those in need and offer concrete solutions for mutual aid and solidarity.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>🎭 Francophone Culture</h3>
-                        <p>Promote the French language and support the Francophone associative and cultural network.</p>
-                    </div>
-                    <div class="priority-card large">
-                        <h3>💼 Economic Development</h3>
-                        <p>Develop economic potential by facilitating exchanges and connections between entrepreneurs, talent, investors, chambers of commerce, and economic stakeholders.</p>
-                    </div>
-                </div>
+            <div class="section-content" data-include="liens-utiles.html">
             </div>
         </div>
 
         <!-- 4. CFE Description -->
         <div class="collapsible-section" id="cfe">
             <div class="section-header" onclick="toggleSection(this)">
-                <h2>Councillor for French Citizens Abroad – What is it?</h2>
-                <span class="toggle-icon">▼</span>
+                <h2>French Councillor Abroad - What is it?</h2>
+                <span class="toggle-icon">v</span>
             </div>
             <div class="section-content" data-include="cfe-description.html">
-            </div>
-        </div>
-
-        <!-- 5. Useful Links -->
-        <div class="collapsible-section" id="liens">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Useful Links</h2>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="section-content" data-include="liens-utiles.html">
             </div>
         </div>
 
@@ -230,14 +229,34 @@
         <p><strong>ASFE - Alliance Solidaire des Français de l'Étranger</strong></p>
         <p>© 2026 – Louis Portal. Campaign website for consular elections.</p>
         <p>Consular elections 2026 - German-speaking Switzerland & Liechtenstein</p>
-        <p style="margin-top: 15px; font-size: 0.9em;">
-            Don't forget to register on the consular electoral roll
-        </p>
         <p style="margin-top: 10px;">
             <a href="https://alliancesolidaire.org" target="_blank">Alliance Solidaire</a>
         </p>
     </footer>
 
+    <!-- Bio Popup -->
+    <div id="bioPopup" class="bio-popup-overlay">
+        <div class="bio-popup-content">
+            <button class="bio-popup-close" aria-label="Close">&times;</button>
+            <img id="bioPhoto" src="" alt="" class="bio-popup-photo" />
+            <h3 id="bioName" class="bio-popup-name"></h3>
+            <p id="bioBio" class="bio-popup-bio"></p>
+            <div class="bio-popup-buttons">
+                <a id="bioElu" href="" class="bio-popup-btn bio-popup-btn-elu">Current term →</a>
+                <a id="bioLinkedin" href="" target="_blank" rel="noopener noreferrer" class="bio-popup-btn bio-popup-btn-linkedin">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox-overlay">
+        <img id="lightbox-img" src="" alt="" class="lightbox-img" />
+    </div>
     <script src="../script.js"></script>
 </body>
 </html>

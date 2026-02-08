@@ -45,6 +45,21 @@
             it: { welcome: "benvenuti sulla mia pagina web", consulaire: "Consolare", startups: "Startups", consLink: "it/consulaire.html", startLink: "it/startup.html" }
         };
 
+        // Auto-detect browser language on page load
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var langCode = userLang.toLowerCase().substring(0, 2);
+            var supportedLangs = ['fr', 'en', 'de', 'it'];
+
+            // Default to French if language not supported
+            if (supportedLangs.indexOf(langCode) === -1) {
+                langCode = 'fr';
+            }
+
+            // Set the detected language
+            setLang(langCode);
+        })();
+
         function setLang(lang) {
             var t = translations[lang];
             document.getElementById('welcome-text').textContent = t.welcome;

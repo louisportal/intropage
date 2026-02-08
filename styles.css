@@ -702,6 +702,13 @@ footer a:hover {
         justify-content: center;
     }
 
+    .info-card-buttons .round-btn {
+        width: 130px;
+        height: 130px;
+        font-size: 0.9em;
+        padding: 12px;
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -790,7 +797,19 @@ footer a:hover {
     }
 
     .section-content.open {
-        padding: 20px;
+        padding: 15px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .info-card-buttons .round-btn {
+        width: 110px;
+        height: 110px;
+        font-size: 0.8em;
+        padding: 10px;
     }
 
     .stat-number {

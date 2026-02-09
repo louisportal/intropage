@@ -1,2 +1,4 @@
 # My page
-This is the personnal page of Louis Portal.
+Super simple: 
+Intro with different links to the different activities.
+That's it.

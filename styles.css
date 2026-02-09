@@ -541,16 +541,19 @@ footer a:hover {
 .election-btn {
     display: inline-flex;
     align-items: center;
-    padding: 8px 12px;
+    justify-content: center;
+    padding: 10px 16px;
     background: #23a9c6;
     color: #faf7f6;
     text-decoration: none;
     border: 2px solid #23a9c6;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 0.75em;
+    font-size: 0.85em;
     transition: all 0.2s ease;
     white-space: nowrap;
+    height: 42px;
+    box-sizing: border-box;
 }
 
 .election-btn:hover {
@@ -639,16 +642,20 @@ footer a:hover {
 }
 
 .lang-switcher-toggle {
-    font-size: 1em;
+    font-size: 0.85em;
     background: none;
     border: 2px solid #032149;
     color: #032149;
     cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 6px;
-    line-height: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
     transition: all 0.2s ease;
     font-weight: 600;
+    height: 42px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lang-switcher-toggle:hover {
@@ -791,10 +798,11 @@ footer a:hover {
 
     /* Election buttons */
     .election-btn {
-        font-size: 0.65em;
-        padding: 6px 10px;
+        font-size: 0.75em;
+        padding: 8px 12px;
         white-space: nowrap;
         flex-shrink: 1;
+        height: 44px;
     }
 
     /* Hamburger container */
@@ -804,13 +812,13 @@ footer a:hover {
 
     /* Hamburger button */
     .hamburger-btn {
-        width: 38px;
-        height: 38px;
-        padding: 8px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
     }
 
     .hamburger-line {
-        width: 16px;
+        width: 18px;
     }
 
     /* Language switcher */
@@ -819,8 +827,9 @@ footer a:hover {
     }
 
     .lang-switcher-toggle {
-        font-size: 0.8em;
-        padding: 6px 10px;
+        font-size: 0.75em;
+        padding: 8px 12px;
+        height: 44px;
     }
 
     .nav-menu {
@@ -929,18 +938,20 @@ footer a:hover {
     }
 
     .election-btn {
-        font-size: 0.6em;
-        padding: 5px 8px;
+        font-size: 0.7em;
+        padding: 8px 10px;
+        height: 42px;
     }
 
     .hamburger-btn {
-        width: 36px;
-        height: 36px;
+        width: 42px;
+        height: 42px;
     }
 
     .lang-switcher-toggle {
-        font-size: 0.75em;
-        padding: 5px 8px;
+        font-size: 0.7em;
+        padding: 8px 10px;
+        height: 42px;
     }
 
     .nav-link {

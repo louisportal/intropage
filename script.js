@@ -55,6 +55,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
+                    // Open the section if it's collapsed
+                    const sectionContent = targetElement.querySelector('.section-content');
+                    const toggleIcon = targetElement.querySelector('.toggle-icon');
+                    if (sectionContent && !sectionContent.classList.contains('open')) {
+                        sectionContent.classList.add('open');
+                        if (toggleIcon) toggleIcon.classList.add('open');
+                    }
+
+                    // Smooth scroll to the section
                     const header = document.querySelector('.header');
                     const headerHeight = header ? header.offsetHeight : 0;
                     const targetPosition = targetElement.offsetTop - headerHeight - 20;

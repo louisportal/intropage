@@ -773,38 +773,15 @@ footer a:hover {
         font-size: 0.85em;
     }
 
+    /* All 4 buttons on same line for mobile */
     .header-controls {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        width: 100%;
-        order: 2;
-    }
-
-    /* Row for election buttons */
-    .header-controls > .election-btn {
-        order: 1;
-    }
-
-    .header-controls > .election-btn:first-of-type {
-        margin-right: 8px;
-    }
-
-    /* Wrapper for buttons on same row */
-    .header-controls::before {
-        content: '';
-        order: 1;
-        display: flex;
-        width: 100%;
+        flex-direction: row;
+        gap: 4px;
         justify-content: center;
-        gap: 8px;
-    }
-
-    /* Row for hamburger and language */
-    .header-controls > .hamburger-container,
-    .header-controls > .lang-switcher {
-        order: 3;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
     }
 
     /* Hide separators on mobile */
@@ -812,38 +789,38 @@ footer a:hover {
         display: none;
     }
 
-    /* All 4 buttons on same line */
-    .header-controls {
-        display: flex;
-        flex-direction: row;
-        gap: 6px;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
-    }
-
     /* Smaller election buttons to fit */
     .election-btn {
-        font-size: 0.6em;
-        padding: 5px 8px;
+        font-size: 0.55em;
+        padding: 4px 6px;
         white-space: nowrap;
+        flex-shrink: 1;
     }
 
-    /* Compact hamburger */
+    /* Compact hamburger container */
     .hamburger-container {
-        width: 36px;
-        height: 36px;
+        flex-shrink: 0;
+    }
+
+    /* Compact hamburger button */
+    .hamburger-btn {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
     }
 
     .hamburger-line {
-        width: 16px;
+        width: 14px;
     }
 
     /* Smaller language switcher */
     .lang-switcher {
-        font-size: 0.75em;
-        padding: 5px 8px;
-        min-width: auto;
+        flex-shrink: 0;
+    }
+
+    .lang-switcher-toggle {
+        font-size: 0.7em;
+        padding: 4px 8px;
     }
 
     .nav-menu {
@@ -855,10 +832,6 @@ footer a:hover {
         display: none;
     }
 
-    /* When scrolled, keep all 4 buttons visible on same line */
-    .header.scrolled .header-controls {
-        gap: 6px;
-    }
 
     .info-card-wrapper {
         flex-direction: column;
@@ -952,12 +925,12 @@ footer a:hover {
     }
 
     .header-controls {
-        gap: 10px;
+        gap: 4px;
     }
 
     .election-btn {
-        font-size: 0.65em;
-        padding: 5px 8px;
+        font-size: 0.5em;
+        padding: 4px 6px;
     }
 
     .nav-link {

@@ -812,87 +812,52 @@ footer a:hover {
         display: none;
     }
 
-    /* Create row layout for election buttons */
+    /* All 4 buttons on same line */
     .header-controls {
         display: flex;
-        flex-direction: column;
-        gap: 12px;
+        flex-direction: row;
+        gap: 6px;
         justify-content: center;
         align-items: center;
+        flex-wrap: nowrap;
     }
 
-    /* First row: election buttons side by side */
+    /* Smaller election buttons to fit */
     .election-btn {
-        font-size: 0.7em;
-        padding: 6px 10px;
+        font-size: 0.6em;
+        padding: 5px 8px;
+        white-space: nowrap;
     }
 
-    /* Second row: hamburger and language centered together */
-    .hamburger-container,
-    .lang-switcher {
-        display: inline-flex;
-    }
-
-    /* Wrapper for hamburger and language */
-    .header-controls {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 12px;
-        justify-items: center;
-        align-items: center;
-    }
-
-    .election-btn:nth-of-type(1) {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .election-btn:nth-of-type(2) {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
+    /* Compact hamburger */
     .hamburger-container {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: end;
-        margin-right: 6px;
+        width: 36px;
+        height: 36px;
     }
 
+    .hamburger-line {
+        width: 16px;
+    }
+
+    /* Smaller language switcher */
     .lang-switcher {
-        grid-column: 2;
-        grid-row: 2;
-        justify-self: start;
-        margin-left: 6px;
+        font-size: 0.75em;
+        padding: 5px 8px;
+        min-width: auto;
     }
 
     .nav-menu {
         min-width: 200px;
     }
 
-    /* When scrolled, hide title, hamburger and language switcher */
-    .header.scrolled .header-title,
-    .header.scrolled .hamburger-container,
-    .header.scrolled .lang-switcher {
+    /* When scrolled, hide title only */
+    .header.scrolled .header-title {
         display: none;
     }
 
-    /* When scrolled, center the election buttons */
+    /* When scrolled, keep all 4 buttons visible on same line */
     .header.scrolled .header-controls {
-        grid-template-rows: auto;
-        gap: 8px;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .header.scrolled .election-btn {
-        grid-row: 1;
-    }
-
-    /* Center header content when scrolled */
-    .header.scrolled .header-content {
-        justify-content: center;
+        gap: 6px;
     }
 
     .info-card-wrapper {
@@ -995,23 +960,9 @@ footer a:hover {
         padding: 5px 8px;
     }
 
-    .hamburger-btn {
-        width: 38px;
-        height: 38px;
-    }
-
-    .hamburger-line {
-        width: 18px;
-    }
-
     .nav-link {
         padding: 12px 16px;
         font-size: 0.9em;
-    }
-
-    /* Ensure scrolled state works on small screens too */
-    .header.scrolled .header-controls {
-        gap: 6px;
     }
 
     .section-header {

@@ -789,38 +789,38 @@ footer a:hover {
         display: none;
     }
 
-    /* Smaller election buttons to fit */
+    /* Election buttons */
     .election-btn {
-        font-size: 0.55em;
-        padding: 4px 6px;
+        font-size: 0.65em;
+        padding: 6px 10px;
         white-space: nowrap;
         flex-shrink: 1;
     }
 
-    /* Compact hamburger container */
+    /* Hamburger container */
     .hamburger-container {
         flex-shrink: 0;
     }
 
-    /* Compact hamburger button */
+    /* Hamburger button */
     .hamburger-btn {
-        width: 32px;
-        height: 32px;
-        padding: 6px;
+        width: 38px;
+        height: 38px;
+        padding: 8px;
     }
 
     .hamburger-line {
-        width: 14px;
+        width: 16px;
     }
 
-    /* Smaller language switcher */
+    /* Language switcher */
     .lang-switcher {
         flex-shrink: 0;
     }
 
     .lang-switcher-toggle {
-        font-size: 0.7em;
-        padding: 4px 8px;
+        font-size: 0.8em;
+        padding: 6px 10px;
     }
 
     .nav-menu {
@@ -925,12 +925,22 @@ footer a:hover {
     }
 
     .header-controls {
-        gap: 4px;
+        gap: 5px;
     }
 
     .election-btn {
-        font-size: 0.5em;
-        padding: 4px 6px;
+        font-size: 0.6em;
+        padding: 5px 8px;
+    }
+
+    .hamburger-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .lang-switcher-toggle {
+        font-size: 0.75em;
+        padding: 5px 8px;
     }
 
     .nav-link {

@@ -155,6 +155,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Header scroll behavior for mobile
+    const header = document.querySelector('.header');
+    if (header) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Add scrolled class when scrolled down more than 50px
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    }
 });
 
 // Add animation on scroll

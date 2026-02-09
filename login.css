@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #faf7f6;
+    color: #032149;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,13 +15,14 @@ body {
 }
 
 .login-box {
-    background: #1e293b;
+    background: #faf7f6;
     border-radius: 12px;
     padding: 2.5rem 2rem;
     width: 100%;
     max-width: 380px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 24px rgba(27, 58, 107, 0.2);
     text-align: center;
+    border: 2px solid #23a9c6;
 }
 
 .login-box h1 {
@@ -32,24 +33,25 @@ body {
 
 .login-box p {
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: #032149;
+    opacity: 0.7;
     margin-bottom: 1.5rem;
 }
 
 .login-box input[type="password"] {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1px solid #334155;
+    border: 2px solid #032149;
     border-radius: 8px;
-    background: #0f172a;
-    color: #e2e8f0;
+    background: #faf7f6;
+    color: #032149;
     font-size: 1rem;
     outline: none;
     transition: border-color 0.2s;
 }
 
 .login-box input[type="password"]:focus {
-    border-color: #3b82f6;
+    border-color: #23a9c6;
 }
 
 .login-box button {
@@ -58,8 +60,8 @@ body {
     margin-top: 1rem;
     border: none;
     border-radius: 8px;
-    background: #3b82f6;
-    color: #fff;
+    background: #032149;
+    color: #faf7f6;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
@@ -67,11 +69,12 @@ body {
 }
 
 .login-box button:hover {
-    background: #2563eb;
+    background: #23a9c6;
+    color: #032149;
 }
 
 .error-msg {
-    color: #f87171;
+    color: #23a9c6;
     font-size: 0.85rem;
     margin-top: 0.75rem;
     min-height: 1.2em;

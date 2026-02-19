@@ -836,9 +836,19 @@ footer a:hover {
         min-width: 200px;
     }
 
-    /* When scrolled, hide title only */
+    /* Smooth slide-away for title on scroll */
+    .header-title {
+        max-height: 80px;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+        opacity: 1;
+    }
+
     .header.scrolled .header-title {
-        display: none;
+        max-height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
     }
 
 

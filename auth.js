@@ -4,19 +4,17 @@
 
     if (sessionStorage.getItem(TOKEN_KEY) === HASH) return;
 
-    // Determine path to login.html relative to current page
-    var depth = (location.pathname.match(/\//g) || []).length - 1;
-    var isSubdir = location.pathname.split('/').filter(Boolean).length > 1
-        && !location.pathname.endsWith('/');
-    var pathParts = location.pathname.replace(/\/[^/]*$/, '').split('/').filter(Boolean);
+    // Build the path to login.html relative to current page
+    // Works on both GitHub Pages (/intropage/fr/page.html) and custom domains (/fr/page.html)
+    var pathParts = location.pathname.split('/').filter(Boolean);
+    var fileName = pathParts[pathParts.length - 1] || '';
+    var knownSubdirs = ['fr', 'en', 'de', 'it'];
 
-    // Check if we're in a subdirectory (fr/, en/, de/, it/)
-    var prefix = '';
-    var page = location.pathname.split('/').filter(Boolean);
-    // If the HTML file is inside a folder like /fr/, /en/, etc.
-    if (page.length >= 2) {
-        prefix = '../';
-    }
+    // Check if the file is inside a language subdirectory
+    var inSubdir = pathParts.some(function(part) {
+        return knownSubdirs.indexOf(part) !== -1;
+    });
 
+    var prefix = inSubdir ? '../' : '';
     window.location.replace(prefix + 'login.html');
 })();

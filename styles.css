@@ -457,8 +457,8 @@ footer a:hover {
 /* Team Grid (La Liste) */
 .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    row-gap: 10px;
-    column-gap: 25px;
+    row-gap: 20px;
+    column-gap: 20px;
     position: relative;
 }
 
@@ -485,20 +485,22 @@ footer a:hover {
 }
 
 .team-grid .logo-block {
-    background: transparent;
-    border: none;
-    padding: 15px;
+    background: #ffffff;
+    border: 1px solid rgba(3, 33, 73, 0.12);
+    border-radius: 12px;
+    padding: 20px 15px;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
     z-index: 1;
+    box-shadow: 0 2px 8px rgba(3, 33, 73, 0.06);
 }
 
 .team-grid .logo-block:hover {
-    background: transparent;
-    border: none;
-    transform: none;
-    box-shadow: none;
+    background: #ffffff;
+    border-color: #23a9c6;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(35, 169, 198, 0.15);
 }
 
 .team-grid .logo-image {
@@ -524,9 +526,17 @@ footer a:hover {
 
 .team-role {
     font-size: 0.85em;
-    color: #777;
+    color: #032149;
     margin-top: 4px;
     text-align: center;
+}
+
+.team-specialty {
+    font-size: 0.75em;
+    color: #23a9c6;
+    margin-top: 2px;
+    text-align: center;
+    font-weight: 600;
 }
 
 /* Header Controls Container */
@@ -983,7 +993,7 @@ footer a:hover {
 
     /* Hide ASFE logo background in vote section on mobile */
     .vote-section {
-        background: linear-gradient(to right, #032149 0%, #23a9c6 60%, transparent 100%) !important;
+        background: #032149 !important;
     }
 
     .info-card-buttons .round-btn {
@@ -1009,6 +1019,16 @@ footer a:hover {
         gap: 12px;
     }
 
+    .team-grid {
+        row-gap: 15px;
+        column-gap: 12px;
+    }
+
+    .team-grid .logo-block {
+        padding: 15px 10px;
+        border-radius: 10px;
+    }
+
     .team-grid .logo-image {
         width: 90px;
         height: 90px;
@@ -1020,6 +1040,10 @@ footer a:hover {
 
     .team-role {
         font-size: 0.8em;
+    }
+
+    .team-specialty {
+        font-size: 0.7em;
     }
 
     .year-label {

@@ -5,22 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site officiel de Louis Portal, conseiller des Français de l'étranger en Suisse">
     <title>Louis Portal</title>
-    <!-- TEMPORAIRE: Redirection vers la page consulaire. Pour restaurer la page d'accueil originale, voir index_home.html -->
+    <link rel="stylesheet" href="home.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+
+    <div class="lang-dropdown">
+        <button class="lang-toggle" id="lang-toggle" onclick="toggleLangMenu()">🇫🇷</button>
+        <div class="lang-menu" id="lang-menu">
+            <a href="#" onclick="setLang('fr')">🇫🇷</a>
+            <a href="#" onclick="setLang('en')">🇬🇧</a>
+            <a href="#" onclick="setLang('de')">🇩🇪</a>
+            <a href="#" onclick="setLang('it')">🇮🇹</a>
+        </div>
+    </div>
+
+    <header>
+        <h1>Louis Portal</h1>
+    </header>
+
+    <main>
+        <p class="welcome" id="welcome-text">bienvenue sur ma page web</p>
+
+        <div class="cards">
+            <a href="fr/consulaire.html" id="card-consulaire" class="card card-consulaire">
+                <span class="card-label" id="label-consulaire">Consulaire</span>
+            </a>
+            <a href="fr/startup.html" id="card-startups" class="card card-startups">
+                <span class="card-label" id="label-startups">Startups/invest</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Louis Portal. All rights reserved.</p>
+    </footer>
+
     <script>
+        var flags = { fr: '🇫🇷', en: '🇬🇧', de: '🇩🇪', it: '🇮🇹' };
+        var translations = {
+            fr: { welcome: "bienvenue sur ma page web", consulaire: "Consulaire", startups: "Startups/invest", consLink: "fr/consulaire.html", startLink: "fr/startup.html" },
+            en: { welcome: "welcome to my webpage", consulaire: "Consular", startups: "Startups/invest", consLink: "en/consulaire.html", startLink: "en/startup.html" },
+            de: { welcome: "willkommen auf meiner Webseite", consulaire: "Konsularisch", startups: "Startups/invest", consLink: "de/consulaire.html", startLink: "de/startup.html" },
+            it: { welcome: "benvenuti sulla mia pagina web", consulaire: "Consolare", startups: "Startups/invest", consLink: "it/consulaire.html", startLink: "it/startup.html" }
+        };
+
+        // Auto-detect browser language on page load
         (function() {
             var userLang = navigator.language || navigator.userLanguage;
             var langCode = userLang.toLowerCase().substring(0, 2);
             var supportedLangs = ['fr', 'en', 'de', 'it'];
+
+            // Default to French if language not supported
             if (supportedLangs.indexOf(langCode) === -1) {
                 langCode = 'fr';
             }
-            window.location.href = langCode + '/consulaire.html';
+
+            // Set the detected language
+            setLang(langCode);
         })();
+
+        function setLang(lang) {
+            var t = translations[lang];
+            document.getElementById('welcome-text').textContent = t.welcome;
+            document.getElementById('label-consulaire').textContent = t.consulaire;
+            document.getElementById('label-startups').textContent = t.startups;
+            document.getElementById('card-consulaire').href = t.consLink;
+            document.getElementById('card-startups').href = t.startLink;
+            document.getElementById('lang-toggle').textContent = flags[lang];
+            document.documentElement.lang = lang;
+            closeLangMenu();
+        }
+
+        function toggleLangMenu() {
+            document.getElementById('lang-menu').classList.toggle('open');
+        }
+
+        function closeLangMenu() {
+            document.getElementById('lang-menu').classList.remove('open');
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-dropdown')) {
+                closeLangMenu();
+            }
+        });
     </script>
-</head>
-<body>
-    <p style="text-align: center; padding: 50px; font-family: Arial, sans-serif; color: #2563EB;">
-        Redirection en cours... / Redirecting... / Weiterleitung... / Reindirizzamento...
-    </p>
+
 </body>
 </html>

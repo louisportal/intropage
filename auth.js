@@ -1,5 +1,5 @@
 (function() {
-    var HASH = 'c09855236b11cd50ce06be0b7525d63f1ea04c5d10f4a8839dd68536a9dd43a1';
+    var HASH = '39896748ed246bc1c65f7c18126617057741e167b1512eeffaf4f06ce63b824e';
     var TOKEN_KEY = '__site_auth';
 
     if (sessionStorage.getItem(TOKEN_KEY) === HASH) return;

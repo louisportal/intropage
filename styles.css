@@ -591,22 +591,22 @@ footer a:hover {
     gap: 5px;
     width: 42px;
     height: 42px;
-    background: rgba(3, 33, 73, 0.05);
-    border: 2px solid #032149;
+    background: rgba(35, 169, 198, 0.05);
+    border: 2px solid #23a9c6;
     border-radius: 8px;
     cursor: pointer;
     padding: 0;
 }
 
 .hamburger-btn:hover {
-    background: rgba(3, 33, 73, 0.1);
+    background: rgba(35, 169, 198, 0.1);
 }
 
 .hamburger-line {
     display: block;
     width: 20px;
     height: 2px;
-    background: #032149;
+    background: #23a9c6;
     border-radius: 1px;
 }
 
@@ -654,8 +654,8 @@ footer a:hover {
 .lang-switcher-toggle {
     font-size: 0.85em;
     background: none;
-    border: 2px solid #032149;
-    color: #032149;
+    border: 2px solid #23a9c6;
+    color: #23a9c6;
     cursor: pointer;
     padding: 10px 16px;
     border-radius: 8px;
@@ -669,7 +669,7 @@ footer a:hover {
 }
 
 .lang-switcher-toggle:hover {
-    background: #032149;
+    background: #23a9c6;
     color: #faf7f6;
 }
 

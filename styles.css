@@ -571,6 +571,16 @@ footer a:hover {
     border-color: #1a8fa0;
 }
 
+.election-btn-outline {
+    background: none;
+    color: #23a9c6;
+}
+
+.election-btn-outline:hover {
+    background: #23a9c6;
+    color: #faf7f6;
+}
+
 /* Header Separator */
 .header-separator {
     width: 1px;

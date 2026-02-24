@@ -508,12 +508,12 @@ footer a:hover {
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #032149;
+    border: 1.5px solid #23a9c6;
     transition: all 0.3s ease;
 }
 
 .team-grid .logo-block:hover .logo-image {
-    border-color: #23a9c6;
+    border-color: #1a8ba5;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(35, 169, 198, 0.3);
 }
@@ -1189,7 +1189,7 @@ footer a:hover {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #032149;
+    border: 1.5px solid #23a9c6;
     margin-bottom: 15px;
 }
 

@@ -67,13 +67,58 @@ body {
 }
 
 .about-content p {
+    color: #555;
+    line-height: 1.7;
     margin-bottom: 15px;
     text-align: justify;
 }
 
 .about-content ul {
+    color: #555;
+    line-height: 1.7;
     margin-left: 20px;
     margin-bottom: 15px;
+}
+
+.about-content-float {
+    margin-top: 30px;
+}
+
+.profile-photo.float-photo {
+    float: left;
+    width: 350px;
+    margin: 0 30px 20px 0;
+}
+
+/* Stat Cards */
+.stat-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-top: 3px solid #23a9c6;
+}
+
+.stat-number {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #032149;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 4px;
 }
 
 /* Grid Layouts */
@@ -211,8 +256,9 @@ body {
     color: #032149;
     padding: 10px 0;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
     align-items: center;
     transition: color 0.3s ease;
     border-bottom: 2px solid #23a9c6;
@@ -230,16 +276,28 @@ body {
     font-size: 1.8em;
 }
 
+.section-teaser {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 4px;
+    font-style: italic;
+}
+
 .toggle-icon {
-    font-size: 1.5em;
+    font-size: 1.4em;
     transition: transform 0.3s ease;
     font-weight: 300;
-    font-family: Helvetica, Arial, sans-serif;
-    letter-spacing: 0.1em;
+    color: #23a9c6;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
 }
 
 .toggle-icon.open {
-    transform: rotate(180deg);
+    transform: rotate(45deg);
 }
 
 .section-content {
@@ -374,15 +432,15 @@ footer a:hover {
 }
 
 .year-toggle {
-    font-size: 1.5em;
+    font-size: 1.4em;
     transition: transform 0.3s ease;
     font-weight: 300;
-    font-family: Helvetica, Arial, sans-serif;
-    letter-spacing: 0.1em;
+    color: #23a9c6;
+    flex-shrink: 0;
 }
 
 .year-toggle.open {
-    transform: rotate(180deg);
+    transform: rotate(45deg);
 }
 
 .year-content {
@@ -776,6 +834,10 @@ footer a:hover {
     .info-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .stat-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -940,6 +1002,27 @@ footer a:hover {
     .year-label {
         font-size: 1.3em;
     }
+
+    .profile-photo.float-photo {
+        float: none;
+        display: block;
+        width: 80%;
+        max-width: 350px;
+        margin: 0 auto 20px auto;
+    }
+
+    .stat-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .stat-number {
+        font-size: 1.5em;
+    }
+
+    .section-content.open {
+        padding: 15px 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -996,6 +1079,18 @@ footer a:hover {
 
     .section-content.open {
         padding: 15px 0;
+    }
+
+    .stat-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-number {
+        font-size: 1.3em;
+    }
+
+    .stat-label {
+        font-size: 0.8em;
     }
 
     /* Hide ASFE logo background in vote section on mobile */

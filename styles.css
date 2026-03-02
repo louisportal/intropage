@@ -1445,49 +1445,58 @@ footer a:hover {
 }
 
 /* ============================= */
-/* Cookie Consent Banner          */
+/* Cookie Consent Overlay          */
 /* ============================= */
-.consent-banner {
+.consent-overlay {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    background: #032149;
-    color: #faf7f6;
-    padding: 18px 24px;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 33, 73, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     z-index: 10000;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-    font-size: 0.9em;
-    line-height: 1.5;
-    flex-wrap: wrap;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
-.consent-banner p {
-    margin: 0;
-    max-width: 600px;
+.consent-box {
+    background: #032149;
+    color: #faf7f6;
+    padding: 36px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
     text-align: center;
+    max-width: 380px;
+    width: 90%;
+    animation: consentFadeIn 0.3s ease;
 }
 
-.consent-banner a {
-    color: #23a9c6;
-    text-decoration: underline;
+@keyframes consentFadeIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.consent-box p {
+    margin: 0 0 24px 0;
+    font-size: 1.15em;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
 .consent-buttons {
     display: flex;
-    gap: 10px;
-    flex-shrink: 0;
+    gap: 12px;
+    justify-content: center;
 }
 
 .consent-btn {
-    padding: 8px 20px;
-    border-radius: 6px;
+    padding: 10px 28px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 0.95em;
     cursor: pointer;
     border: 2px solid #23a9c6;
     transition: all 0.2s ease;
@@ -1510,4 +1519,18 @@ footer a:hover {
 
 .consent-btn-decline:hover {
     background: rgba(35, 169, 198, 0.15);
+}
+
+@media (max-width: 480px) {
+    .consent-box {
+        padding: 28px 24px;
+        max-width: 320px;
+    }
+    .consent-box p {
+        font-size: 1.05em;
+    }
+    .consent-btn {
+        padding: 9px 22px;
+        font-size: 0.9em;
+    }
 }

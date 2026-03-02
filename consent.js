@@ -1,6 +1,19 @@
 (function() {
     var GA_ID = 'G-PXLJJHGL5J';
 
+    var translations = {
+        fr: { text: 'Accepter les cookies \uD83C\uDF6A ?', accept: 'Accepter', decline: 'Refuser' },
+        en: { text: 'Accept cookies \uD83C\uDF6A?', accept: 'Accept', decline: 'Decline' },
+        de: { text: 'Cookies akzeptieren \uD83C\uDF6A?', accept: 'Akzeptieren', decline: 'Ablehnen' },
+        it: { text: 'Accettare i cookie \uD83C\uDF6A?', accept: 'Accetta', decline: 'Rifiuta' }
+    };
+
+    function getLang() {
+        var lang = document.documentElement.lang || '';
+        lang = lang.toLowerCase().substring(0, 2);
+        return translations[lang] ? lang : 'fr';
+    }
+
     function loadGA() {
         var script = document.createElement('script');
         script.async = true;
@@ -14,25 +27,32 @@
     }
 
     function showBanner() {
-        var banner = document.createElement('div');
-        banner.className = 'consent-banner';
-        banner.innerHTML =
-            '<p>Accepter les cookies \uD83C\uDF6A ?</p>' +
+        var t = translations[getLang()];
+
+        var overlay = document.createElement('div');
+        overlay.className = 'consent-overlay';
+
+        var box = document.createElement('div');
+        box.className = 'consent-box';
+        box.innerHTML =
+            '<p>' + t.text + '</p>' +
             '<div class="consent-buttons">' +
-            '<button class="consent-btn consent-btn-accept" id="consent-accept">Accepter</button>' +
-            '<button class="consent-btn consent-btn-decline" id="consent-decline">Refuser</button>' +
+            '<button class="consent-btn consent-btn-accept" id="consent-accept">' + t.accept + '</button>' +
+            '<button class="consent-btn consent-btn-decline" id="consent-decline">' + t.decline + '</button>' +
             '</div>';
-        document.body.appendChild(banner);
+
+        overlay.appendChild(box);
+        document.body.appendChild(overlay);
 
         document.getElementById('consent-accept').addEventListener('click', function() {
             localStorage.setItem('cookie_consent', 'accepted');
-            banner.remove();
+            overlay.remove();
             loadGA();
         });
 
         document.getElementById('consent-decline').addEventListener('click', function() {
             localStorage.setItem('cookie_consent', 'declined');
-            banner.remove();
+            overlay.remove();
         });
     }
 

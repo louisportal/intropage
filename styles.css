@@ -54,8 +54,8 @@ body {
 /* About Section with Photo */
 .about-grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 40px;
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
     align-items: start;
     margin-top: 30px;
 }
@@ -282,9 +282,9 @@ body {
 }
 
 .toggle-icon {
-    font-size: 1.4em;
+    font-size: 2.4em;
     transition: transform 0.3s ease;
-    font-weight: 300;
+    font-weight: 700;
     color: #23a9c6;
     grid-column: 2;
     grid-row: 1;
@@ -419,10 +419,23 @@ footer a:hover {
     font-weight: 600;
 }
 
+/* Bleu-Blanc-Rouge cycling for year sections */
+.year-section:nth-child(3n+1) .year-label { color: #002654; }
+.year-section:nth-child(3n+1) .year-header { border-bottom-color: #002654; }
+.year-section:nth-child(3n+1) .year-toggle { color: #002654; }
+
+.year-section:nth-child(3n+2) .year-label { color: #8D8D8D; }
+.year-section:nth-child(3n+2) .year-header { border-bottom-color: #8D8D8D; }
+.year-section:nth-child(3n+2) .year-toggle { color: #8D8D8D; }
+
+.year-section:nth-child(3n) .year-label { color: #CE1126; }
+.year-section:nth-child(3n) .year-header { border-bottom-color: #CE1126; }
+.year-section:nth-child(3n) .year-toggle { color: #CE1126; }
+
 .year-toggle {
-    font-size: 1.4em;
+    font-size: 2em;
     transition: transform 0.3s ease;
-    font-weight: 300;
+    font-weight: 700;
     color: #23a9c6;
     flex-shrink: 0;
 }
@@ -553,20 +566,12 @@ footer a:hover {
 
 .position-badge {
     position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 24px;
-    height: 24px;
-    background: #032149;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 0.7em;
+    top: 8px;
+    right: 10px;
+    color: #032149;
+    font-size: 0.85em;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 2;
-    border: 1.5px solid #23a9c6;
     line-height: 1;
 }
 
@@ -1138,9 +1143,9 @@ footer a:hover {
     }
 
     .position-badge {
-        width: 20px;
-        height: 20px;
-        font-size: 0.6em;
+        font-size: 0.75em;
+        top: 6px;
+        right: 8px;
     }
 
     .team-grid .logo-label {
@@ -1210,9 +1215,9 @@ footer a:hover {
     }
 
     .position-badge {
-        width: 18px;
-        height: 18px;
-        font-size: 0.55em;
+        font-size: 0.7em;
+        top: 5px;
+        right: 6px;
     }
 
     .links-grid {

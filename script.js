@@ -156,10 +156,10 @@ document.addEventListener('DOMContentLoaded', function() {
             lightbox.style.display = 'none';
         });
 
-        // Open lightbox when clicking timeline photos
+        // Open lightbox when clicking grid photos (bento box)
         document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('timeline-photo')) {
-                lightboxImg.src = e.target.src;
+            if (e.target.classList.contains('grid-photo')) {
+                lightboxImg.src = e.target.getAttribute('data-full') || e.target.src;
                 lightbox.style.display = 'flex';
             }
         });

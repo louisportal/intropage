@@ -549,13 +549,12 @@ footer a:hover {
     overflow: hidden;
     border: 1.5px solid #23a9c6;
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .position-badge {
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 6px;
+    right: 6px;
     width: 24px;
     height: 24px;
     background: #032149;
@@ -566,7 +565,7 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
     border: 1.5px solid #23a9c6;
     line-height: 1;
 }
@@ -811,11 +810,11 @@ footer a:hover {
 }
 
 .link-block:hover {
-    border-color: #23a9c6;
-    background: #032149;
+    border-color: #7C3AED;
+    background: #7C3AED;
     color: #faf7f6;
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(3, 33, 73, 0.2);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .link-block.facebook:hover {

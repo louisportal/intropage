@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <script src="../consent.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scoprite il ruolo dei consiglieri dei francesi all'estero e il peso dell'ASFE">
+    <title>ASFE & CFE</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <script src="../auth.js"></script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>ASFE & CFE</h1>
+                <p>Comprendere il ruolo dei vostri eletti e il peso dell'ASFE</p>
+            </div>
+            <div class="header-controls">
+                <a href="consulaire.html" class="election-btn">Elezioni 2026</a>
+                <div class="header-separator"></div>
+                <div class="lang-switcher">
+                    <button class="lang-switcher-toggle">IT</button>
+                    <div class="lang-switcher-menu">
+                        <a href="../fr/a-propos.html">FR</a>
+                        <a href="../en/a-propos.html">EN</a>
+                        <a href="../de/a-propos.html">DE</a>
+                        <a href="../it/a-propos.html">IT</a>
+                    </div>
+                </div>
+                <div class="header-separator"></div>
+                <div class="hamburger-container">
+                    <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <nav id="navMenu" class="nav-menu">
+                        <a href="consulaire.html" class="nav-link">Elezioni 2026</a>
+                        <a href="liens-utiles.html" class="nav-link">Link Utili</a>
+                        <a href="a-propos.html" class="nav-link nav-link-last">ASFE & CFE</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Section 1: CFE Description -->
+        <div class="collapsible-section" id="cfe">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Consigliere dei Francesi all'Estero</h2>
+                <p class="section-teaser">Scoprite chi sono i vostri eletti di prossimità e il loro ruolo quotidiano</p>
+                <span class="toggle-icon open">+</span>
+            </div>
+            <div class="section-content open">
+                <!-- Stat cards -->
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <div class="stat-number">443</div>
+                        <div class="stat-label">consiglieri eletti</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">130</div>
+                        <div class="stat-label">circoscrizioni</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6 anni</div>
+                        <div class="stat-label">di mandato</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">90</div>
+                        <div class="stat-label">membri dell'AFE</div>
+                    </div>
+                </div>
+
+                <div class="about-content about-content-float">
+                    <img src="../assets/Info/Conseillers_consulaires.jpg" alt="I Consiglieri dei Francesi all'Estero" class="profile-photo float-photo zoomable" style="cursor: pointer;" onclick="document.getElementById('lightbox').style.display='flex'; document.getElementById('lightbox-img').src=this.src;" />
+
+                    <p>I consiglieri dei francesi all'estero sono <strong>eletti di prossimità</strong>, creati dalla legge del 22 luglio 2013. Eletti a suffragio universale diretto su liste paritarie, per un mandato di 6 anni, dai francesi iscritti nelle liste elettorali consolari, sono attualmente 443 distribuiti in 130 circoscrizioni nel mondo (433 alle prossime elezioni di maggio 2026).</p>
+
+                    <p><strong>Chi sono?</strong></p>
+                    <ul>
+                        <li>Cittadini francesi residenti all'estero, eletti dai loro connazionali francesi all'estero</li>
+                        <li>Ogni circoscrizione consolare conta da 1 a 9 consiglieri, in funzione del numero di francesi iscritti</li>
+                        <li>Esercitano il loro mandato in modo largamente volontario, con un'indennità forfettaria modesta destinata a coprire le spese di viaggio</li>
+                    </ul>
+
+                    <p><strong>Cosa fanno quotidianamente?</strong></p>
+                    <ul>
+                        <li>Rappresentano e accompagnano i francesi della loro circoscrizione nelle loro pratiche presso l'ambasciata o il consolato</li>
+                        <li>Siedono nel consiglio consolare, l'istanza locale che si riunisce almeno 2 volte l'anno per trattare temi concreti: borse scolastiche, assistenza sociale, occupazione e formazione professionale, sicurezza, sostegno alle associazioni (STAFE)</li>
+                        <li>Emettono pareri consultivi e formulano raccomandazioni su tutte le questioni che riguardano la vita dei francesi nella loro circoscrizione</li>
+                        <li>Trasmettono i bisogni e le preoccupazioni dal territorio all'amministrazione, al governo e ai parlamentari</li>
+                        <li>Contribuiscono alla vita civica e associativa locale e sostengono iniziative concrete</li>
+                    </ul>
+
+                    <p><strong>Quale ruolo nella rappresentanza nazionale?</strong></p>
+                    <ul>
+                        <li>Sono grandi elettori e partecipano all'elezione dei 12 senatori dei francesi all'estero</li>
+                        <li>Tra i 443 consiglieri, 90 sono eletti dai loro pari per sedere all'Assemblea dei Francesi all'Estero (AFE), l'assemblea consultiva nazionale che dialoga direttamente con il governo su tutte le politiche pubbliche riguardanti i francesi all'estero</li>
+                        <li>Lavorano in collegamento con gli 11 deputati dei francesi all'estero</li>
+                    </ul>
+
+                    <p><strong>In sintesi</strong>, sono l'equivalente dei consiglieri comunali, ma per le comunità francesi all'estero - i vostri interlocutori diretti a livello consolare.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Il peso dell'ASFE -->
+        <div class="collapsible-section" id="asfe">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Il peso dell'ASFE: un attore imprescindibile</h2>
+                <p class="section-teaser">Un movimento trasversale dedicato ai francesi all'estero</p>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="section-content">
+                <div class="about-content">
+                    <p>L'Alliance Solidaire des Français de l'Étranger (ASFE) occupa oggi una posizione di primo piano in questo sistema di rappresentanza. Movimento trasversale unico nel suo genere — interamente dedicato alla difesa degli interessi dei francesi all'estero al di là delle divisioni destra-sinistra — l'ASFE si è imposta come uno degli attori più strutturati e influenti dell'ecosistema.</p>
+
+                    <p>Al Senato, l'ASFE detiene <strong>3 seggi su 12</strong> tra i senatori dei francesi all'estero, ovvero un quarto della rappresentanza senatoriale di questa comunità — un peso considerevole che le conferisce una voce forte nel lavoro legislativo e nel controllo dell'azione governativa.</p>
+
+                    <p>All'AFE, l'ASFE anima il gruppo <strong>« Solidaires & Indépendants »</strong>, che porta una visione pragmatica e orientata ai risultati, mettendo l'efficienza al servizio degli espatriati piuttosto che le querele partigiane.</p>
+
+                    <p>L'ASFE è anche una delle reti più attive in materia di informazione e accompagnamento dei francesi all'estero, con una piattaforma editoriale ricca che copre tutti i temi della vita quotidiana (fiscalità, educazione, protezione sociale, sicurezza, occupazione…).</p>
+
+                    <p>Con le elezioni consolari di maggio 2026 che si avvicinano, l'ASFE si posiziona come una scelta naturale per gli espatriati che desiderano rappresentanti competenti, impegnati e veramente al servizio della comunità francese all'estero.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section" data-include="contact.html">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>ASFE - Alliance Solidaire des Français de l'Étranger</strong></p>
+        <p>© 2026 – Louis Portal. Sito di campagna per le elezioni consolari.</p>
+        <p>Elezioni consolari 2026 - Svizzera tedesca & Liechtenstein</p>
+        <p style="margin-top: 10px;">
+            <a href="https://alliancesolidaire.org" target="_blank">Alliance Solidaire</a>
+        </p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox-overlay">
+        <img id="lightbox-img" src="" alt="" class="lightbox-img" />
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

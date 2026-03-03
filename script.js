@@ -47,31 +47,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Close menu and smooth scroll when clicking nav links
+        // Close menu and handle nav links (anchor scroll or page navigation)
         document.querySelectorAll('.nav-link').forEach(function(link) {
             link.addEventListener('click', function(e) {
                 navMenu.classList.remove('open');
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    // Open the section if it's collapsed
-                    const sectionContent = targetElement.querySelector('.section-content');
-                    const toggleIcon = targetElement.querySelector('.toggle-icon');
-                    if (sectionContent && !sectionContent.classList.contains('open')) {
-                        sectionContent.classList.add('open');
-                        if (toggleIcon) toggleIcon.classList.add('open');
-                    }
 
-                    // Smooth scroll to the section
-                    const header = document.querySelector('.header');
-                    const headerHeight = header ? header.offsetHeight : 0;
-                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                var href = this.getAttribute('href');
+
+                // Only handle anchor links with smooth scroll
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    var targetId = href.substring(1);
+                    var targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // Open the section if it's collapsed
+                        var sectionContent = targetElement.querySelector('.section-content');
+                        var toggleIcon = targetElement.querySelector('.toggle-icon');
+                        if (sectionContent && !sectionContent.classList.contains('open')) {
+                            sectionContent.classList.add('open');
+                            if (toggleIcon) toggleIcon.classList.add('open');
+                        }
+
+                        // Smooth scroll to the section
+                        var header = document.querySelector('.header');
+                        var headerHeight = header ? header.offsetHeight : 0;
+                        var targetPosition = targetElement.offsetTop - headerHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
+                // For page links (e.g. liens-utiles.html), let browser navigate normally
             });
         });
     }

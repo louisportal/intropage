@@ -226,6 +226,17 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     text-align: left;
+    position: relative;
+}
+
+.priority-number {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: #23a9c6;
+    font-size: 0.8em;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .priority-card:hover {

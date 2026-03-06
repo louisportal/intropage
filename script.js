@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hamburgerBtn && navMenu) {
         hamburgerBtn.addEventListener('click', function(e) {
             e.stopPropagation();
+            // Close language menu if open
+            var langMenu = document.querySelector('.lang-switcher-menu');
+            if (langMenu) langMenu.classList.remove('open');
             navMenu.classList.toggle('open');
         });
 
@@ -90,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (langToggle && langMenu) {
         langToggle.addEventListener('click', function(e) {
             e.stopPropagation();
+            // Close hamburger menu if open
+            var navMenuEl = document.getElementById('navMenu');
+            if (navMenuEl) navMenuEl.classList.remove('open');
             langMenu.classList.toggle('open');
         });
 

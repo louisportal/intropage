@@ -250,13 +250,15 @@ body {
 
 a.priority-card {
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
 }
 
 a.priority-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(35, 169, 198, 0.3);
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(35, 169, 198, 0.45);
     background: #0a2d5c !important;
+    border-color: #23a9c6;
 }
 
 .priority-card h3 {
@@ -996,7 +998,8 @@ footer a:hover {
         font-size: 1.3em;
     }
 
-    .info-grid {
+    .info-grid,
+    .info-grid.two-col {
         grid-template-columns: 1fr;
         gap: 20px;
     }

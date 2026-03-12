@@ -630,6 +630,24 @@ footer a:hover {
     font-weight: 600;
 }
 
+.team-grid .logo-block::after {
+    content: "▸ Voir la bio";
+    display: block;
+    font-size: 0.7em;
+    color: rgba(3, 33, 73, 0.35);
+    margin-top: 8px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+:lang(en) .team-grid .logo-block::after { content: "▸ View bio"; }
+:lang(de) .team-grid .logo-block::after { content: "▸ Bio lesen"; }
+:lang(it) .team-grid .logo-block::after { content: "▸ Leggere la bio"; }
+
+.team-grid .logo-block:hover::after {
+    color: #23a9c6;
+}
+
 /* Header Controls Container */
 .header-controls {
     display: flex;

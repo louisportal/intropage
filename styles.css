@@ -1384,6 +1384,20 @@ footer a:hover {
     border-top: 1px solid rgba(3, 33, 73, 0.1);
 }
 
+.section-separator {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(3, 33, 73, 0.1);
+}
+
+.section-separator p {
+    color: #032149;
+    font-size: 1em;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
 .register-reminder p {
     color: #032149;
     font-size: 1em;

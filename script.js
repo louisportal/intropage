@@ -131,6 +131,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // WhatsApp share button
+    var whatsappLink = document.getElementById('whatsappShare');
+    if (whatsappLink) {
+        var shareUrl = window.location.href;
+        whatsappLink.href = 'https://wa.me/?text=' + encodeURIComponent(shareUrl);
+    }
+
     // Bio popup handler (delegated event listener)
     document.addEventListener('click', function(e) {
         const member = e.target.closest('.team-member');

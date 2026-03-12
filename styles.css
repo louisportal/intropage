@@ -38,6 +38,10 @@ body {
     font-weight: 700;
 }
 
+/* WhatsApp Share Button - mobile only */
+.whatsapp-share {
+    display: none;
+}
 
 .header-title h1 {
     font-size: 2em;
@@ -1203,6 +1207,31 @@ footer a:hover {
     .contact-link {
         font-size: 0.85em;
         padding: 8px 14px;
+    }
+
+    .whatsapp-share {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        background: #25D366;
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85em;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .whatsapp-share svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+        flex-shrink: 0;
     }
 }
 

@@ -32,6 +32,14 @@ body {
     position: relative;
 }
 
+.scrolled-title {
+    display: none;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #032149;
+    white-space: nowrap;
+}
+
 .header-title h1 {
     font-size: 2em;
     margin-bottom: 5px;
@@ -967,6 +975,36 @@ footer a:hover {
 
     .nav-menu {
         min-width: 200px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background: #032149;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        z-index: 1001;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+    }
+
+    .nav-menu .nav-link {
+        color: #faf7f6;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 16px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu .nav-link-last {
+        border-bottom: none;
     }
 
     /* Smooth slide-away for title on scroll */
@@ -982,10 +1020,27 @@ footer a:hover {
         opacity: 0;
         margin: 0;
         padding: 0;
+        overflow: hidden;
+        flex: 0 0 0;
     }
 
     .header.scrolled .lang-switcher {
         display: none;
+    }
+
+    .header.scrolled .header-content {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .header.scrolled .scrolled-title {
+        display: block;
+    }
+
+    .header.scrolled .header-controls {
+        width: auto;
+        justify-content: flex-end;
     }
 
     .info-card-wrapper {
@@ -1189,8 +1244,8 @@ footer a:hover {
     }
 
     .team-grid .logo-image {
-        width: 90px;
-        height: 90px;
+        width: 110px;
+        height: 110px;
     }
 
     .position-badge {

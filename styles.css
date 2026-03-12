@@ -966,6 +966,10 @@ footer a:hover {
         padding: 0;
     }
 
+    .header.scrolled .lang-switcher {
+        display: none;
+    }
+
     .info-card-wrapper {
         flex-direction: column;
     }

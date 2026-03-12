@@ -131,12 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Hide sticky CTA bar after deadline
-    var stickyBar = document.querySelector('.sticky-cta-bar');
-    if (stickyBar && pastDeadline) {
-        stickyBar.style.display = 'none';
-    }
-
     // Bio popup handler (delegated event listener)
     document.addEventListener('click', function(e) {
         const member = e.target.closest('.team-member');

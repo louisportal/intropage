@@ -755,6 +755,10 @@ footer a:hover {
     display: flex;
 }
 
+.nav-close-btn {
+    display: none;
+}
+
 .nav-link {
     color: #032149;
     text-decoration: none;
@@ -1005,6 +1009,20 @@ footer a:hover {
 
     .nav-menu .nav-link-last {
         border-bottom: none;
+    }
+
+    .nav-menu .nav-close-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: #23a9c6;
+        font-size: 2em;
+        cursor: pointer;
+        padding: 5px 10px;
+        line-height: 1;
     }
 
     /* Smooth slide-away for title on scroll */

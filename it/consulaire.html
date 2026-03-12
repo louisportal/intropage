@@ -35,8 +35,9 @@
                         <span class="hamburger-line"></span>
                     </button>
                     <nav id="navMenu" class="nav-menu">
+                        <button class="nav-close-btn" aria-label="Chiudi il menu">&times;</button>
                         <a href="#lista" class="nav-link">Lista ASFE 2026</a>
-                        <a href="#programma" class="nav-link">Il nostro Programma</a>
+                        <a href="programme.html" class="nav-link">Il nostro Programma</a>
                         <a href="liens-utiles.html" class="nav-link">Link Utili</a>
                         <a href="a-propos.html" class="nav-link">L'ASFE e i consiglieri</a>
                         <a href="elu_2021.html" class="nav-link nav-link-last">Mandato in corso</a>
@@ -47,14 +48,10 @@
     </header>
 
     <div class="container">
-        <!-- 1. La Lista -->
-        <div class="collapsible-section" id="lista">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>VOTA ASFE!</h2>
-                <p class="section-teaser">Scoprite il nostro team per le elezioni di maggio 2026</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
+        <!-- La Lista -->
+        <div id="lista">
+            <h2 style="color:#032149; font-size:1.8em; margin-bottom:5px;">VOTA ASFE!</h2>
+            <p style="color:#666; font-style:italic; margin-bottom:30px;">Scoprite il nostro team per le elezioni di maggio 2026</p>
                 <div class="countdown-banner" id="countdownBanner">
                     <span class="countdown-text">Solo <strong id="countdownDays">--</strong> giorni per iscriversi!</span>
                     <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R43248" target="_blank" class="countdown-btn">Iscriversi per votare</a>
@@ -193,54 +190,19 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <!-- 2. Programma -->
-        <div class="collapsible-section" id="programma">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Il nostro Programma</h2>
-                <p class="section-teaser">Le nostre priorità per i francesi nella Svizzera tedesca e nel Liechtenstein</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
-                <div class="info-grid">
-                    <div class="priority-card" style="background:#032149; color:#faf7f6;">
-                        <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">L'ASFE</h3>
-                        <p>Difendere, Sostenere e Accompagnare i Francesi all'Estero - L'ASFE è l'unico partito il cui unico obiettivo è proteggere gli interessi dei francesi stabiliti fuori dalla Francia.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">1</span>
-                        <h3>Informare & Difendere</h3>
-                        <p>Difendere i diritti e gli interessi della comunità attraverso l'azione dell'ASFE e la diffusione di un'informazione affidabile e di qualità sui temi che riguardano i francesi all'estero, in particolare nella nostra circoscrizione.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">2</span>
-                        <h3>Connettere</h3>
-                        <p>Favorire l'integrazione in Svizzera e rafforzare il legame con la Francia grazie alla rete, agli scambi e alle iniziative locali.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">3</span>
-                        <h3>Accompagnare</h3>
-                        <p>Sostenere chi ne ha bisogno e proporre soluzioni concrete di aiuto reciproco e solidarietà.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">4</span>
-                        <h3>Cultura Francofona</h3>
-                        <p>Valorizzare la lingua francese e sostenere il tessuto associativo e culturale francofono.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">5</span>
-                        <h3>Sviluppo Economico</h3>
-                        <p>Sviluppare il potenziale economico facilitando gli scambi e i contatti tra imprenditori, talenti, investitori, camere di commercio e attori economici.</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="info-grid two-col" style="margin-top:20px;">
+            <a href="programme.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Il nostro Programma ➔</h3>
+                <p>Le nostre priorità per i francesi nella Svizzera tedesca e nel Liechtenstein.</p>
+            </a>
+            <a href="elu_2021.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Mandato in corso ➔</h3>
+                <p>Scoprite la nostra attività consolare dal 2021.</p>
+            </a>
             <a href="liens-utiles.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Francesi/Francofoni in Svizzera ➔</h3>
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Link Utili ➔</h3>
                 <p>Trovate tutti i nostri link web, Facebook e Instagram.</p>
             </a>
             <a href="a-propos.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">

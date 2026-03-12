@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('open');
         });
 
+        // Close menu via close button
+        var closeBtn = document.querySelector('.nav-close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                navMenu.classList.remove('open');
+            });
+        }
+
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.nav-menu') && !e.target.closest('#hamburgerBtn')) {

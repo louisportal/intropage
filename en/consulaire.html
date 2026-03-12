@@ -35,8 +35,9 @@
                         <span class="hamburger-line"></span>
                     </button>
                     <nav id="navMenu" class="nav-menu">
+                        <button class="nav-close-btn" aria-label="Close menu">&times;</button>
                         <a href="#liste" class="nav-link">ASFE List 2026</a>
-                        <a href="#programme" class="nav-link">Our Programme</a>
+                        <a href="programme.html" class="nav-link">Our Programme</a>
                         <a href="liens-utiles.html" class="nav-link">Useful Links</a>
                         <a href="a-propos.html" class="nav-link">ASFE and the councillors</a>
                         <a href="elu_2021.html" class="nav-link nav-link-last">Current mandate</a>
@@ -47,14 +48,10 @@
     </header>
 
     <div class="container">
-        <!-- 1. The List -->
-        <div class="collapsible-section" id="liste">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>VOTE ASFE!</h2>
-                <p class="section-teaser">Meet our team for the May 2026 elections</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
+        <!-- The List -->
+        <div id="liste">
+            <h2 style="color:#032149; font-size:1.8em; margin-bottom:5px;">VOTE ASFE!</h2>
+            <p style="color:#666; font-style:italic; margin-bottom:30px;">Meet our team for the May 2026 elections</p>
                 <div class="countdown-banner" id="countdownBanner">
                     <span class="countdown-text">Only <strong id="countdownDays">--</strong> days left to register!</span>
                     <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R43248" target="_blank" class="countdown-btn">Register to vote</a>
@@ -193,54 +190,19 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <!-- 2. Programme -->
-        <div class="collapsible-section" id="programme">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Our Programme</h2>
-                <p class="section-teaser">Our priorities for French citizens in German-speaking Switzerland and Liechtenstein</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
-                <div class="info-grid">
-                    <div class="priority-card" style="background:#032149; color:#faf7f6;">
-                        <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">ASFE</h3>
-                        <p>Defend, Support and Accompany French Citizens Abroad - ASFE is the only party whose sole objective is to protect the interests of French citizens living outside France.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">1</span>
-                        <h3>Inform & Defend</h3>
-                        <p>Defend the rights and interests of the community through ASFE's action and by disseminating reliable, high-quality information on issues concerning French citizens abroad, particularly in our constituency.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">2</span>
-                        <h3>Connect</h3>
-                        <p>Foster integration in Switzerland and strengthen the bond with France through networking, exchanges, and local initiatives.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">3</span>
-                        <h3>Support</h3>
-                        <p>Help those in need and offer concrete solutions for mutual aid and solidarity.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">4</span>
-                        <h3>Francophone Culture</h3>
-                        <p>Promote the French language and support the Francophone associative and cultural network.</p>
-                    </div>
-                    <div class="priority-card">
-                        <span class="priority-number">5</span>
-                        <h3>Economic Development</h3>
-                        <p>Develop economic potential by facilitating exchanges and connections between entrepreneurs, talents, investors, chambers of commerce, and economic stakeholders.</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="info-grid two-col" style="margin-top:20px;">
+            <a href="programme.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Our Programme ➔</h3>
+                <p>Our priorities for French citizens in German-speaking Switzerland and Liechtenstein.</p>
+            </a>
+            <a href="elu_2021.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Current mandate ➔</h3>
+                <p>Discover our consular activity since 2021.</p>
+            </a>
             <a href="liens-utiles.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">French/Francophone in Switzerland ➔</h3>
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Useful Links ➔</h3>
                 <p>Find all our web, Facebook and Instagram links.</p>
             </a>
             <a href="a-propos.html" class="priority-card" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">

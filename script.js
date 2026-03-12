@@ -116,17 +116,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Countdown to registration deadline (April 24, 2026)
+    var deadline = new Date('2026-04-24T23:59:59+02:00');
+    var now = new Date();
+    var diff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+    var pastDeadline = diff <= 0;
+
     var countdownEl = document.getElementById('countdownDays');
     var bannerEl = document.getElementById('countdownBanner');
     if (countdownEl && bannerEl) {
-        var deadline = new Date('2026-04-24T23:59:59+02:00');
-        var now = new Date();
-        var diff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
-        if (diff > 0) {
+        if (!pastDeadline) {
             countdownEl.textContent = diff;
         } else {
             bannerEl.style.display = 'none';
         }
+    }
+
+    // Hide sticky CTA bar after deadline
+    var stickyBar = document.querySelector('.sticky-cta-bar');
+    if (stickyBar && pastDeadline) {
+        stickyBar.style.display = 'none';
     }
 
     // Bio popup handler (delegated event listener)
@@ -234,7 +242,7 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-document.querySelectorAll('.info-card, .stat-box, .priority-card').forEach(el => {
+document.querySelectorAll('.priority-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'all 0.6s ease';

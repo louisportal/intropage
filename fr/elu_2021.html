@@ -4,7 +4,7 @@
     <script src="../consent.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Portal - Cdfe</title>
+    <title>Louis Portal - Conseiller</title>
     <link rel="stylesheet" href="../styles.css?v=4">
     <script src="../auth.js"></script>
 </head>
@@ -16,6 +16,8 @@
                 <h1>Louis Portal</h1>
                 <p>Conseiller des Français de l'Étranger en Suisse alémanique et au Liechtenstein<br>Élu depuis 2021 – Candidat tête de liste pour l'élection de Mai 2026</p>
             </div>
+            <span class="scrolled-title">Votez ASFE !</span>
+            <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R43248" target="_blank" class="scrolled-cta">S'inscrire</a>
             <div class="header-controls">
                 <a href="consulaire.html" class="election-btn">Élections Consulaires 2026</a>
 
@@ -48,6 +50,11 @@
     </header>
 
     <div class="container">
+
+        <div class="countdown-banner" id="countdownBanner">
+            <span class="countdown-text">Plus que <strong id="countdownDays">--</strong> jours pour s'inscrire !</span>
+            <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R43248" target="_blank" class="countdown-btn">S'inscrire pour voter</a>
+        </div>
 
         <!-- SECTION 1: Votre élu consulaire -->
         <div class="collapsible-section" id="quisuisje">
@@ -1392,6 +1399,10 @@
         </p>
     </footer>
 
+    <div class="sticky-cta-bar">
+        <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R43248" target="_blank">S'inscrire sur la LEC</a>
+        <a href="consulaire.html">Votez ASFE ➔</a>
+    </div>
     <script src="../script.js?v=2"></script>
 </body>
 </html>

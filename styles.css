@@ -36,8 +36,29 @@ body {
     display: none;
     font-size: 1.1em;
     font-weight: 700;
-    color: #032149;
+}
+
+/* Scrolled header CTA */
+.scrolled-cta {
+    display: none;
+}
+
+.header.scrolled .scrolled-cta {
+    display: inline-block;
+    background: #23a9c6;
+    color: #faf7f6;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 10px;
     white-space: nowrap;
+}
+
+/* Sticky Mobile CTA Bar */
+.sticky-cta-bar {
+    display: none;
 }
 
 .header-title h1 {
@@ -139,92 +160,6 @@ body {
 
 .info-grid.two-col {
     grid-template-columns: repeat(2, 1fr);
-}
-
-/* Cards */
-.info-card {
-    background: #faf7f6;
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 4px solid #23a9c6;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-.info-card h3 {
-    color: #032149;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-}
-
-.info-card ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.info-card li {
-    padding: 8px 0;
-    padding-left: 25px;
-    position: relative;
-}
-
-.info-card li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #032149;
-    font-weight: bold;
-}
-
-.info-card p {
-    line-height: 1.7;
-}
-
-/* Info card with buttons layout */
-.info-card-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.info-card-wrapper .info-card {
-    flex: 1;
-}
-
-.info-card-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-shrink: 0;
-}
-
-.info-card-buttons .round-btn {
-    width: 210px;
-    height: 210px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #032149, #23a9c6);
-    color: #032149;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.3em;
-    font-weight: 600;
-    text-align: center;
-    line-height: 1.2;
-    padding: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-.info-card-buttons .round-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    background: linear-gradient(135deg, #23a9c6, #032149);
 }
 
 .priority-card {
@@ -698,13 +633,6 @@ footer a:hover {
     color: #faf7f6;
 }
 
-/* Header Separator */
-.header-separator {
-    width: 1px;
-    height: 28px;
-    background: rgba(3, 33, 73, 0.3);
-}
-
 /* Hamburger Menu */
 .hamburger-container {
     position: relative;
@@ -906,6 +834,11 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
+    .header.scrolled .scrolled-cta,
+    .header.scrolled .election-btn {
+        display: none;
+    }
+
     .header-content {
         padding: 15px;
         flex-wrap: wrap;
@@ -934,11 +867,6 @@ footer a:hover {
         align-items: center;
         flex-wrap: nowrap;
         width: 100%;
-    }
-
-    /* Hide separators on mobile */
-    .header-controls > .header-separator {
-        display: none;
     }
 
     /* Election buttons */
@@ -1066,23 +994,6 @@ footer a:hover {
         justify-content: flex-end;
     }
 
-    .info-card-wrapper {
-        flex-direction: column;
-    }
-
-    .info-card-buttons {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .info-card-buttons .round-btn {
-        width: 140px;
-        height: 140px;
-        font-size: 0.95em;
-        padding: 15px;
-    }
-
     .about-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -1156,6 +1067,39 @@ footer a:hover {
 
     .section-content.open {
         padding: 15px 0;
+    }
+
+    /* Sticky Mobile CTA Bar */
+    .sticky-cta-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: #032149;
+        padding: 10px 15px;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .sticky-cta-bar a {
+        color: #faf7f6;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85em;
+        padding: 8px 16px;
+        border: 2px solid #23a9c6;
+        border-radius: 6px;
+        white-space: nowrap;
+    }
+
+    .sticky-cta-bar a:first-child {
+        background: #23a9c6;
+    }
+
+    body {
+        padding-bottom: 60px;
     }
 }
 
@@ -1234,12 +1178,6 @@ footer a:hover {
         padding-left: 22px;
     }
 
-    .info-card-buttons .round-btn {
-        width: 120px;
-        height: 120px;
-        font-size: 0.85em;
-        padding: 12px;
-    }
 
     .links-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1331,12 +1269,6 @@ footer a:hover {
         font-size: 1.1em;
     }
 
-    .info-card-buttons .round-btn {
-        width: 100px;
-        height: 100px;
-        font-size: 0.75em;
-        padding: 10px;
-    }
 
     .team-grid .logo-image {
         width: 80px;

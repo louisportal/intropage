@@ -192,6 +192,30 @@ a.priority-card:hover {
     font-size: 1.2em;
 }
 
+.priority-card.has-icon {
+    padding-right: 70px;
+}
+
+.priority-card .card-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+}
+
+.priority-card .card-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #23a9c6;
+}
+
+.priority-card:hover .card-icon {
+    opacity: 0.6;
+}
+
 .priority-card.large {
     grid-column: span 2;
 }

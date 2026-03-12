@@ -1027,7 +1027,7 @@ footer a:hover {
 
     /* Smooth slide-away for title on scroll */
     .header-title {
-        max-height: 80px;
+        max-height: 120px;
         overflow: hidden;
         transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         opacity: 1;

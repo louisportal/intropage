@@ -107,6 +107,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Countdown to registration deadline (April 24, 2026)
+    var countdownEl = document.getElementById('countdownDays');
+    var bannerEl = document.getElementById('countdownBanner');
+    if (countdownEl && bannerEl) {
+        var deadline = new Date('2026-04-24T23:59:59+02:00');
+        var now = new Date();
+        var diff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+        if (diff > 0) {
+            countdownEl.textContent = diff;
+        } else {
+            bannerEl.style.display = 'none';
+        }
+    }
+
     // Bio popup handler (delegated event listener)
     document.addEventListener('click', function(e) {
         const member = e.target.closest('.team-member');

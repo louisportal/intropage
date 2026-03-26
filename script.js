@@ -7,14 +7,6 @@ function toggleSection(header) {
     icon.classList.toggle('open');
 }
 
-// Toggle year sub-sections in timeline
-function toggleYear(header) {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector('.year-toggle');
-    content.classList.toggle('open');
-    icon.classList.toggle('open');
-}
-
 // Load shared HTML fragments (data-include="filename.html")
 document.addEventListener('DOMContentLoaded', function() {
     // Load HTML includes

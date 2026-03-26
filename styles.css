@@ -371,63 +371,27 @@ footer a:hover {
     line-height: 1.3;
 }
 
-/* Year collapsible sections */
-.year-section {
-    margin-bottom: 30px;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-}
-
-.year-header {
-    background: transparent;
-    color: #032149;
-    padding: 10px 0;
-    cursor: pointer;
+/* Year badge in photo grid */
+.year-badge {
+    background: #ffffff;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    transition: color 0.3s ease;
-    border-bottom: 2px solid #23a9c6;
+    justify-content: center;
+    padding: 24px 16px;
+    border-radius: 8px;
+    cursor: default;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-.year-label {
-    font-size: 1.5em;
-    font-weight: 600;
-}
-
-/* Bleu-Blanc-Rouge cycling for year sections */
-.year-section:nth-child(3n+1) .year-label { color: #002654; }
-.year-section:nth-child(3n+1) .year-header { border-bottom-color: #002654; }
-.year-section:nth-child(3n+1) .year-toggle { color: #002654; }
-
-.year-section:nth-child(3n+2) .year-label { color: #8D8D8D; }
-.year-section:nth-child(3n+2) .year-header { border-bottom-color: #8D8D8D; }
-.year-section:nth-child(3n+2) .year-toggle { color: #8D8D8D; }
-
-.year-section:nth-child(3n) .year-label { color: #CE1126; }
-.year-section:nth-child(3n) .year-header { border-bottom-color: #CE1126; }
-.year-section:nth-child(3n) .year-toggle { color: #CE1126; }
-
-.year-toggle {
+.year-badge span {
     font-size: 2em;
-    transition: transform 0.3s ease;
     font-weight: 700;
-    color: #23a9c6;
-    flex-shrink: 0;
+    color: #032149;
+    letter-spacing: 0.02em;
 }
 
-.year-toggle.open {
-    transform: rotate(45deg);
-}
-
-.year-content {
-    display: none;
-}
-
-.year-content.open {
-    display: block;
-    padding: 20px 0;
+.year-badge:hover .grid-photo {
+    transform: none;
 }
 
 /* Mobile: overlay always visible (no hover on touch) */
@@ -1051,8 +1015,8 @@ footer a:hover {
         min-height: 55px;
     }
 
-    .year-label {
-        font-size: 1.3em;
+    .year-badge span {
+        font-size: 1.6em;
     }
 
     .profile-photo.float-photo {
@@ -1201,8 +1165,8 @@ footer a:hover {
         font-size: 0.7em;
     }
 
-    .year-label {
-        font-size: 1.2em;
+    .year-badge span {
+        font-size: 1.4em;
     }
 
     .photo-grid {

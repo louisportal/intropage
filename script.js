@@ -1,3 +1,12 @@
+// Toggle year photo sections
+function toggleYearPhotos(badge) {
+    var photos = badge.nextElementSibling;
+    if (photos && photos.classList.contains('year-photos')) {
+        photos.classList.toggle('open');
+        badge.classList.toggle('open');
+    }
+}
+
 // Toggle collapsible sections
 function toggleSection(header) {
     const content = header.nextElementSibling;

@@ -371,7 +371,11 @@ footer a:hover {
     line-height: 1.3;
 }
 
-/* Year badge in photo grid */
+/* Year sections (collapsible) */
+.year-section {
+    margin-bottom: 16px;
+}
+
 .year-badge {
     background: #ffffff;
     display: flex;
@@ -383,11 +387,46 @@ footer a:hover {
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
+.year-badge-clickable {
+    cursor: pointer;
+    gap: 12px;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+}
+
+.year-badge-clickable:hover {
+    background: #f0f4f8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.year-chevron {
+    transition: transform 0.3s ease;
+    color: #23a9c6;
+}
+
+.year-photos.open + .year-badge-clickable .year-chevron,
+.year-badge-clickable.open .year-chevron {
+    transform: rotate(0deg);
+}
+
+.year-badge-clickable:not(.open) .year-chevron {
+    transform: rotate(-90deg);
+}
+
 .year-badge span {
     font-size: 2em;
     font-weight: 700;
     color: #032149;
     letter-spacing: 0.02em;
+}
+
+.year-photos {
+    display: none;
+    overflow: hidden;
+}
+
+.year-photos.open {
+    display: block;
 }
 
 .year-badge:hover .grid-photo {

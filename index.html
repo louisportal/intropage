@@ -3,20 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Louis Portal - Conseiller des Français de l'Étranger en Suisse alémanique et au Liechtenstein">
-    <title>Louis Portal - Conseiller des Français de l'Étranger</title>
-    <script>
-        (function() {
-            var userLang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase().substring(0, 2);
-            var supported = { fr: 1, en: 1, de: 1, it: 1 };
-            var lang = supported[userLang] ? userLang : 'fr';
-            window.location.replace(lang + '/elu_2021.html');
-        })();
-    </script>
+    <meta name="description" content="Site officiel de Louis Portal, conseiller des Français de l'étranger en Suisse">
+    <title>Louis Portal</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="consent.js"></script>
 </head>
 <body>
-    <p style="text-align:center; margin-top:40px; font-family:Helvetica,Arial,sans-serif; color:#032149;">
-        Redirection en cours...
-    </p>
+
+    <div class="lang-dropdown">
+        <button class="lang-toggle" id="lang-toggle" onclick="toggleLangMenu()">🇫🇷</button>
+        <div class="lang-menu" id="lang-menu">
+            <a href="#" onclick="setLang('fr')">🇫🇷</a>
+            <a href="#" onclick="setLang('en')">🇬🇧</a>
+            <a href="#" onclick="setLang('de')">🇩🇪</a>
+            <a href="#" onclick="setLang('it')">🇮🇹</a>
+        </div>
+    </div>
+
+    <header>
+        <h1>Louis Portal</h1>
+    </header>
+
+    <main>
+        <p class="welcome" id="welcome-text">bienvenue sur ma page web</p>
+
+        <div class="cards">
+            <a href="https://consulaires2026.com/" id="card-consulaire" class="card card-consulaire">
+                <span class="card-label" id="label-consulaire">Consulaire</span>
+            </a>
+            <a href="fr/startup.html" id="card-startups" class="card card-startups">
+                <span class="card-label" id="label-startups">Startups/invest</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Louis Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var flags = { fr: '🇫🇷', en: '🇬🇧', de: '🇩🇪', it: '🇮🇹' };
+        var translations = {
+            fr: { welcome: "bienvenue sur ma page web", consulaire: "Consulaire", startups: "Startups/invest", consLink: "https://consulaires2026.com/", startLink: "fr/startup.html" },
+            en: { welcome: "welcome to my webpage", consulaire: "Consular", startups: "Startups/invest", consLink: "https://consulaires2026.com/", startLink: "en/startup.html" },
+            de: { welcome: "willkommen auf meiner Webseite", consulaire: "Konsularisch", startups: "Startups/invest", consLink: "https://consulaires2026.com/", startLink: "de/startup.html" },
+            it: { welcome: "benvenuti sulla mia pagina web", consulaire: "Consolare", startups: "Startups/invest", consLink: "https://consulaires2026.com/", startLink: "it/startup.html" }
+        };
+
+        // Auto-detect browser language on page load
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var langCode = userLang.toLowerCase().substring(0, 2);
+            var supportedLangs = ['fr', 'en', 'de', 'it'];
+
+            // Default to French if language not supported
+            if (supportedLangs.indexOf(langCode) === -1) {
+                langCode = 'fr';
+            }
+
+            // Set the detected language
+            setLang(langCode);
+        })();
+
+        function setLang(lang) {
+            var t = translations[lang];
+            document.getElementById('welcome-text').textContent = t.welcome;
+            document.getElementById('label-consulaire').textContent = t.consulaire;
+            document.getElementById('label-startups').textContent = t.startups;
+            document.getElementById('card-consulaire').href = t.consLink;
+            document.getElementById('card-startups').href = t.startLink;
+            document.getElementById('lang-toggle').textContent = flags[lang];
+            document.documentElement.lang = lang;
+            closeLangMenu();
+        }
+
+        function toggleLangMenu() {
+            document.getElementById('lang-menu').classList.toggle('open');
+        }
+
+        function closeLangMenu() {
+            document.getElementById('lang-menu').classList.remove('open');
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-dropdown')) {
+                closeLangMenu();
+            }
+        });
+    </script>
+
 </body>
 </html>

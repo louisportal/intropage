@@ -14,6 +14,20 @@
         return translations[lang] ? lang : 'fr';
     }
 
+    function setConsent(value) {
+        var d = new Date();
+        d.setFullYear(d.getFullYear() + 1);
+        document.cookie = 'cookie_consent=' + value + ';path=/;expires=' + d.toUTCString() + ';SameSite=Lax';
+        try { localStorage.setItem('cookie_consent', value); } catch(e) {}
+    }
+
+    function getConsent() {
+        var match = document.cookie.match(/(^|;\s*)cookie_consent=([^;]*)/);
+        if (match) return match[2];
+        try { return localStorage.getItem('cookie_consent'); } catch(e) {}
+        return null;
+    }
+
     function loadGA() {
         var script = document.createElement('script');
         script.async = true;
@@ -45,18 +59,18 @@
         document.body.appendChild(overlay);
 
         document.getElementById('consent-accept').addEventListener('click', function() {
-            localStorage.setItem('cookie_consent', 'accepted');
+            setConsent('accepted');
             overlay.remove();
             loadGA();
         });
 
         document.getElementById('consent-decline').addEventListener('click', function() {
-            localStorage.setItem('cookie_consent', 'declined');
+            setConsent('declined');
             overlay.remove();
         });
     }
 
-    var consent = localStorage.getItem('cookie_consent');
+    var consent = getConsent();
     if (consent === 'accepted') {
         loadGA();
     } else if (!consent) {

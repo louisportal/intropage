@@ -97,7 +97,8 @@ body {
 
 .profile-photo.float-photo {
     float: left;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     margin: 0 30px 20px 0;
 }
 

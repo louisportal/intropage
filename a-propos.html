@@ -18,7 +18,9 @@
             }
 
             // Redirect to the appropriate language version
-            window.location.href = langCode + '/a-propos.html';
+            var base = 'https://consulaires2026.com/';
+            var path = langCode === 'fr' ? 'a-propos.html' : langCode + '/a-propos.html';
+            window.location.href = base + path;
         })();
     </script>
 </head>

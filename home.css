@@ -257,3 +257,94 @@ footer a:hover {
     opacity: 0.8;
     text-decoration: underline;
 }
+
+/* ============================= */
+/* Cookie Consent Overlay        */
+/* ============================= */
+.consent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 33, 73, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.consent-box {
+    background: #032149;
+    color: #faf7f6;
+    padding: 36px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    animation: consentFadeIn 0.3s ease;
+}
+
+@keyframes consentFadeIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.consent-box p {
+    margin: 0 0 24px 0;
+    font-size: 1.15em;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.consent-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.consent-btn {
+    padding: 10px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    border: 2px solid #23a9c6;
+    transition: all 0.2s ease;
+}
+
+.consent-btn-accept {
+    background: #23a9c6;
+    color: #faf7f6;
+}
+
+.consent-btn-accept:hover {
+    background: #1a8fa0;
+    border-color: #1a8fa0;
+}
+
+.consent-btn-decline {
+    background: none;
+    color: #23a9c6;
+}
+
+.consent-btn-decline:hover {
+    background: rgba(35, 169, 198, 0.15);
+}
+
+@media (max-width: 480px) {
+    .consent-box {
+        padding: 28px 24px;
+        max-width: 320px;
+    }
+    .consent-box p {
+        font-size: 1.05em;
+    }
+    .consent-btn {
+        padding: 9px 22px;
+        font-size: 0.9em;
+    }
+}

@@ -40,33 +40,34 @@
         gtag('config', GA_ID);
     }
 
+    function dismissBanner(banner) {
+        banner.style.animation = 'consentSlideDown 0.3s ease forwards';
+        banner.addEventListener('animationend', function() { banner.remove(); });
+    }
+
     function showBanner() {
         var t = translations[getLang()];
 
-        var overlay = document.createElement('div');
-        overlay.className = 'consent-overlay';
-
-        var box = document.createElement('div');
-        box.className = 'consent-box';
-        box.innerHTML =
-            '<p>' + t.text + '</p>' +
+        var banner = document.createElement('div');
+        banner.className = 'consent-banner';
+        banner.innerHTML =
+            '<p class="consent-text">' + t.text + '</p>' +
             '<div class="consent-buttons">' +
             '<button class="consent-btn consent-btn-accept" id="consent-accept">' + t.accept + '</button>' +
             '<button class="consent-btn consent-btn-decline" id="consent-decline">' + t.decline + '</button>' +
             '</div>';
 
-        overlay.appendChild(box);
-        document.body.appendChild(overlay);
+        document.body.appendChild(banner);
 
         document.getElementById('consent-accept').addEventListener('click', function() {
             setConsent('accepted');
-            overlay.remove();
+            dismissBanner(banner);
             loadGA();
         });
 
         document.getElementById('consent-decline').addEventListener('click', function() {
             setConsent('declined');
-            overlay.remove();
+            dismissBanner(banner);
         });
     }
 

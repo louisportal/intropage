@@ -261,59 +261,55 @@ footer a:hover {
 /* ============================= */
 /* Cookie Consent Overlay        */
 /* ============================= */
-.consent-overlay {
+.consent-banner {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(3, 33, 73, 0.6);
+    background: #032149;
+    color: #faf7f6;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 24px;
+    padding: 16px 24px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
     z-index: 10000;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    animation: consentSlideUp 0.3s ease;
 }
 
-.consent-box {
-    background: #032149;
-    color: #faf7f6;
-    padding: 36px 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    max-width: 380px;
-    width: 90%;
-    animation: consentFadeIn 0.3s ease;
+@keyframes consentSlideUp {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
 }
 
-@keyframes consentFadeIn {
-    from { opacity: 0; transform: scale(0.92); }
-    to   { opacity: 1; transform: scale(1); }
+@keyframes consentSlideDown {
+    from { transform: translateY(0); }
+    to   { transform: translateY(100%); }
 }
 
-.consent-box p {
-    margin: 0 0 24px 0;
-    font-size: 1.15em;
-    line-height: 1.5;
+.consent-banner .consent-text {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
     font-weight: 500;
 }
 
 .consent-buttons {
     display: flex;
-    gap: 12px;
-    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .consent-btn {
-    padding: 10px 28px;
+    padding: 8px 22px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95em;
+    font-size: 0.9em;
     cursor: pointer;
     border: 2px solid #23a9c6;
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .consent-btn-accept {
@@ -336,15 +332,14 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
-    .consent-box {
-        padding: 28px 24px;
-        max-width: 320px;
-    }
-    .consent-box p {
-        font-size: 1.05em;
+    .consent-banner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 14px 20px;
     }
     .consent-btn {
-        padding: 9px 22px;
-        font-size: 0.9em;
+        padding: 8px 18px;
+        font-size: 0.85em;
     }
 }

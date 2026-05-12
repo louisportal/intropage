@@ -1,0 +1,6 @@
+node_modules/
+.env
+.DS_Store
+.titles.json
+assets/Activité/_inbox/*
+!assets/Activité/_inbox/.gitkeep

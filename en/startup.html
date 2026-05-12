@@ -4,59 +4,286 @@
     <script src="../consent.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startups - Louis Portal</title>
+    <title>Louis Portal - Startups & Investment</title>
+    <link rel="stylesheet" href="../styles.css?v=4">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-            background: #fafafa;
-            color: #111;
-            min-height: 100vh;
+        /* Orange / pink theme overrides — page-scoped */
+        :root {
+            --brand-pink: #BE185D;
+            --brand-pink-soft: #f9a8c4;
+            --brand-pink-dark: #9D174D;
+            --brand-orange: #F97316;
+            --brand-orange-hover: #EA580C;
+        }
+
+        .header { border-bottom-color: var(--brand-orange); }
+        .header-title h1,
+        .header-title p,
+        .scrolled-title { color: var(--brand-pink); }
+
+        .section-header { color: var(--brand-pink); border-bottom-color: var(--brand-orange); }
+        .toggle-icon { color: var(--brand-orange); }
+
+        .section-separator p { color: var(--brand-pink); }
+
+        footer { color: var(--brand-pink); border-top-color: var(--brand-orange); }
+        footer a { color: var(--brand-pink); }
+
+        .lang-switcher-toggle { border-color: var(--brand-orange); color: var(--brand-orange); }
+        .lang-switcher-toggle:hover { background: var(--brand-orange); color: #faf7f6; }
+        .lang-switcher-menu { border-color: var(--brand-pink); }
+        .lang-switcher-menu a { color: var(--brand-pink); }
+        .lang-switcher-menu a:hover { background: var(--brand-pink); color: #faf7f6; }
+
+        .hamburger-btn { background: rgba(249, 115, 22, 0.05); border-color: var(--brand-orange); }
+        .hamburger-btn:hover { background: rgba(249, 115, 22, 0.12); }
+        .hamburger-line { background: var(--brand-orange); }
+        .nav-menu { border-color: var(--brand-pink); }
+        .nav-link { color: var(--brand-pink); }
+
+        .election-btn {
+            background: var(--brand-orange);
+            color: #faf7f6;
+            border-color: var(--brand-orange);
+        }
+        .election-btn:hover { background: var(--brand-orange-hover); border-color: var(--brand-orange-hover); }
+
+        .year-badge span { color: var(--brand-pink); }
+        .year-chevron { color: var(--brand-orange); }
+        .photo-overlay { background: linear-gradient(transparent, rgba(190, 24, 93, 0.85)); }
+        .photo-date { color: #fed7aa; }
+
+        .priority-card h3 { color: var(--brand-pink); }
+        .priority-card .card-icon svg { fill: var(--brand-orange); }
+        a.priority-card:hover {
+            box-shadow: 0 12px 35px rgba(249, 115, 22, 0.45);
+            background: var(--brand-pink-dark) !important;
+            border-color: var(--brand-orange);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { background: var(--brand-pink); }
+            .nav-menu .nav-link { color: #faf7f6; }
+            .nav-menu .nav-close-btn { color: var(--brand-orange); }
+        }
+
+        /* Intro buttons stack */
+        .intro-actions {
             display: flex;
             flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 260px;
+        }
+        .intro-btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-        .gear {
-            font-size: 3rem;
-            margin-bottom: 24px;
-            animation: spin 3s linear infinite;
-            display: inline-block;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .wip {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        .dots::after {
-            content: '';
-            animation: dots 1.5s steps(4, end) infinite;
-        }
-        @keyframes dots {
-            0% { content: ''; }
-            25% { content: '.'; }
-            50% { content: '..'; }
-            75% { content: '...'; }
-        }
-        .back {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #888;
+            gap: 8px;
+            padding: 10px 18px;
             text-decoration: none;
-            transition: color 0.2s;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+            line-height: 1.2;
+            text-align: center;
         }
-        .back:hover { color: #111; }
+        .intro-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+        .intro-btn-outline {
+            background: none;
+            color: var(--brand-orange);
+            border: 2px solid var(--brand-orange);
+        }
+        .intro-btn-outline:hover { background: var(--brand-orange); color: #faf7f6; }
+        .intro-btn-primary {
+            background: var(--brand-pink);
+            color: #faf7f6;
+            border: 2px solid var(--brand-pink);
+        }
+        .intro-btn-primary:hover { background: var(--brand-pink-dark); border-color: var(--brand-pink-dark); }
+        .intro-btn-secondary {
+            background: none;
+            color: var(--brand-pink);
+            border: 2px solid var(--brand-pink);
+        }
+        .intro-btn-secondary:hover { background: var(--brand-pink); color: #faf7f6; }
+
+        /* Empty activity placeholder */
+        .activity-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-style: italic;
+            border: 1px dashed rgba(190, 24, 93, 0.25);
+            border-radius: 10px;
+            background: #fff7f3;
+        }
+
+        /* Portfolio card extras */
+        .portfolio-card {
+            position: relative;
+        }
+        .portfolio-tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 3px 10px;
+            background: var(--brand-orange);
+            color: #faf7f6;
+            border-radius: 999px;
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        a.portfolio-card:hover .portfolio-tag {
+            background: #faf7f6;
+            color: var(--brand-pink-dark);
+        }
     </style>
 </head>
 <body>
-    <div class="gear">&#9881;</div>
-    <p class="wip">Work in progress<span class="dots"></span></p>
-    <a href="../index.html" class="back">&larr; back</a>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>Louis Portal</h1>
+                <p>Founder &amp; Investor — Inovexus Chapter Lead for Switzerland</p>
+            </div>
+            <span class="scrolled-title">Louis Portal</span>
+            <div class="header-controls">
+                <a href="https://inovexus.com" target="_blank" rel="noopener" class="election-btn">Inovexus</a>
+
+                <div class="lang-switcher">
+                    <button class="lang-switcher-toggle">EN</button>
+                    <div class="lang-switcher-menu">
+                        <a href="../fr/startup.html">FR</a>
+                        <a href="../en/startup.html">EN</a>
+                        <a href="../de/startup.html">DE</a>
+                        <a href="../it/startup.html">IT</a>
+                    </div>
+                </div>
+
+                <div class="hamburger-container">
+                    <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <nav id="navMenu" class="nav-menu">
+                        <button class="nav-close-btn" aria-label="Close menu">&times;</button>
+                        <a href="https://inovexus.com" target="_blank" rel="noopener" class="nav-link">Inovexus</a>
+                        <a href="mailto:louis@inovexus.com" class="nav-link">Contact</a>
+                        <a href="https://n87wtgwhgc5.typeform.com/to/JRq0WY2U#notes=xxxxx" target="_blank" rel="noopener" class="nav-link">Apply for funding</a>
+                        <a href="https://n87wtgwhgc5.typeform.com/to/mjFM7WP7?typeform-source=inovexus.com" target="_blank" rel="noopener" class="nav-link nav-link-last">Join Inovexus</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SECTION 1: Inovexus Chapter Lead -->
+        <div class="collapsible-section" id="quisuisje">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Inovexus Chapter Lead — Switzerland</h2>
+                <p class="section-teaser">Louis Portal, founder turned investor — based in Zurich</p>
+                <span class="toggle-icon open">+</span>
+            </div>
+            <div class="section-content open">
+                <div class="about-grid">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                        <img src="../assets/Inovexus%20photos/Profil%20Inovexus.jpg" alt="Portrait of Louis Portal — Inovexus" class="profile-photo" />
+                        <div class="intro-actions">
+                            <a href="mailto:louis@inovexus.com" class="intro-btn intro-btn-outline">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                Contact
+                            </a>
+                            <a href="https://n87wtgwhgc5.typeform.com/to/JRq0WY2U#notes=xxxxx" target="_blank" rel="noopener" class="intro-btn intro-btn-primary">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path>
+                                </svg>
+                                Apply for funding
+                            </a>
+                            <a href="https://n87wtgwhgc5.typeform.com/to/mjFM7WP7?typeform-source=inovexus.com" target="_blank" rel="noopener" class="intro-btn intro-btn-secondary">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                </svg>
+                                Join Inovexus
+                            </a>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <p>I founded Fision in 2014, a Swiss fashion-tech startup turning smartphones into virtual fitting rooms. After six years of building the company across Zurich, Paris and New York, we exited to Zalando in 2020 — one of the few Swiss fashion-tech acquisitions of its decade.</p>
+                        <p>I then spent several years inside the European startup ecosystem, advising and operating across a dozen early-stage companies — covering product, go-to-market and fundraising. That work naturally pulled me toward the capital side of the table, and I joined a series of international investor clubs to back the founders I most wanted to see succeed.</p>
+                        <p>Today I lead the Swiss chapter of Inovexus, a global investor club that backs ambitious technology founders from pre-seed to Series A. My role is to source the best Swiss deals, open our network to founders raising here, and help our members deploy capital with conviction across the country.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Activity -->
+        <div id="activite">
+            <h2 style="color: var(--brand-pink); font-size:1.8em; margin-bottom:5px; text-align:center; margin-top: 40px;">Activity</h2>
+            <p style="color:#666; font-style:italic; margin-bottom:30px; text-align:center;">A look back at the events, panels and gatherings around Inovexus in Switzerland</p>
+            <div class="activity-empty">
+                Photos &amp; events coming soon.
+            </div>
+        </div>
+
+        <div class="section-separator">
+            <p>Public portfolio</p>
+        </div>
+
+        <!-- Portfolio Cards -->
+        <div class="info-grid" style="margin-top:20px;">
+            <a href="https://anotherearth.ai" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3>Another Earth ➔</h3>
+                <p>AI-native company building toward an alternative model of intelligence.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></span>
+            </a>
+            <a href="https://www.partnify.com" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3>Partnify ➔</h3>
+                <p>Smart partnerships platform helping brands grow through structured collaborations.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+            </a>
+            <a href="https://alter-ego.ai" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3>Alter Ego ➔</h3>
+                <p>AI assistants that act on your behalf — your second self for work that compounds.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>
+            </a>
+            <a href="https://www.reseda.ch/?srsltid=AfmBOopOBpacVuO3RlDV4WLCizwzZt4TT8HdJ72MY_C_2s10Fot5ax1v" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3>Reseda ➔</h3>
+                <p>Swiss-made wellbeing brand reinventing botanical care for everyday rituals.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25a2.5 2.5 0 003.92.7c.59.59 1.42.92 2.36.92 1.84 0 3.33-1.34 3.33-3 0-.86-.34-1.64-.88-2.21.42-.05.79-.17 1.14-.36.95-.5 1.65-1.49 1.65-2.65 0-.34-.07-.69-.18-1.02-.41.62-1.02 1.02-1.74 1.16-.34-.69-1.02-1.16-1.81-1.16-1.11 0-2 .89-2 2 0 .57.25 1.08.64 1.45-.49.07-.95.27-1.32.55-.78-.86-1.92-1.4-3.18-1.4C5.42 5.23 4 6.71 4 8.55c0 .67.19 1.29.5 1.81-.32.27-.6.6-.84.97 1.16-1.07 2.59-1.62 4-1.62l-2.06.54z"/></svg></span>
+            </a>
+            <a href="https://www.alba.pizza" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3>Alba ➔</h3>
+                <p>Next-generation pizza concept — craft food, retail and tech under one brand.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z"/></svg></span>
+            </a>
+            <a href="https://www.startupticker.ch/en/news/zalando-acquires-swiss-fashiontech-startup-fision" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3>Fision ➔</h3>
+                <p>Swiss fashion-tech pioneer in virtual fitting — acquired by Zalando in 2020.</p>
+                <span class="portfolio-tag">Founded &amp; Exited</span>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 22 12 17.27 5.79 22l2.39-8.15L2 9.36h7.61L12 2z"/></svg></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 – Louis Portal. Founder &amp; Investor.</p>
+        <p style="margin-top: 10px;">
+            <a href="https://inovexus.com" target="_blank" rel="noopener">Inovexus</a>
+        </p>
+    </footer>
+
+    <script src="../script.js?v=2"></script>
 </body>
 </html>

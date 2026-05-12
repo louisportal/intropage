@@ -91,48 +91,6 @@ body {
     margin-bottom: 15px;
 }
 
-.about-content-float {
-    margin-top: 30px;
-}
-
-.profile-photo.float-photo {
-    float: left;
-    width: 100%;
-    max-width: 350px;
-    margin: 0 30px 20px 0;
-}
-
-/* Stat Cards */
-.stat-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 25px;
-    margin-top: 10px;
-}
-
-.stat-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 18px 12px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    border-top: 3px solid #23a9c6;
-}
-
-.stat-number {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #032149;
-    line-height: 1.2;
-}
-
-.stat-label {
-    font-size: 0.85em;
-    color: #777;
-    margin-top: 4px;
-}
-
 /* Grid Layouts */
 .info-grid {
     display: grid;
@@ -157,16 +115,6 @@ body {
     align-items: flex-start;
     text-align: left;
     position: relative;
-}
-
-.priority-number {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    color: #23a9c6;
-    font-size: 0.8em;
-    font-weight: 700;
-    line-height: 1;
 }
 
 .priority-card:hover {
@@ -215,10 +163,6 @@ a.priority-card:hover {
 
 .priority-card:hover .card-icon {
     opacity: 0.6;
-}
-
-.priority-card.large {
-    grid-column: span 2;
 }
 
 /* Collapsible Sections */
@@ -441,166 +385,6 @@ footer a:hover {
     }
 }
 
-/* ============================= */
-/* Logo Grid (Liens Utiles)       */
-/* ============================= */
-.logo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
-    margin-top: 10px;
-}
-
-.logo-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    background: #faf7f6;
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 25px 15px;
-    transition: all 0.3s ease;
-}
-
-.logo-block:hover {
-    border-color: #032149;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(3, 33, 73, 0.15);
-}
-
-.logo-image {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-}
-
-.logo-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.logo-label {
-    font-weight: 600;
-    font-size: 0.95em;
-    color: #032149;
-    text-align: center;
-}
-
-/* Team Grid (La Liste) */
-.team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    row-gap: 20px;
-    column-gap: 20px;
-    position: relative;
-}
-
-.team-grid::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
-    background-image: url('../assets/Logos/logo-1.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.team-grid .logo-block {
-    background: #ffffff;
-    border: 1px solid rgba(3, 33, 73, 0.12);
-    border-radius: 12px;
-    padding: 20px 15px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 2px 8px rgba(3, 33, 73, 0.06);
-}
-
-.team-grid .logo-block:hover {
-    background: #ffffff;
-    border-color: #23a9c6;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(35, 169, 198, 0.15);
-}
-
-.team-grid .logo-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1.5px solid #23a9c6;
-    transition: all 0.3s ease;
-}
-
-.position-badge {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    color: #23a9c6;
-    font-size: 0.85em;
-    font-weight: 700;
-    z-index: 2;
-    line-height: 1;
-}
-
-.team-grid .logo-block:hover .logo-image {
-    border-color: #1a8ba5;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(35, 169, 198, 0.3);
-}
-
-.team-grid .logo-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.team-role {
-    font-size: 0.85em;
-    color: #032149;
-    margin-top: 4px;
-    text-align: center;
-}
-
-.team-specialty {
-    font-size: 0.75em;
-    color: #23a9c6;
-    margin-top: 2px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.team-grid .logo-block::after {
-    content: "▸ Voir la bio";
-    display: block;
-    font-size: 0.7em;
-    color: rgba(3, 33, 73, 0.35);
-    margin-top: 8px;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-:lang(en) .team-grid .logo-block::after { content: "▸ View bio"; }
-:lang(de) .team-grid .logo-block::after { content: "▸ Bio lesen"; }
-:lang(it) .team-grid .logo-block::after { content: "▸ Leggere la bio"; }
-
-.team-grid .logo-block:hover::after {
-    color: #23a9c6;
-}
-
 /* Header Controls Container */
 .header-controls {
     display: flex;
@@ -631,16 +415,6 @@ footer a:hover {
 .election-btn:hover {
     background: #1a8fa0;
     border-color: #1a8fa0;
-}
-
-.election-btn-outline {
-    background: none;
-    color: #23a9c6;
-}
-
-.election-btn-outline:hover {
-    background: #23a9c6;
-    color: #faf7f6;
 }
 
 /* Hamburger Menu */
@@ -781,64 +555,9 @@ footer a:hover {
 }
 
 
-/* ============================= */
-/* Links Grid (Liens Utiles)      */
-/* ============================= */
-.links-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.link-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #032149;
-    background: #faf7f6;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 12px 8px;
-    font-size: 0.82em;
-    font-weight: 600;
-    text-align: center;
-    line-height: 1.3;
-    min-height: 60px;
-    transition: all 0.25s ease;
-    word-break: break-word;
-}
-
-.link-block:hover {
-    border-color: #7C3AED;
-    background: #7C3AED;
-    color: #faf7f6;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-}
-
-.link-block.facebook:hover {
-    background: #1877F2;
-    border-color: #1877F2;
-}
-
-.link-block.instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    border-color: #dc2743;
-}
-
 /* Responsive Design */
 @media (max-width: 992px) {
-    .priority-card.large {
-        grid-column: span 1;
-    }
-
     .info-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stat-cards {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1029,50 +748,8 @@ footer a:hover {
         column-count: 3;
     }
 
-    .logo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .logo-image {
-        width: 80px;
-        height: 80px;
-    }
-
-    .team-grid .logo-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .links-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-
-    .link-block {
-        font-size: 0.75em;
-        padding: 10px 6px;
-        min-height: 55px;
-    }
-
     .year-badge span {
         font-size: 1.6em;
-    }
-
-    .profile-photo.float-photo {
-        float: none;
-        display: block;
-        width: 80%;
-        max-width: 350px;
-        margin: 0 auto 20px auto;
-    }
-
-    .stat-cards {
-        gap: 10px;
-    }
-
-    .stat-number {
-        font-size: 1.5em;
     }
 
     .section-content.open {
@@ -1133,78 +810,6 @@ footer a:hover {
         font-size: 1.1em;
     }
 
-    .stat-number {
-        font-size: 1.3em;
-    }
-
-    .stat-label {
-        font-size: 0.8em;
-    }
-
-    /* Hide ASFE logo background in vote section on mobile */
-    .vote-section {
-        background: #032149 !important;
-        padding: 20px 15px;
-    }
-
-    .vote-section h3 {
-        font-size: 1.2em;
-    }
-
-    .vote-list-item {
-        font-size: 0.95em;
-        padding-left: 22px;
-    }
-
-
-    .links-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .link-block {
-        font-size: 0.7em;
-        padding: 8px 5px;
-        min-height: 50px;
-    }
-
-    .logo-grid {
-        gap: 12px;
-    }
-
-    .team-grid {
-        row-gap: 15px;
-        column-gap: 12px;
-    }
-
-    .team-grid .logo-block {
-        padding: 15px 10px;
-        border-radius: 10px;
-    }
-
-    .team-grid .logo-image {
-        width: 110px;
-        height: 110px;
-    }
-
-    .position-badge {
-        font-size: 0.75em;
-        top: 6px;
-        right: 8px;
-    }
-
-    .team-grid .logo-label {
-        font-size: 0.9em;
-    }
-
-    .team-role {
-        font-size: 0.8em;
-    }
-
-    .team-specialty {
-        font-size: 0.7em;
-    }
-
     .year-badge span {
         font-size: 1.4em;
     }
@@ -1215,21 +820,6 @@ footer a:hover {
 
     .profile-photo {
         max-width: 200px;
-    }
-
-    .bio-popup-content {
-        padding: 20px 15px;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-
-    .bio-popup-photo {
-        width: 90px;
-        height: 90px;
-    }
-
-    .bio-popup-bio {
-        font-size: 0.85em;
     }
 
     .contact-link {
@@ -1271,36 +861,6 @@ footer a:hover {
     .header-title h1 {
         font-size: 1.1em;
     }
-
-
-    .team-grid .logo-image {
-        width: 80px;
-        height: 80px;
-    }
-
-    .position-badge {
-        font-size: 0.7em;
-        top: 5px;
-        right: 6px;
-    }
-
-    .links-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .vote-section {
-        padding: 15px 12px;
-    }
-
-    .bio-popup-content {
-        padding: 15px 12px;
-        width: 95%;
-    }
-
-    .bio-popup-photo {
-        width: 80px;
-        height: 80px;
-    }
 }
 
 /* ============================= */
@@ -1339,55 +899,6 @@ footer a:hover {
     height: 18px;
 }
 
-/* ============================= */
-/* Countdown Banner               */
-/* ============================= */
-.countdown-banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    background: #032149;
-    color: #faf7f6;
-    padding: 14px 24px;
-    border-radius: 10px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-}
-
-.countdown-text {
-    font-size: 1.05em;
-}
-
-.countdown-text strong {
-    color: #23a9c6;
-    font-size: 1.3em;
-}
-
-.countdown-btn {
-    display: inline-block;
-    background: #23a9c6;
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95em;
-    transition: background 0.2s;
-}
-
-.countdown-btn:hover {
-    background: #1a8fa0;
-}
-
-/* Register Reminder (between grid and vote section) */
-.register-reminder {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(3, 33, 73, 0.1);
-}
-
 .section-separator {
     text-align: center;
     margin-top: 30px;
@@ -1400,195 +911,6 @@ footer a:hover {
     font-size: 1em;
     margin-bottom: 0;
     font-weight: 500;
-}
-
-.register-reminder p {
-    color: #032149;
-    font-size: 1em;
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-@media (max-width: 480px) {
-    .countdown-banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-        padding: 12px 16px;
-    }
-
-    .countdown-text {
-        font-size: 0.95em;
-    }
-}
-
-/* ============================= */
-/* Vote Section                   */
-/* ============================= */
-.vote-section {
-    margin-top: 40px;
-    position: relative;
-    background: linear-gradient(to right, #032149 0%, #23a9c6 60%, transparent 100%),
-                url('../assets/Logos/ASFE - Cover Facebook 2.png');
-    background-size: cover, cover;
-    background-position: left center, right center;
-    background-repeat: no-repeat, no-repeat;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(3, 33, 73, 0.2);
-    overflow: hidden;
-}
-
-.vote-section h3 {
-    color: #faf7f6;
-    margin-bottom: 20px;
-    font-size: 1.4em;
-    border-bottom: none;
-    padding-bottom: 12px;
-    position: relative;
-    z-index: 1;
-}
-
-.vote-list {
-    list-style: none;
-    padding-left: 0;
-    position: relative;
-    z-index: 1;
-}
-
-.vote-list-item {
-    margin-bottom: 15px;
-    padding-left: 30px;
-    position: relative;
-    color: #faf7f6;
-    font-size: 1.05em;
-    line-height: 1.6;
-}
-
-.vote-list-item:last-child {
-    margin-bottom: 0;
-}
-
-.vote-list-item::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #23a9c6;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-/* ============================= */
-/* Bio Popup                      */
-/* ============================= */
-.bio-popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 9998;
-    justify-content: center;
-    align-items: center;
-}
-
-.bio-popup-content {
-    background: #faf7f6;
-    border-radius: 12px;
-    padding: 30px;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    position: relative;
-    border: 2px solid #23a9c6;
-}
-
-.bio-popup-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    color: #032149;
-}
-
-.bio-popup-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1.5px solid #23a9c6;
-    margin-bottom: 15px;
-}
-
-.bio-popup-name {
-    color: #032149;
-    margin-bottom: 10px;
-}
-
-.bio-popup-bio {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.bio-popup-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.bio-popup-btn {
-    display: none;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 0.9em;
-    align-items: center;
-    gap: 5px;
-}
-
-.bio-popup-btn-elu {
-    background: #23a9c6;
-    color: #faf7f6;
-    gap: 5px;
-}
-
-.bio-popup-btn-linkedin {
-    background: #0077B5;
-    color: #faf7f6;
-    gap: 8px;
-}
-
-/* ============================= */
-/* Lightbox                       */
-/* ============================= */
-.lightbox-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.lightbox-img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 /* ============================= */

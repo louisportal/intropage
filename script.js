@@ -116,98 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Countdown to registration deadline (April 24, 2026)
-    var deadline = new Date('2026-04-24T23:59:59+02:00');
-    var now = new Date();
-    var diff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
-    var pastDeadline = diff <= 0;
-
-    var countdownEl = document.getElementById('countdownDays');
-    var bannerEl = document.getElementById('countdownBanner');
-    if (countdownEl && bannerEl) {
-        if (!pastDeadline) {
-            countdownEl.textContent = diff;
-        } else {
-            bannerEl.style.display = 'none';
-        }
-    }
-
     // WhatsApp share button
     var whatsappLink = document.getElementById('whatsappShare');
     if (whatsappLink) {
         var shareUrl = window.location.href;
         whatsappLink.href = 'https://wa.me/?text=' + encodeURIComponent(shareUrl);
-    }
-
-    // Bio popup handler (delegated event listener)
-    document.addEventListener('click', function(e) {
-        const member = e.target.closest('.team-member');
-        if (!member) return;
-
-        const bioPopup = document.getElementById('bioPopup');
-        if (!bioPopup) return;
-
-        const bioPhoto = document.getElementById('bioPhoto');
-        const bioName = document.getElementById('bioName');
-        const bioBio = document.getElementById('bioBio');
-        const bioLinkedin = document.getElementById('bioLinkedin');
-        const bioElu = document.getElementById('bioElu');
-
-        if (bioPhoto) bioPhoto.src = member.getAttribute('data-photo') || '';
-        if (bioName) bioName.textContent = member.getAttribute('data-name') || '';
-        if (bioBio) bioBio.textContent = member.getAttribute('data-bio') || '';
-
-        const linkedin = member.getAttribute('data-linkedin');
-        if (bioLinkedin) {
-            bioLinkedin.style.display = linkedin ? 'inline-flex' : 'none';
-            if (linkedin) bioLinkedin.href = linkedin;
-        }
-
-        const elu = member.getAttribute('data-elu');
-        if (bioElu) {
-            bioElu.style.display = elu ? 'inline-flex' : 'none';
-            if (elu) bioElu.href = elu;
-        }
-
-        bioPopup.style.display = 'flex';
-    });
-
-    // Bio popup close functionality
-    const bioPopup = document.getElementById('bioPopup');
-    if (bioPopup) {
-        // Close button
-        const bioCloseBtn = bioPopup.querySelector('.bio-popup-close');
-        if (bioCloseBtn) {
-            bioCloseBtn.addEventListener('click', function() {
-                bioPopup.style.display = 'none';
-            });
-        }
-
-        // Close when clicking overlay
-        bioPopup.addEventListener('click', function(e) {
-            if (e.target === bioPopup) {
-                bioPopup.style.display = 'none';
-            }
-        });
-    }
-
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    if (lightbox && lightboxImg) {
-        // Close lightbox when clicking anywhere
-        lightbox.addEventListener('click', function() {
-            lightbox.style.display = 'none';
-        });
-
-        // Open lightbox when clicking grid photos (bento box)
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('grid-photo')) {
-                lightboxImg.src = e.target.getAttribute('data-full') || e.target.src;
-                lightbox.style.display = 'flex';
-            }
-        });
     }
 
     // Header scroll behavior for mobile

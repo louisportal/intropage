@@ -67,14 +67,30 @@
             .nav-menu .nav-close-btn { color: var(--brand-orange); }
         }
 
+        /* Bio photo column */
+        @media (min-width: 769px) {
+            .about-grid { grid-template-columns: 250px 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            .profile-photo { max-width: 250px; }
+        }
+
         /* Intro buttons stack */
         .intro-actions {
             display: flex;
             flex-direction: column;
             gap: 10px;
             width: 100%;
-            max-width: 260px;
+            max-width: 280px;
         }
+
+        /* Cookie consent banner — orange/pink theme override */
+        .consent-banner { background: var(--brand-pink); }
+        .consent-btn { border-color: var(--brand-orange); }
+        .consent-btn-accept { background: var(--brand-orange); color: #faf7f6; }
+        .consent-btn-accept:hover { background: var(--brand-orange-hover); border-color: var(--brand-orange-hover); }
+        .consent-btn-decline { background: none; color: var(--brand-orange); }
+        .consent-btn-decline:hover { background: rgba(249, 115, 22, 0.18); }
         .intro-btn {
             display: inline-flex;
             align-items: center;
@@ -113,18 +129,21 @@
         /* Portfolio card extras */
         .portfolio-card {
             position: relative;
+            min-height: 110px;
         }
         .portfolio-tag {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 3px 10px;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 10px;
             background: var(--brand-orange);
             color: #faf7f6;
             border-radius: 999px;
-            font-size: 0.72em;
+            font-size: 0.7em;
             font-weight: 700;
             letter-spacing: 0.02em;
             text-transform: uppercase;
+            z-index: 2;
         }
         a.portfolio-card:hover .portfolio-tag {
             background: #faf7f6;
@@ -208,8 +227,8 @@
                         </div>
                     </div>
                     <div class="about-content">
-                        <p>I founded Fision in 2014, a Swiss fashion-tech startup turning smartphones into virtual fitting rooms. After six years of building the company across Zurich, Paris and New York, we exited to Zalando in 2020, one of the few Swiss fashion-tech acquisitions of its decade.</p>
-                        <p>I then spent several years inside the European startup ecosystem, advising and operating across a dozen early-stage companies, covering product, go-to-market and fundraising. That work naturally pulled me toward the capital side of the table, and I joined a series of international investor clubs to back the founders I most wanted to see succeed.</p>
+                        <p>A published engineer who studied in Paris, Zurich and NYC, I founded Fision in 2014, a Swiss fashion-tech startup turning smartphones into virtual fitting rooms. After six years of building the company, we exited to Zalando in 2020, one of the few Swiss fashion-tech acquisitions of its decade.</p>
+                        <p>Post-exit, several years followed inside the European startup ecosystem, advising and operating across a dozen early-stage companies, covering product, go-to-market and fundraising. That work naturally pulled me toward the capital side of the table, and I joined a series of international investor clubs to back the founders I most wanted to see succeed.</p>
                         <p>Today I lead the Swiss chapter of Inovexus, a global investor club that backs ambitious technology founders from pre-seed to Series A. My role is to source the best Swiss deals, open our network to founders raising here, and help our members deploy capital with conviction across the country.</p>
                     </div>
                 </div>
@@ -271,6 +290,20 @@
                             <div class="photo-overlay">
                                 <span class="photo-date">Mars 2026</span>
                                 <span class="photo-title">Investor breakfast at B2 Hotel 2</span>
+                            </div>
+                        </div>
+                        <div class="photo-grid-item">
+                            <img src="../assets/Inovexus%20photos/webp/thumb/2603_investor_breakfast_B2_hotel_3.webp" data-full="../assets/Inovexus%20photos/webp/full/2603_investor_breakfast_B2_hotel_3.webp" alt="Investor breakfast at B2 Hotel 3" loading="lazy" class="grid-photo" />
+                            <div class="photo-overlay">
+                                <span class="photo-date">Mars 2026</span>
+                                <span class="photo-title">Investor breakfast at B2 Hotel 3</span>
+                            </div>
+                        </div>
+                        <div class="photo-grid-item">
+                            <img src="../assets/Inovexus%20photos/webp/thumb/2601_Inovexus_Breakfast_in_Berlin_Westin.webp" data-full="../assets/Inovexus%20photos/webp/full/2601_Inovexus_Breakfast_in_Berlin_Westin.webp" alt="Inovexus Breakfast in Berlin Westin" loading="lazy" class="grid-photo" />
+                            <div class="photo-overlay">
+                                <span class="photo-date">Jan. 2026</span>
+                                <span class="photo-title">Inovexus Breakfast at the Berlin Westin</span>
                             </div>
                         </div>
                     </div>
@@ -398,7 +431,7 @@
         <div class="info-grid" style="margin-top:20px;">
             <a href="https://anotherearth.ai" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
                 <h3>Another Earth ➔</h3>
-                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 8h4v8H3V8zm14 0h4v8h-4V8zM8 6h8v12H8V6zm4-4l-2 3h4l-2-3z"/></svg></span>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M9 9h6v6H9V9zm-7 1.5h7v3H2v-3zm13 0h7v3h-7v-3zM11 5h2v4h-2V5z"/></svg></span>
             </a>
             <a href="https://www.partnify.com" target="_blank" rel="noopener" class="priority-card portfolio-card has-icon" style="text-decoration:none; background:#faf7f6; width:100%; box-sizing:border-box;">
                 <h3>Partnify ➔</h3>

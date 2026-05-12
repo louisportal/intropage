@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "add-photos": "node scripts/add-photos.mjs",
-    "add-photos:dry": "node scripts/add-photos.mjs --dry-run"
+    "add-photos:dry": "node scripts/add-photos.mjs --dry-run",
+    "build-inovexus-webp": "node scripts/build-inovexus-webp.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",

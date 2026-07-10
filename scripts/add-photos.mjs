@@ -44,7 +44,7 @@ async function main() {
       yymm: m[1],
       year: '20' + m[1].slice(0, 2),
       month: parseInt(m[1].slice(2), 10),
-      slug: m[2],
+      slug: m[2].normalize('NFC'),
       ext: m[3].toLowerCase(),
     });
   }

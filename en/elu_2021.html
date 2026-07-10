@@ -4,21 +4,19 @@
     <script src="../consent.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Portal - Councillor</title>
-    <link rel="stylesheet" href="../styles.css?v=4">
+    <title>Louis Portal - My Activity</title>
+    <link rel="stylesheet" href="../styles.css?v=5">
 </head>
 <body>
     <!-- Header with Navigation -->
-    <header class="header">
+    <header class="header" style="position:sticky; top:0; z-index:1000;">
         <div class="header-content">
             <div class="header-title">
                 <h1>Louis Portal</h1>
-                <p>French Councillor Abroad in German-speaking Switzerland and Liechtenstein<br>Elected since 2021 – Lead candidate for the May 2026 election</p>
+                <p>French Councillor Abroad in German-speaking Switzerland and Liechtenstein<br>Elected since 2021</p>
             </div>
             <span class="scrolled-title">Louis Portal</span>
             <div class="header-controls">
-                <a href="https://consulaires2026.com/" class="election-btn">Elections 2026</a>
-
                 <div class="lang-switcher">
                     <button class="lang-switcher-toggle">EN</button>
                     <div class="lang-switcher-menu">
@@ -36,11 +34,11 @@
                         <span class="hamburger-line"></span>
                     </button>
                     <nav id="navMenu" class="nav-menu">
-                        <button class="nav-close-btn" aria-label="Close menu">&times;</button>
-                        <a href="https://consulaires2026.com/" class="nav-link">ASFE List 2026</a>
-                        <a href="https://consulaires2026.com/programme.html" class="nav-link">Our Programme</a>
-                        <a href="https://consulaires2026.com/liens-utiles.html" class="nav-link">Useful Links</a>
-                        <a href="https://consulaires2026.com/a-propos.html" class="nav-link nav-link-last">ASFE and the councillors</a>
+                        <button class="nav-close-btn" aria-label="Fermer le menu">&times;</button>
+                        <a href="elu.html" class="nav-link">Your Councillor</a>
+                        <a href="elu_2021.html" class="nav-link">My Activity</a>
+                        <a href="liens-utiles.html" class="nav-link">Useful Links</a>
+                        <a href="asfe.html" class="nav-link nav-link-last">ASFE and the Councillors</a>
                     </nav>
                 </div>
             </div>
@@ -49,35 +47,6 @@
 
     <div class="container">
 
-        <!-- SECTION 1: Your elected councillor -->
-        <div class="collapsible-section" id="quisuisje">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Your elected councillor</h2>
-                <p class="section-teaser">Louis Portal, your representative in German-speaking Switzerland</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
-                <div class="about-grid">
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                        <img src="../assets/Profils/1_Louis_Portal_Picture.jpg" alt="Portrait of Louis Portal" class="profile-photo" />
-                        <a href="mailto:louis.portal.consulaire@gmail.com" style="display:inline-flex; align-items:center; justify-content: center; gap:8px; padding:10px 20px; background:none; color:#23a9c6; text-decoration:none; border:2px solid #23a9c6; border-radius:6px; font-weight:600; font-size:0.95em; transition:all 0.2s ease; width: 100%; max-width: 250px; box-sizing: border-box;">
-                            <svg style="width:18px; height:18px;" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                            </svg>
-                            Contact
-                        </a>
-                    </div>
-                    <div class="about-content">
-                        <p>Originally from Bordeaux, I lived in Paris, New York, and then Zurich, where I settled in 2014 to finish my studies. Based in German-speaking Switzerland for twelve years, I founded a digital startup and spent ten years in the tech/venture capital ecosystem, with which I still collaborate, representing an international investor club for Switzerland.</p>
-                        <p>Today I work in the aviation sector. I travel regularly for work, which gives me many opportunities to interact with consular representatives from around the world and stay in touch with the realities of French citizens abroad.</p>
-                        <p>Committed to ASFE during the last consular elections, and in contact with many French and French-speaking associations, I was elected with the conviction that abroad, civic engagement must transcend partisan divisions and unite all French citizens. It is essential to remember that ASFE's independence is a major asset. French politics is important, but we must above all focus on the local realities of our host country. This allows us to respond effectively to your needs.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 2: Activity (Timeline) -->
         <div id="activite">
             <h2 style="color:#032149; font-size:1.8em; margin-bottom:5px; text-align:center;">Activity</h2>
             <p style="color:#666; font-style:italic; margin-bottom:30px; text-align:center;">A look back at the actions and events since 2021</p>
@@ -1745,26 +1714,25 @@
             <p>All about our action</p>
         </div>
 
-        <!-- Navigation Cards -->
         <div class="info-grid two-col" style="margin-top:20px;">
-            <a href="https://consulaires2026.com/" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">ASFE List 2026 ➔</h3>
-                <p>Discover our team for the May 2026 elections.</p>
-                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M18 13h-.68l-2 2h1.91L19 17H5l1.78-2h2.05l-2-2H6l-3 3v4c0 1.1.89 2 1.99 2H19c1.1 0 2-.89 2-2v-4l-3-3zm-1-5.05l-4.95 4.95-3.54-3.54 4.95-4.95L16.99 7.95zm-4.24-5.66L6.39 8.66a.996.996 0 000 1.41l4.95 4.95c.39.39 1.02.39 1.41 0l6.36-6.36a.996.996 0 000-1.41l-4.95-4.95a.996.996 0 00-1.41 0z"/></svg></span>
+            <a href="elu.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Your Councillor &#10132;</h3>
+                <p>Discover who your representative is in German-speaking Switzerland.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-10a4 4 0 110 8 4 4 0 010-8z"/></svg></span>
             </a>
-            <a href="https://consulaires2026.com/en/programme.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Our Programme ➔</h3>
-                <p>Our priorities for French citizens in German-speaking Switzerland and Liechtenstein.</p>
-                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
+            <a href="elu_2021.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">My Activity &#10132;</h3>
+                <p>Discover our consular activity since 2021.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 0h-4V4h4v2z"/></svg></span>
             </a>
-            <a href="https://consulaires2026.com/en/liens-utiles.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Useful Links ➔</h3>
+            <a href="liens-utiles.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Useful Links &#10132;</h3>
                 <p>Find all our web, Facebook and Instagram links.</p>
                 <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span>
             </a>
-            <a href="https://consulaires2026.com/en/a-propos.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">ASFE and the councillors ➔</h3>
-                <p>Discover ASFE and the role of the councillors for French citizens abroad.</p>
+            <a href="asfe.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">ASFE and the Councillors &#10132;</h3>
+                <p>The role of councillors and the weight of ASFE.</p>
                 <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
             </a>
         </div>

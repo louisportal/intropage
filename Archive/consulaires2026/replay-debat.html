@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script src="consent.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Replay du débat des consulaires - mardi 12 mai 2026">
+    <title>Replay du débat - Consulaires 2026</title>
+    <link rel="stylesheet" href="styles.css?v=6">
+    <style>
+        .video-wrapper {
+            max-width: 960px;
+            margin: 30px auto;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            position: relative;
+            aspect-ratio: 16 / 9;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .replay-intro {
+            max-width: 800px;
+            margin: 20px auto 10px;
+            text-align: center;
+            color: #444;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .replay-intro h2 {
+            color: #032149;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>Replay du débat des consulaires</h1>
+                <p>Mardi 12 mai 2026, animé par Catherine Fiankan-Bokonga<br>Les têtes de liste face aux Français de Suisse alémanique et du Liechtenstein</p>
+            </div>
+            <span class="scrolled-title">Replay du débat</span>
+            <div class="header-controls">
+                <a href="index.html" class="election-btn">Élections 2026</a>
+                <div class="hamburger-container">
+                    <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <nav id="navMenu" class="nav-menu">
+                        <button class="nav-close-btn" aria-label="Fermer le menu">&times;</button>
+                        <a href="index.html" class="nav-link">La liste ASFE 2026</a>
+                        <a href="programme.html" class="nav-link">Notre Programme</a>
+                        <a href="liens-utiles.html" class="nav-link">Liens Utiles</a>
+                        <a href="a-propos.html" class="nav-link">L'ASFE et les conseillers</a>
+                        <a href="https://louisportal.com/fr/elu_2021.html" class="nav-link">Mandat en cours</a>
+                        <a href="info_vote.html" class="nav-link nav-link-last">Infos et inscriptions</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="replay-intro">
+            <h2>Le débat en replay</h2>
+            <p>Retrouvez l'intégralité du débat qui m'a opposé aux autres têtes de liste lors de la rencontre en ligne du 12 mai 2026.</p>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/4TsqjW4oE_s?rel=0"
+                title="Débat des consulaires - 12 mai 2026"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="cta-section" data-include="contact.html">
+        </div>
+
+        <footer>
+            <p>&copy; 2026 – ASFE - Liste Consulaires 2026. Suisse alémanique & Liechtenstein.</p>
+            <p style="margin-top: 10px;">
+                <a href="https://alliancesolidaire.org" target="_blank">Alliance Solidaire</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js?v=2"></script>
+</body>
+</html>

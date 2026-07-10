@@ -4,8 +4,8 @@
     <script src="../consent.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Portal - Conseiller</title>
-    <link rel="stylesheet" href="../styles.css?v=4">
+    <title>Louis Portal - Mon activité</title>
+    <link rel="stylesheet" href="../styles.css?v=5">
 </head>
 <body>
     <!-- Header with Navigation -->
@@ -13,12 +13,10 @@
         <div class="header-content">
             <div class="header-title">
                 <h1>Louis Portal</h1>
-                <p>Conseiller des Français de l'Étranger en Suisse alémanique et au Liechtenstein<br>Élu depuis 2021 – Candidat tête de liste pour l'élection de Mai 2026</p>
+                <p>Conseiller des Français de l'Étranger en Suisse alémanique et au Liechtenstein<br>Élu depuis 2021</p>
             </div>
             <span class="scrolled-title">Louis Portal</span>
             <div class="header-controls">
-                <a href="https://consulaires2026.com/" class="election-btn">Élections 2026</a>
-
                 <div class="lang-switcher">
                     <button class="lang-switcher-toggle">FR</button>
                     <div class="lang-switcher-menu">
@@ -37,10 +35,10 @@
                     </button>
                     <nav id="navMenu" class="nav-menu">
                         <button class="nav-close-btn" aria-label="Fermer le menu">&times;</button>
-                        <a href="https://consulaires2026.com/" class="nav-link">La liste ASFE 2026</a>
-                        <a href="https://consulaires2026.com/programme.html" class="nav-link">Notre Programme</a>
-                        <a href="https://consulaires2026.com/liens-utiles.html" class="nav-link">Liens Utiles</a>
-                        <a href="https://consulaires2026.com/a-propos.html" class="nav-link nav-link-last">L'ASFE et les conseillers</a>
+                        <a href="elu.html" class="nav-link">Votre élu</a>
+                        <a href="elu_2021.html" class="nav-link">Mon activité</a>
+                        <a href="liens-utiles.html" class="nav-link">Liens Utiles</a>
+                        <a href="asfe.html" class="nav-link nav-link-last">L'ASFE et les conseillers</a>
                     </nav>
                 </div>
             </div>
@@ -49,35 +47,6 @@
 
     <div class="container">
 
-        <!-- SECTION 1: Votre élu consulaire -->
-        <div class="collapsible-section" id="quisuisje">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Votre élu consulaire</h2>
-                <p class="section-teaser">Louis Portal, votre représentant en Suisse alémanique</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
-                <div class="about-grid">
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                        <img src="../assets/Profils/1_Louis_Portal_Picture.jpg" alt="Portrait de Louis Portal" class="profile-photo" />
-                        <a href="mailto:louis.portal.consulaire@gmail.com" style="display:inline-flex; align-items:center; justify-content: center; gap:8px; padding:10px 20px; background:none; color:#23a9c6; text-decoration:none; border:2px solid #23a9c6; border-radius:6px; font-weight:600; font-size:0.95em; transition:all 0.2s ease; width: 100%; max-width: 250px; box-sizing: border-box;">
-                            <svg style="width:18px; height:18px;" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                            </svg>
-                            Contact
-                        </a>
-                    </div>
-                    <div class="about-content">
-                        <p>Originaire de Bordeaux, j'ai vécu à Paris, New York puis Zurich, où je me suis installé en 2014 pour finir mes études. Basé depuis douze ans en Suisse alémanique, j'y ai fondé une startup dans le digital et évolué pendant dix ans dans l'écosystème tech/capital-risque, avec lequel je collabore encore, représentant d'un club d'investisseur international pour la Suisse.</p>
-                        <p>Aujourd'hui dans le secteur aérien, je voyage régulièrement pour le travail, autant d'occasions d'échanger avec les élus consulaires de monde entier et de rester au contact des réalités des Français de l'Étranger.</p>
-                        <p>Engagé au sein de l'ASFE lors des dernières élections consulaires, et au contact de nombreuses associations françaises et francophones, j'ai été élu avec la conviction qu'à l'étranger, l'engagement doit dépasser les clivages partisans et rassembler tous les Français. Il est essentiel de rappeler que l'indépendance de l'ASFE est un atout majeur. Faire de la politique française est important, mais nous devons avant tout nous concentrer sur les réalités locales de notre pays d'accueil. Cela nous permet de répondre efficacement à vos besoins.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 2: Activité (Timeline) -->
         <div id="activite">
             <h2 style="color:#032149; font-size:1.8em; margin-bottom:5px; text-align:center;">Activité</h2>
             <p style="color:#666; font-style:italic; margin-bottom:30px; text-align:center;">Retour en images sur les actions et événements depuis 2021</p>
@@ -1745,26 +1714,25 @@
             <p>Tout sur notre action</p>
         </div>
 
-        <!-- Navigation Cards -->
         <div class="info-grid two-col" style="margin-top:20px;">
-            <a href="https://consulaires2026.com/" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">La liste ASFE 2026 ➔</h3>
-                <p>Découvrez notre équipe pour les élections de mai 2026.</p>
-                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M18 13h-.68l-2 2h1.91L19 17H5l1.78-2h2.05l-2-2H6l-3 3v4c0 1.1.89 2 1.99 2H19c1.1 0 2-.89 2-2v-4l-3-3zm-1-5.05l-4.95 4.95-3.54-3.54 4.95-4.95L16.99 7.95zm-4.24-5.66L6.39 8.66a.996.996 0 000 1.41l4.95 4.95c.39.39 1.02.39 1.41 0l6.36-6.36a.996.996 0 000-1.41l-4.95-4.95a.996.996 0 00-1.41 0z"/></svg></span>
+            <a href="elu.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Votre élu &#10132;</h3>
+                <p>Découvrez qui est votre représentant en Suisse alémanique.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-10a4 4 0 110 8 4 4 0 010-8z"/></svg></span>
             </a>
-            <a href="https://consulaires2026.com/programme.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Notre Programme ➔</h3>
-                <p>Nos priorités pour les Français de Suisse alémanique et du Liechtenstein.</p>
-                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
+            <a href="elu_2021.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Mon activité &#10132;</h3>
+                <p>Découvrez notre activité consulaire depuis 2021.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 0h-4V4h4v2z"/></svg></span>
             </a>
-            <a href="https://consulaires2026.com/liens-utiles.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Liens Utiles ➔</h3>
+            <a href="liens-utiles.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Liens Utiles &#10132;</h3>
                 <p>Retrouvez tous nos liens web, Facebook et Instagram.</p>
                 <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span>
             </a>
-            <a href="https://consulaires2026.com/a-propos.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">L'ASFE et les conseillers ➔</h3>
-                <p>Découvrez l'ASFE et le rôle des conseillers des Français de l'Etranger.</p>
+            <a href="asfe.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">L'ASFE et les conseillers &#10132;</h3>
+                <p>Le rôle des conseillers et le poids de l'ASFE.</p>
                 <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
             </a>
         </div>

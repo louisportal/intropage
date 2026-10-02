@@ -4,3 +4,5 @@ node_modules/
 .titles.json
 assets/Activité/_inbox/*
 !assets/Activité/_inbox/.gitkeep
+assets/Inovexus photos/_inbox/*
+!assets/Inovexus photos/_inbox/.gitkeep

@@ -16,7 +16,6 @@
             <a href="#" onclick="setLang('fr')">🇫🇷</a>
             <a href="#" onclick="setLang('en')">🇬🇧</a>
             <a href="#" onclick="setLang('de')">🇩🇪</a>
-            <a href="#" onclick="setLang('it')">🇮🇹</a>
         </div>
     </div>
 
@@ -28,20 +27,11 @@
         <p class="welcome" id="welcome-text">bienvenue sur ma page web</p>
 
         <div class="cards">
-            <a href="fr/elu.html" id="card-elu" class="card card-consulaire">
-                <span class="card-label" id="label-elu">Votre élu</span>
-            </a>
-            <a href="fr/elu_2021.html" id="card-activite" class="card card-activite">
-                <span class="card-label" id="label-activite">Mon activité</span>
-            </a>
-            <a href="fr/liens-utiles.html" id="card-liens" class="card card-liens">
-                <span class="card-label" id="label-liens">Liens Utiles</span>
-            </a>
-            <a href="fr/asfe.html" id="card-asfe" class="card card-asfe">
-                <span class="card-label" id="label-asfe">L'ASFE et les conseillers</span>
+            <a href="fr/elu.html" id="card-consulaire" class="card card-consulaire">
+                <span class="card-label" id="label-consulaire">Consulaire</span>
             </a>
             <a href="fr/startup.html" id="card-startups" class="card card-startups">
-                <span class="card-label" id="label-startups">Startups/invest</span>
+                <span class="card-label" id="label-startups">Startup/invest</span>
             </a>
         </div>
     </main>
@@ -51,19 +41,18 @@
     </footer>
 
     <script>
-        var flags = { fr: '🇫🇷', en: '🇬🇧', de: '🇩🇪', it: '🇮🇹' };
+        var flags = { fr: '🇫🇷', en: '🇬🇧', de: '🇩🇪' };
         var translations = {
-            fr: { welcome: "bienvenue sur ma page web", elu: "Votre élu", activite: "Mon activité", liens: "Liens Utiles", asfe: "L'ASFE et les conseillers", startups: "Startups/invest" },
-            en: { welcome: "welcome to my webpage", elu: "Your Councillor", activite: "My Activity", liens: "Useful Links", asfe: "ASFE and the Councillors", startups: "Startups/invest" },
-            de: { welcome: "willkommen auf meiner Webseite", elu: "Ihr Ratsmitglied", activite: "Meine Aktivität", liens: "Nützliche Links", asfe: "Die ASFE und die Berater", startups: "Startups/invest" },
-            it: { welcome: "benvenuti sulla mia pagina web", elu: "Il vostro Consigliere", activite: "La mia Attività", liens: "Link Utili", asfe: "L'ASFE e i Consiglieri", startups: "Startups/invest" }
+            fr: { welcome: "bienvenue sur ma page web", consulaire: "Consulaire", startups: "Startup/invest" },
+            en: { welcome: "welcome to my webpage", consulaire: "Consular", startups: "Startup/invest" },
+            de: { welcome: "willkommen auf meiner Webseite", consulaire: "Konsularisch", startups: "Startup/invest" }
         };
 
         // Auto-detect browser language on page load
         (function() {
             var userLang = navigator.language || navigator.userLanguage;
             var langCode = userLang.toLowerCase().substring(0, 2);
-            var supportedLangs = ['fr', 'en', 'de', 'it'];
+            var supportedLangs = ['fr', 'en', 'de'];
 
             // Default to French if language not supported
             if (supportedLangs.indexOf(langCode) === -1) {
@@ -77,15 +66,9 @@
         function setLang(lang) {
             var t = translations[lang];
             document.getElementById('welcome-text').textContent = t.welcome;
-            document.getElementById('label-elu').textContent = t.elu;
-            document.getElementById('label-activite').textContent = t.activite;
-            document.getElementById('label-liens').textContent = t.liens;
-            document.getElementById('label-asfe').textContent = t.asfe;
+            document.getElementById('label-consulaire').textContent = t.consulaire;
             document.getElementById('label-startups').textContent = t.startups;
-            document.getElementById('card-elu').href = lang + '/elu.html';
-            document.getElementById('card-activite').href = lang + '/elu_2021.html';
-            document.getElementById('card-liens').href = lang + '/liens-utiles.html';
-            document.getElementById('card-asfe').href = lang + '/asfe.html';
+            document.getElementById('card-consulaire').href = lang + '/elu.html';
             document.getElementById('card-startups').href = lang + '/startup.html';
             document.getElementById('lang-toggle').textContent = flags[lang];
             document.documentElement.lang = lang;

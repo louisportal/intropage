@@ -168,18 +168,6 @@ main {
     opacity: 0.5;
 }
 
-.card-activite {
-    background: linear-gradient(135deg, #23a9c6, #032149);
-}
-
-.card-liens {
-    background: linear-gradient(135deg, #7C3AED, #23a9c6);
-}
-
-.card-asfe {
-    background: linear-gradient(135deg, #032149, #7C3AED);
-}
-
 .card-startups {
     background: linear-gradient(135deg, #FF8C42, #6B2E5F);
 }

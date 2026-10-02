@@ -4,8 +4,7 @@
     var translations = {
         fr: { text: 'Accepter les cookies \uD83C\uDF6A ?', accept: 'Accepter', decline: 'Refuser' },
         en: { text: 'Accept cookies \uD83C\uDF6A?', accept: 'Accept', decline: 'Decline' },
-        de: { text: 'Cookies akzeptieren \uD83C\uDF6A?', accept: 'Akzeptieren', decline: 'Ablehnen' },
-        it: { text: 'Accettare i cookie \uD83C\uDF6A?', accept: 'Accetta', decline: 'Rifiuta' }
+        de: { text: 'Cookies akzeptieren \uD83C\uDF6A?', accept: 'Akzeptieren', decline: 'Ablehnen' }
     };
 
     function getLang() {

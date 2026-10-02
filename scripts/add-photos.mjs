@@ -8,43 +8,80 @@ import 'dotenv/config';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
-const INBOX_DIR = path.join(REPO_ROOT, 'assets/Activité/_inbox');
-const ORIGINALS_DIR = path.join(REPO_ROOT, 'assets/Activité');
-const WEBP_FULL_DIR = path.join(ORIGINALS_DIR, 'webp/full');
-const WEBP_THUMB_DIR = path.join(ORIGINALS_DIR, 'webp/thumb');
-const BACKUP_DIR = path.join(process.env.HOME, 'Pictures/Louisportal_originals');
-
-const LANGS = ['fr', 'en', 'de', 'it'];
+const BACKUP_ROOT = path.join(process.env.HOME, 'Pictures/Louisportal_originals');
 const FR_MONTHS = ['Jan.', 'Fév.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sep.', 'Oct.', 'Nov.', 'Déc.'];
+
+// Each target has its own inbox, asset folder and pages to update.
+// itemIndent = indentation of <div class="photo-grid-item"> in that page's markup.
+const TARGETS = {
+  politique: {
+    label: 'Politique',
+    assetDir: path.join(REPO_ROOT, 'assets/Activité'),
+    urlDir: 'Activité',
+    backupDir: BACKUP_ROOT,
+    pages: [['fr', 'fr/elu_2021.html'], ['en', 'en/elu_2021.html'], ['de', 'de/elu_2021.html']],
+    itemIndent: 16,
+  },
+  inovexus: {
+    label: 'Inovexus',
+    assetDir: path.join(REPO_ROOT, 'assets/Inovexus photos'),
+    urlDir: 'Inovexus%20photos',
+    backupDir: path.join(BACKUP_ROOT, 'Inovexus'),
+    pages: [['en', 'en/startup.html']],
+    itemIndent: 24,
+  },
+};
 
 const MAX_BYTES = 500 * 1024;
 const FULL_WIDTH = 1600;
 const THUMB_WIDTH = 600;
 
-const FILENAME_RE = /^(\d{4})_(.+)\.(jpe?g|png)$/i;
+// YYMM_ prefix. A YYMMDD_ prefix is accepted and truncated to YYMM.
+const FILENAME_RE = /^(\d{4})(?:\d{2})?_(.+)\.(jpe?g|png)$/i;
 const DRY_RUN = process.argv.includes('--dry-run');
 const TITLES_ARG = process.argv.find(a => a.startsWith('--titles='));
 const TITLES_FILE = TITLES_ARG ? TITLES_ARG.slice('--titles='.length) : null;
+const TARGET_ARG = process.argv.find(a => a.startsWith('--target='));
+const TARGET_NAMES = TARGET_ARG ? [TARGET_ARG.slice('--target='.length)] : Object.keys(TARGETS);
 
 async function main() {
-  await fs.mkdir(INBOX_DIR, { recursive: true });
-  await fs.mkdir(WEBP_FULL_DIR, { recursive: true });
-  await fs.mkdir(WEBP_THUMB_DIR, { recursive: true });
-  await fs.mkdir(BACKUP_DIR, { recursive: true });
+  let total = 0;
+  for (const name of TARGET_NAMES) {
+    const target = TARGETS[name];
+    if (!target) throw new Error(`Unknown target "${name}". Use: ${Object.keys(TARGETS).join(', ')}`);
+    console.log(`\n=== ${target.label} ===`);
+    total += await processTarget(target);
+  }
+  if (total > 0 && !DRY_RUN) {
+    console.log(`\n✓ Done. ${total} photo(s) added.`);
+    console.log(`  Review: git status && git diff`);
+  }
+}
 
-  const entries = await fs.readdir(INBOX_DIR);
+async function processTarget(target) {
+  const inboxDir = path.join(target.assetDir, '_inbox');
+  const webpFullDir = path.join(target.assetDir, 'webp/full');
+  const webpThumbDir = path.join(target.assetDir, 'webp/thumb');
+  const langs = target.pages.map(([lang]) => lang);
+
+  await fs.mkdir(inboxDir, { recursive: true });
+  await fs.mkdir(webpFullDir, { recursive: true });
+  await fs.mkdir(webpThumbDir, { recursive: true });
+  await fs.mkdir(target.backupDir, { recursive: true });
+
+  const entries = await fs.readdir(inboxDir);
   const valid = [];
   const invalid = [];
   for (const f of entries) {
     if (f.startsWith('.')) continue;
-    const m = FILENAME_RE.exec(f);
+    const m = FILENAME_RE.exec(f.normalize('NFC'));
     if (!m) { invalid.push(f); continue; }
     valid.push({
       file: f,
       yymm: m[1],
       year: '20' + m[1].slice(0, 2),
       month: parseInt(m[1].slice(2), 10),
-      slug: m[2].normalize('NFC'),
+      slug: m[2],
       ext: m[3].toLowerCase(),
     });
   }
@@ -55,23 +92,23 @@ async function main() {
   }
   if (valid.length === 0) {
     console.log('Nothing to process. Drop YYMM_description.{jpg,jpeg,png} files in:');
-    console.log(`  ${INBOX_DIR}`);
-    return;
+    console.log(`  ${inboxDir}`);
+    return 0;
   }
 
-  // Skip duplicates (already in assets/Activité/)
-  const existingOriginals = new Set(await fs.readdir(ORIGINALS_DIR).catch(() => []));
+  // Skip duplicates (already in the asset folder, any extension/case)
+  const existing = new Set((await fs.readdir(target.assetDir).catch(() => [])).map(f => f.normalize('NFC').toLowerCase()));
   const toProcess = [];
   for (const p of valid) {
     const baseName = `${p.yymm}_${p.slug}`;
-    const collisions = ['.jpg', '.jpeg', '.png'].some(ext => existingOriginals.has(baseName + ext));
-    if (collisions) {
-      console.warn(`Skipping ${p.file}: a file named ${baseName}.* already exists in assets/Activité/`);
+    const collisions = ['.jpg', '.jpeg', '.png'].some(ext => existing.has((baseName + ext).toLowerCase()));
+    if (collisions || toProcess.some(q => `${q.yymm}_${q.slug}` === baseName)) {
+      console.warn(`Skipping ${p.file}: a file named ${baseName}.* already exists`);
       continue;
     }
     toProcess.push(p);
   }
-  if (toProcess.length === 0) return;
+  if (toProcess.length === 0) return 0;
 
   console.log(`Found ${toProcess.length} photo(s) to process.`);
   let titles;
@@ -80,8 +117,10 @@ async function main() {
     const raw = await fs.readFile(TITLES_FILE, 'utf8');
     const obj = JSON.parse(raw);
     titles = toProcess.map(p => {
-      const t = obj[p.file] || obj[`${p.yymm}_${p.slug}`];
+      const t = obj[p.file] || obj[p.file.normalize('NFC')] || obj[`${p.yymm}_${p.slug}`];
       if (!t) throw new Error(`No titles provided for ${p.file} in ${TITLES_FILE}`);
+      const missing = langs.filter(l => !t[l]);
+      if (missing.length) throw new Error(`Missing ${missing.join(', ')} title(s) for ${p.file}`);
       return t;
     });
   } else {
@@ -91,27 +130,24 @@ async function main() {
   toProcess.forEach((p, i) => {
     Object.assign(p, titles[i]);
     console.log(`  ${p.file}`);
-    console.log(`    FR: ${p.fr}`);
-    console.log(`    EN: ${p.en}`);
-    console.log(`    DE: ${p.de}`);
-    console.log(`    IT: ${p.it}`);
+    for (const l of langs) console.log(`    ${l.toUpperCase()}: ${p[l]}`);
   });
 
   if (DRY_RUN) {
     console.log('\n--dry-run: no files written, no HTML modified.');
-    return;
+    return toProcess.length;
   }
 
   for (const p of toProcess) {
     const baseName = `${p.yymm}_${p.slug}`;
-    const inboxPath = path.join(INBOX_DIR, p.file);
+    const inboxPath = path.join(inboxDir, p.file);
     console.log(`\nProcessing ${p.file}...`);
 
     // Backup original
-    await fs.copyFile(inboxPath, path.join(BACKUP_DIR, p.file));
+    await fs.copyFile(inboxPath, path.join(target.backupDir, p.file));
 
     // Compress original to JPEG under 500KB
-    const compressedSize = await compressOriginalToJpeg(inboxPath, path.join(ORIGINALS_DIR, `${baseName}.jpg`));
+    const compressedSize = await compressOriginalToJpeg(inboxPath, path.join(target.assetDir, `${baseName}.jpg`));
     console.log(`  compressed: ${(compressedSize / 1024).toFixed(0)} KB`);
 
     // WebP full
@@ -119,34 +155,32 @@ async function main() {
       .rotate()
       .resize({ width: FULL_WIDTH, withoutEnlargement: true })
       .webp({ quality: 80 })
-      .toFile(path.join(WEBP_FULL_DIR, `${baseName}.webp`));
+      .toFile(path.join(webpFullDir, `${baseName}.webp`));
 
     // WebP thumb
     await sharp(inboxPath)
       .rotate()
       .resize({ width: THUMB_WIDTH, withoutEnlargement: true })
       .webp({ quality: 75 })
-      .toFile(path.join(WEBP_THUMB_DIR, `${baseName}.webp`));
+      .toFile(path.join(webpThumbDir, `${baseName}.webp`));
 
     // Remove from inbox
     await fs.unlink(inboxPath);
     console.log(`  webp full + thumb generated, inbox cleared.`);
   }
 
-  for (const lang of LANGS) {
-    const htmlPath = path.join(REPO_ROOT, lang, 'elu_2021.html');
+  for (const [lang, page] of target.pages) {
+    const htmlPath = path.join(REPO_ROOT, page);
     let html = await fs.readFile(htmlPath, 'utf8');
     for (const p of toProcess) {
-      html = insertPhotoBlock(html, p, lang);
+      html = insertPhotoBlock(html, p, lang, target);
     }
     await fs.writeFile(htmlPath, html);
-    console.log(`Updated ${lang}/elu_2021.html`);
+    console.log(`Updated ${page}`);
   }
 
-  console.log(`\n✓ Done. ${toProcess.length} photo(s) added.`);
-  console.log(`  Originals backed up to: ${BACKUP_DIR}`);
-  console.log(`  Review: git status && git diff`);
-  console.log(`  Commit: git add -A && git commit -m "Add photos: ${toProcess.map(p => p.yymm + '_' + p.slug).join(', ').slice(0, 70)}"`);
+  console.log(`  Originals backed up to: ${target.backupDir}`);
+  return toProcess.length;
 }
 
 async function compressOriginalToJpeg(inputPath, outPath) {
@@ -174,14 +208,14 @@ async function translateBatch(slugs) {
     throw new Error('ANTHROPIC_API_KEY is not set. Create a .env file (copy .env.example).');
   }
   const client = new Anthropic();
-  const prompt = `For each French photo filename slug below, produce a clean, natural title in 4 languages.
+  const prompt = `For each French photo filename slug below, produce a clean, natural title in 3 languages.
 
-The slug uses underscores where spaces should be. French apostrophes and accents have been stripped from the filename — restore them in the FR title (e.g., "AGM_de_l_UFEZ" → "AGM de l'UFEZ"). Then translate the FR title naturally to EN, DE, IT.
+The slug uses underscores where spaces should be. French apostrophes and accents have been stripped from the filename — restore them in the FR title (e.g., "AGM_de_l_UFEZ" → "AGM de l'UFEZ"). Then translate the FR title naturally to EN and DE.
 
 Use curly apostrophes ('), not straight ones. Keep proper nouns and acronyms (ASFE, UFEZ, LFZ, etc.) unchanged.
 
 Return ONLY a JSON array (no markdown fences, no commentary), one object per input, in the same order:
-[{"fr": "...", "en": "...", "de": "...", "it": "..."}, ...]
+[{"fr": "...", "en": "...", "de": "..."}, ...]
 
 Inputs:
 ${slugs.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
@@ -201,12 +235,14 @@ ${slugs.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
   return parsed;
 }
 
-function insertPhotoBlock(html, p, lang) {
+function insertPhotoBlock(html, p, lang, target) {
+  const activiteIdx = html.indexOf('<div id="activite">');
+  if (activiteIdx === -1) throw new Error('No <div id="activite"> found');
   const yearMarker = `<span>${p.year}</span>`;
-  const yearIdx = html.indexOf(yearMarker);
+  const yearIdx = html.indexOf(yearMarker, activiteIdx);
 
   if (yearIdx === -1) {
-    return createNewYearSection(html, p, lang);
+    return createNewYearSection(html, p, lang, target);
   }
 
   const gridOpenIdx = html.indexOf('<div class="photo-grid">', yearIdx);
@@ -216,7 +252,7 @@ function insertPhotoBlock(html, p, lang) {
   const nextYearSection = html.indexOf('<div class="year-section">', gridOpenIdx + 1);
   const scanEnd = nextYearSection === -1 ? html.length : nextYearSection;
 
-  const ITEM_RE = /<div class="photo-grid-item">\s*<img src="\.\.\/assets\/Activité\/webp\/thumb\/(\d{4,6})_[^"]+"[^>]*>\s*<div class="photo-overlay">[\s\S]*?<\/div>\s*<\/div>/g;
+  const ITEM_RE = /<div class="photo-grid-item">\s*<img src="\.\.\/assets\/[^"]*\/webp\/thumb\/(\d{4,6})_[^"]+"[^>]*>\s*<div class="photo-overlay">[\s\S]*?<\/div>\s*<\/div>/g;
   ITEM_RE.lastIndex = gridContentStart;
   const items = [];
   let m;
@@ -230,44 +266,47 @@ function insertPhotoBlock(html, p, lang) {
   }
 
   const newYYMM = parseInt(p.yymm, 10);
-  const block = renderPhotoGridItem(p, lang);
+  const block = renderPhotoGridItem(p, lang, target);
   const before = items.find(it => it.yymm < newYYMM);
+  const nl = '\n' + ' '.repeat(target.itemIndent);
 
   let insertIdx, content;
   if (before) {
     insertIdx = before.startIdx;
-    content = block + '\n                ';
+    content = block + nl;
   } else if (items.length > 0) {
     insertIdx = items[items.length - 1].endIdx;
-    content = '\n                ' + block;
+    content = nl + block;
   } else {
     insertIdx = gridContentStart;
-    content = '\n                ' + block;
+    content = nl + block;
   }
 
   return html.slice(0, insertIdx) + content + html.slice(insertIdx);
 }
 
-function renderPhotoGridItem(p, lang) {
+function renderPhotoGridItem(p, lang, target) {
   const monthLabel = FR_MONTHS[p.month - 1];
   const title = p[lang];
   const alt = altText(p.slug);
+  const i = ' '.repeat(target.itemIndent);
+  const file = `${p.yymm}_${p.slug}.webp`;
   return `<div class="photo-grid-item">
-                    <img src="../assets/Activité/webp/thumb/${p.yymm}_${p.slug}.webp" data-full="../assets/Activité/webp/full/${p.yymm}_${p.slug}.webp" alt="${alt}" loading="lazy" class="grid-photo" />
-                    <div class="photo-overlay">
-                        <span class="photo-date">${monthLabel} ${p.year}</span>
-                        <span class="photo-title">${escapeHtml(title)}</span>
-                    </div>
-                </div>`;
+${i}    <img src="../assets/${target.urlDir}/webp/thumb/${file}" data-full="../assets/${target.urlDir}/webp/full/${file}" alt="${alt}" loading="lazy" class="grid-photo" />
+${i}    <div class="photo-overlay">
+${i}        <span class="photo-date">${monthLabel} ${p.year}</span>
+${i}        <span class="photo-title">${escapeHtml(title)}</span>
+${i}    </div>
+${i}</div>`;
 }
 
-function createNewYearSection(html, p, lang) {
-  const itemBlock = renderPhotoGridItem(p, lang);
+function createNewYearSection(html, p, lang, target) {
+  const itemBlock = renderPhotoGridItem(p, lang, target);
   const newSection = `            <div class="year-section">
                 <div class="year-badge year-badge-clickable" onclick="toggleYearPhotos(this)"><span>${p.year}</span><svg class="year-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="4,7 10,13 16,7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                 <div class="year-photos">
                     <div class="photo-grid">
-                ${itemBlock}
+${' '.repeat(target.itemIndent)}${itemBlock}
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@
         (function() {
             var userLang = navigator.language || navigator.userLanguage;
             var langCode = userLang.toLowerCase().substring(0, 2);
-            var supportedLangs = ['fr', 'en', 'de', 'it'];
+            var supportedLangs = ['fr', 'en', 'de'];
 
             // Default to French if language not supported
             if (supportedLangs.indexOf(langCode) === -1) {
@@ -24,7 +24,7 @@
 </head>
 <body>
     <p style="text-align: center; padding: 50px; font-family: Arial, sans-serif; color: #2563EB;">
-        Redirection en cours... / Redirecting... / Weiterleitung... / Reindirizzamento...
+        Redirection en cours... / Redirecting... / Weiterleitung...
     </p>
 </body>
 </html>

@@ -11,6 +11,186 @@ body {
     background-color: #faf7f6;
 }
 
+/* Consular pages: soft French-flag glow (blue top-left, red bottom-right) */
+body.consulaire {
+    background:
+        radial-gradient(at 0% 0%, rgba(0, 35, 149, 0.14) 0px, transparent 55%),
+        radial-gradient(at 100% 100%, rgba(237, 41, 57, 0.12) 0px, transparent 55%),
+        #fbfbf9;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body.consulaire .header {
+    background: rgba(251, 251, 249, 0.72);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+body.consulaire footer,
+body.consulaire .cta-section {
+    background: transparent;
+}
+
+/* Startup / Inovexus pages: dotted paper background */
+body.startup {
+    background-color: #f8f7f4;
+    background-image: radial-gradient(#d4d0c8 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+body.startup .header {
+    background: rgba(248, 247, 244, 0.78);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+body.startup footer {
+    background: transparent;
+}
+
+/* Startup / Inovexus pages: orange and pink theme */
+body.startup {
+    --brand-pink: #BE185D;
+    --brand-pink-dark: #9D174D;
+    --brand-orange: #F97316;
+    --brand-orange-hover: #EA580C;
+}
+
+body.startup .header { border-bottom-color: var(--brand-orange); }
+body.startup .header-title h1,
+body.startup .header-title p,
+body.startup .scrolled-title { color: var(--brand-pink); }
+
+body.startup .section-header { color: var(--brand-pink); border-bottom-color: var(--brand-orange); }
+body.startup .toggle-icon { color: var(--brand-orange); }
+
+body.startup .section-separator p { color: var(--brand-pink); }
+
+body.startup footer { color: var(--brand-pink); border-top-color: var(--brand-orange); }
+body.startup footer a { color: var(--brand-pink); }
+
+body.startup .lang-switcher-toggle { border-color: var(--brand-orange); color: var(--brand-orange); }
+body.startup .lang-switcher-toggle:hover { background: var(--brand-orange); color: #faf7f6; }
+body.startup .lang-switcher-menu { border-color: var(--brand-pink); }
+body.startup .lang-switcher-menu a { color: var(--brand-pink); }
+body.startup .lang-switcher-menu a:hover { background: var(--brand-pink); color: #faf7f6; }
+
+body.startup .hamburger-btn { background: rgba(249, 115, 22, 0.05); border-color: var(--brand-orange); }
+body.startup .hamburger-btn:hover { background: rgba(249, 115, 22, 0.12); }
+body.startup .hamburger-line { background: var(--brand-orange); }
+body.startup .nav-menu { border-color: var(--brand-pink); }
+body.startup .nav-link { color: var(--brand-pink); }
+
+body.startup .election-btn {
+    background: var(--brand-orange);
+    color: #faf7f6;
+    border-color: var(--brand-orange);
+}
+body.startup .election-btn:hover { background: var(--brand-orange-hover); border-color: var(--brand-orange-hover); }
+
+body.startup .year-badge span { color: var(--brand-pink); }
+body.startup .year-chevron { color: var(--brand-orange); }
+body.startup .photo-overlay { background: linear-gradient(transparent, rgba(190, 24, 93, 0.85)); }
+body.startup .photo-date { color: #fed7aa; }
+
+body.startup .priority-card h3 { color: var(--brand-pink); }
+body.startup .priority-card .card-icon svg { fill: var(--brand-orange); }
+body.startup a.priority-card:hover {
+    box-shadow: 0 12px 35px rgba(249, 115, 22, 0.45);
+    background: var(--brand-pink-dark) !important;
+    border-color: var(--brand-orange);
+}
+
+@media (max-width: 768px) {
+    body.startup .nav-menu { background: var(--brand-pink); }
+    body.startup .nav-menu .nav-link { color: #faf7f6; }
+    body.startup .nav-menu .nav-close-btn { color: var(--brand-orange); }
+}
+
+/* Bio photo column */
+@media (min-width: 769px) {
+    body.startup .about-grid { grid-template-columns: 250px 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+    body.startup .profile-photo { max-width: 250px; }
+}
+
+/* Intro buttons stack */
+body.startup .intro-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 280px;
+}
+
+/* Cookie consent banner, orange/pink theme */
+body.startup .consent-banner { background: var(--brand-pink); }
+body.startup .consent-btn { border-color: var(--brand-orange); }
+body.startup .consent-btn-accept { background: var(--brand-orange); color: #faf7f6; }
+body.startup .consent-btn-accept:hover { background: var(--brand-orange-hover); border-color: var(--brand-orange-hover); }
+body.startup .consent-btn-decline { background: none; color: var(--brand-orange); }
+body.startup .consent-btn-decline:hover { background: rgba(249, 115, 22, 0.18); }
+body.startup .intro-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    line-height: 1.2;
+    text-align: center;
+}
+body.startup .intro-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+body.startup .intro-btn-outline {
+    background: none;
+    color: var(--brand-orange);
+    border: 2px solid var(--brand-orange);
+}
+body.startup .intro-btn-outline:hover { background: var(--brand-orange); color: #faf7f6; }
+body.startup .intro-btn-primary {
+    background: var(--brand-pink);
+    color: #faf7f6;
+    border: 2px solid var(--brand-pink);
+}
+body.startup .intro-btn-primary:hover { background: var(--brand-pink-dark); border-color: var(--brand-pink-dark); }
+body.startup .intro-btn-secondary {
+    background: none;
+    color: var(--brand-pink);
+    border: 2px solid var(--brand-pink);
+}
+body.startup .intro-btn-secondary:hover { background: var(--brand-pink); color: #faf7f6; }
+
+/* Portfolio card extras */
+body.startup .portfolio-card {
+    position: relative;
+    min-height: 110px;
+}
+body.startup .portfolio-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 10px;
+    background: var(--brand-orange);
+    color: #faf7f6;
+    border-radius: 999px;
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    z-index: 2;
+}
+body.startup a.portfolio-card:hover .portfolio-tag {
+    background: #faf7f6;
+    color: var(--brand-pink-dark);
+}
+
 /* Header & Navigation */
 .header {
     background: #faf7f6;
@@ -123,6 +303,8 @@ body {
 }
 
 a.priority-card {
+    text-decoration: none;
+    width: 100%;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     border: 2px solid transparent;
@@ -139,6 +321,15 @@ a.priority-card:hover {
     color: #032149;
     margin-bottom: 15px;
     font-size: 1.2em;
+}
+
+.priority-card.dark {
+    background: #032149;
+    color: #faf7f6;
+}
+
+.priority-card.dark h3 {
+    color: #23a9c6;
 }
 
 .priority-card.has-icon {
@@ -564,7 +755,6 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-    .header.scrolled .scrolled-cta,
     .header.scrolled .election-btn {
         display: none;
     }
@@ -578,6 +768,10 @@ footer a:hover {
     .header-title {
         flex: 1 1 100%;
         text-align: center;
+        max-height: 120px;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+        opacity: 1;
     }
 
     .header-title h1 {
@@ -684,13 +878,6 @@ footer a:hover {
     }
 
     /* Smooth slide-away for title on scroll */
-    .header-title {
-        max-height: 120px;
-        overflow: hidden;
-        transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
-        opacity: 1;
-    }
-
     .header.scrolled .header-title {
         max-height: 0;
         opacity: 0;
@@ -1414,5 +1601,44 @@ footer a:hover {
     }
     .press-card-sub {
         font-size: 0.82em;
+    }
+}
+
+/* Floating "back to year" button (photo timelines) */
+.year-back-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 998;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 999px;
+    background: var(--brand-pink, #032149);
+    color: #faf7f6;
+    font-family: inherit;
+    font-size: 0.95em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(3, 33, 73, 0.25);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+}
+
+.year-back-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.year-back-btn:hover {
+    background: var(--brand-orange, #23a9c6);
+}
+
+@media (max-width: 768px) {
+    /* Sit above the WhatsApp share button */
+    .year-back-btn {
+        bottom: 80px;
     }
 }

@@ -7,6 +7,61 @@ function toggleYearPhotos(badge) {
     }
 }
 
+// Floating "back to year" button on photo timelines (Activité pages)
+(function() {
+    function init() {
+        var sections = document.querySelectorAll('.year-section');
+        if (!sections.length) return;
+
+        var btn = document.createElement('button');
+        btn.className = 'year-back-btn';
+        btn.type = 'button';
+        document.body.appendChild(btn);
+        var target = null;
+
+        function headerOffset() {
+            var h = document.querySelector('.header');
+            return h ? h.offsetHeight : 0;
+        }
+
+        function update() {
+            var top = headerOffset();
+            var mid = window.innerHeight / 2;
+            target = null;
+            sections.forEach(function(sec) {
+                var badge = sec.querySelector('.year-badge');
+                if (!badge || !badge.classList.contains('open')) return;
+                var r = sec.getBoundingClientRect();
+                // Viewport middle is inside this open year, and its heading is out of view
+                if (r.top < mid && r.bottom > mid && badge.getBoundingClientRect().bottom < top) {
+                    target = badge;
+                }
+            });
+            if (target) {
+                btn.innerHTML = '&uarr; ' + target.querySelector('span').textContent;
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        }
+
+        btn.addEventListener('click', function() {
+            if (!target) return;
+            var y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset() - 12;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.year-badge')) setTimeout(update, 50);
+        });
+        update();
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
+
 // Toggle links directory categories (Liens Utiles)
 function toggleLinksCategory(header) {
     const wasOpen = header.classList.contains('open');
@@ -32,7 +87,6 @@ function toggleSection(header) {
     icon.classList.toggle('open');
 }
 
-// Load shared HTML fragments (data-include="filename.html")
 document.addEventListener('DOMContentLoaded', function() {
     // Show the number of links on each Useful Links category
     document.querySelectorAll('.links-category').forEach(function(cat) {
@@ -40,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (count) count.textContent = cat.querySelectorAll('.link-block').length;
     });
 
-    // Load HTML includes
+    // Load shared HTML fragments (data-include="filename.html")
     document.querySelectorAll('[data-include]').forEach(function(el) {
         var file = el.getAttribute('data-include');
         fetch(file)
@@ -81,38 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Close menu and handle nav links (anchor scroll or page navigation)
+        // Close menu when a link is clicked
         document.querySelectorAll('.nav-link').forEach(function(link) {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function() {
                 navMenu.classList.remove('open');
-
-                var href = this.getAttribute('href');
-
-                // Only handle anchor links with smooth scroll
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    var targetId = href.substring(1);
-                    var targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        // Open the section if it's collapsed
-                        var sectionContent = targetElement.querySelector('.section-content');
-                        var toggleIcon = targetElement.querySelector('.toggle-icon');
-                        if (sectionContent && !sectionContent.classList.contains('open')) {
-                            sectionContent.classList.add('open');
-                            if (toggleIcon) toggleIcon.classList.add('open');
-                        }
-
-                        // Smooth scroll to the section
-                        var header = document.querySelector('.header');
-                        var headerHeight = header ? header.offsetHeight : 0;
-                        var targetPosition = targetElement.offsetTop - headerHeight - 20;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-                // For page links (e.g. liens-utiles.html), let browser navigate normally
             });
         });
     }

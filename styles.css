@@ -21,7 +21,19 @@ body.consulaire {
     min-height: 100vh;
 }
 
-body.consulaire .header {
+/* Frosted header. The blur sits on a pseudo-element: backdrop-filter on the
+   header itself would trap the full-screen mobile menu (position: fixed) inside it. */
+body.consulaire .header,
+body.startup .header {
+    background: transparent;
+}
+
+body.consulaire .header::before,
+body.startup .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: rgba(251, 251, 249, 0.72);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -39,10 +51,8 @@ body.startup {
     background-size: 22px 22px;
 }
 
-body.startup .header {
+body.startup .header::before {
     background: rgba(248, 247, 244, 0.78);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
 }
 
 body.startup footer {

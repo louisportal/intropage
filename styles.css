@@ -363,7 +363,23 @@ a.priority-card:hover {
 }
 
 .priority-card.dark h3 {
-    color: #23a9c6;
+    color: #ffffff;
+}
+
+.priority-card.dark p {
+    color: rgba(250, 247, 246, 0.78);
+}
+
+.priority-card.dark .card-icon svg {
+    fill: #ffffff;
+}
+
+.priority-card.dark .card-icon {
+    opacity: 0.22;
+}
+
+.priority-card.dark:hover .card-icon {
+    opacity: 0.4;
 }
 
 .priority-card.has-icon {

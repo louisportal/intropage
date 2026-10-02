@@ -44,11 +44,11 @@ body.consulaire .cta-section {
     background: transparent;
 }
 
-/* Startup / Inovexus pages: dotted paper background */
+/* Startup / Inovexus pages: very light grain (SVG noise) on off-white */
 body.startup {
     background-color: #f8f7f4;
-    background-image: radial-gradient(#d4d0c8 1px, transparent 1px);
-    background-size: 22px 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
 }
 
 body.startup .header::before {

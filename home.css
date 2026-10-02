@@ -169,7 +169,7 @@ main {
 }
 
 .card-startups {
-    background: linear-gradient(135deg, #FF8C42, #6B2E5F);
+    background: linear-gradient(135deg, #01001D 0%, #362266 40%, #7D3C5E 72%, #E28248 100%);
 }
 
 .card-startups::before {

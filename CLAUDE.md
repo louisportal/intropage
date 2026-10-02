@@ -9,19 +9,19 @@ Personal site for Louis Portal, Conseiller des Français de l'Étranger (Swiss-G
 | Target | Inbox | Pages updated | Title languages |
 |---|---|---|---|
 | Politique | `assets/Activité/_inbox/` | `fr/`, `en/`, `de/` `elu_2021.html` | FR / EN / DE |
-| Inovexus | `assets/Inovexus photos/_inbox/` | `en/startup.html` only (FR/DE startup pages are "under construction" stubs) | EN |
+| Inovexus | `assets/Inovexus photos/_inbox/` | `fr/`, `en/`, `de/` `startup.html` | FR / EN / DE |
 
 ### Workflow when Louis says "process photos" / "process the inbox" (or similar)
 
 1. **List both inboxes** (filenames look like `YYMM_Description_With_Underscores.jpg`).
-2. **Propose titles** in a markdown table per target: FR / EN / DE for Politique, EN for Inovexus. Restore French accents and apostrophes. Keep proper nouns (ASFE, UFEZ, LFZ, AFE, Inovexus…) unchanged. Use curly apostrophes `'`. For "apéro", English is "apéritif" (Louis prefers chic over plain).
+2. **Propose titles** in a markdown table per target, FR / EN / DE for both. Restore French accents and apostrophes. Keep proper nouns (ASFE, UFEZ, LFZ, AFE, Inovexus…) unchanged. Use curly apostrophes `'`. For "apéro", English is "apéritif" (Louis prefers chic over plain).
 3. **Pause and wait for Louis's OK or edits.** Do not proceed without confirmation.
 4. **Write** the approved titles to `.titles.json` (gitignored, never commit it) keyed by full filename (both targets in the same file), then run:
    ```bash
    node scripts/add-photos.mjs --titles=.titles.json
    ```
    (`--target=politique` or `--target=inovexus` limits to one inbox; `--dry-run` previews.)
-5. **Show the resulting `git diff`** on `fr/elu_2021.html` and/or `en/startup.html`.
+5. **Show the resulting `git diff`** on `fr/elu_2021.html` and/or `fr/startup.html`.
 6. **Wait for Louis to say "commit & push"** before running any git command. He usually does the commit himself.
 
 ### Hard constraints

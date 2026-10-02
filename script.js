@@ -9,11 +9,18 @@ function toggleYearPhotos(badge) {
 
 // Toggle links directory categories (Liens Utiles)
 function toggleLinksCategory(header) {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector('.links-category-toggle');
-    content.classList.toggle('open');
-    icon.classList.toggle('open');
-    header.classList.toggle('open');
+    const wasOpen = header.classList.contains('open');
+    // Close every category, then reopen the clicked one if it was closed
+    document.querySelectorAll('.links-category-header.open').forEach(function(h) {
+        h.classList.remove('open');
+        h.nextElementSibling.classList.remove('open');
+        h.querySelector('.links-category-toggle').classList.remove('open');
+    });
+    if (!wasOpen) {
+        header.classList.add('open');
+        header.nextElementSibling.classList.add('open');
+        header.querySelector('.links-category-toggle').classList.add('open');
+    }
 }
 
 // Toggle collapsible sections

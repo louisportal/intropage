@@ -1012,24 +1012,52 @@ footer a:hover {
 }
 
 .stat-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 18px 12px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 22px 12px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    border-top: 3px solid #23a9c6;
+    color: #faf7f6;
+    /* One gradient spread across the 4 cards, each shows its own slice */
+    background: linear-gradient(110deg, #032149 0%, #0a4f7e 40%, #1b8fb4 75%, #23a9c6 100%);
+    background-size: 400% 100%;
+    box-shadow: 0 6px 18px rgba(3, 33, 73, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:nth-child(4n+1) { background-position: 0% 50%; }
+.stat-card:nth-child(4n+2) { background-position: 33.33% 50%; }
+.stat-card:nth-child(4n+3) { background-position: 66.66% 50%; }
+.stat-card:nth-child(4n+4) { background-position: 100% 50%; }
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 80%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 65%);
+    pointer-events: none;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(3, 33, 73, 0.22);
 }
 
 .stat-number {
-    font-size: 1.8em;
+    position: relative;
+    font-size: 1.9em;
     font-weight: 700;
-    color: #032149;
+    color: #faf7f6;
     line-height: 1.2;
 }
 
 .stat-label {
+    position: relative;
     font-size: 0.85em;
-    color: #777;
+    color: rgba(250, 247, 246, 0.85);
     margin-top: 4px;
 }
 

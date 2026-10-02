@@ -27,7 +27,7 @@ const TARGETS = {
     assetDir: path.join(REPO_ROOT, 'assets/Inovexus photos'),
     urlDir: 'Inovexus%20photos',
     backupDir: path.join(BACKUP_ROOT, 'Inovexus'),
-    pages: [['en', 'en/startup.html']],
+    pages: [['fr', 'fr/startup.html'], ['en', 'en/startup.html'], ['de', 'de/startup.html']],
     itemIndent: 24,
   },
 };

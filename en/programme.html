@@ -4,7 +4,7 @@
     <script src="../consent.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Portal - Your Councillor</title>
+    <title>Louis Portal - Programme</title>
     <link rel="stylesheet" href="../styles.css?v=8">
 </head>
 <body>
@@ -12,17 +12,17 @@
     <header class="header" style="position:sticky; top:0; z-index:1000;">
         <div class="header-content">
             <div class="header-title">
-                <h1>Louis Portal</h1>
-                <p>French Councillor Abroad in German-speaking Switzerland and Liechtenstein<br>Elected since 2021</p>
+                <h1>Programme</h1>
+                <p>Our priorities for French citizens in German-speaking Switzerland and Liechtenstein</p>
             </div>
-            <span class="scrolled-title">Louis Portal</span>
+            <span class="scrolled-title">Programme</span>
             <div class="header-controls">
                 <div class="lang-switcher">
                     <button class="lang-switcher-toggle">EN</button>
                     <div class="lang-switcher-menu">
-                        <a href="../fr/elu.html">FR</a>
-                        <a href="../en/elu.html">EN</a>
-                        <a href="../de/elu.html">DE</a>
+                        <a href="../fr/programme.html">FR</a>
+                        <a href="../en/programme.html">EN</a>
+                        <a href="../de/programme.html">DE</a>
                     </div>
                 </div>
 
@@ -47,44 +47,62 @@
 
     <div class="container">
 
-        <!-- SECTION 1: Your elected councillor -->
-        <div class="collapsible-section" id="quisuisje">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Your elected councillor</h2>
-                <p class="section-teaser">Louis Portal, your representative in German-speaking Switzerland</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
-                <div class="about-grid">
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                        <img src="../assets/Profils/1_Louis_Portal_Picture.jpg" alt="Portrait of Louis Portal" class="profile-photo" />
-                        <a href="mailto:louis.portal.consulaire@gmail.com" style="display:inline-flex; align-items:center; justify-content: center; gap:8px; padding:10px 20px; background:none; color:#23a9c6; text-decoration:none; border:2px solid #23a9c6; border-radius:6px; font-weight:600; font-size:0.95em; transition:all 0.2s ease; width: 100%; max-width: 250px; box-sizing: border-box;">
-                            <svg style="width:18px; height:18px;" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                            </svg>
-                            Contact
-                        </a>
-                    </div>
-                    <div class="about-content">
-                        <p>Originally from Bordeaux, I lived in Paris, New York, and then Zurich, where I settled in 2014 to finish my studies. Based in German-speaking Switzerland for twelve years, I founded a digital startup and spent ten years in the tech/venture capital ecosystem, which I still collaborate and work tightly with, representing an international investor club for Switzerland.</p>
-                        <p>Today I work in the aviation sector. I travel regularly for work, which gives me many opportunities to interact with consular representatives from around the world and stay in touch with the realities of French citizens abroad.</p>
-                        <p>Committed to ASFE during the last consular elections, and in contact with many French and French-speaking associations, I was elected with the conviction that abroad, civic engagement must transcend partisan divisions and unite all French citizens. It is essential to remember that ASFE's independence is a major asset. French politics is important, but we must above all focus on the local realities of our host country. This allows us to respond effectively to your needs.</p>
-                    </div>
+        <div id="programme">
+            <div class="info-grid">
+                <div class="priority-card" style="background:#032149; color:#faf7f6;">
+                    <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">ASFE</h3>
+                    <p>Defend, Support and Accompany French Citizens Abroad - ASFE is the only party whose sole objective is to protect the interests of French citizens living outside France.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">1</span>
+                    <h3>Inform & Defend</h3>
+                    <p>Defend the rights and interests of the community through ASFE's action and by disseminating reliable, high-quality information on issues concerning French citizens abroad, particularly in our constituency.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">2</span>
+                    <h3>Connect</h3>
+                    <p>Foster integration in Switzerland and strengthen the bond with France through networking, exchanges, and local initiatives.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">3</span>
+                    <h3>Support</h3>
+                    <p>Help those in need and offer concrete solutions for mutual aid and solidarity.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">4</span>
+                    <h3>Francophone Culture</h3>
+                    <p>Promote the French language and support the Francophone associative and cultural network.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">5</span>
+                    <h3>Economic Development</h3>
+                    <p>Develop economic potential by facilitating exchanges and connections between entrepreneurs, talents, investors, chambers of commerce, and economic stakeholders.</p>
                 </div>
             </div>
         </div>
 
+        <a href="https://lepetitjournal.com/zurich/communaute/louis-portal-faire-simple-faire-utile-442174" target="_blank" rel="noopener noreferrer" class="press-card" aria-label="Read Louis Portal's interview in Le Petit Journal">
+            <span class="press-card-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 3H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H4V5h16v12zM6 8h6v2H6V8zm0 4h6v2H6v-2zm8-4h4v6h-4V8z"/></svg>
+            </span>
+            <span class="press-card-content">
+                <span class="press-card-eyebrow">Press · Le Petit Journal</span>
+                <span class="press-card-title">My interview with Le Petit Journal (in French)</span>
+                <span class="press-card-sub">« Faire simple, faire utile »</span>
+            </span>
+            <span class="press-card-arrow" aria-hidden="true">&#10132;</span>
+        </a>
+
         <div class="info-grid two-col" style="margin-top:20px;">
+            <a href="elu.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Your Councillor &#10132;</h3>
+                <p>Discover who your representative is in German-speaking Switzerland.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-10a4 4 0 110 8 4 4 0 010-8z"/></svg></span>
+            </a>
             <a href="elu_2021.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
                 <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">My Activity &#10132;</h3>
                 <p>Discover our consular activity since 2021.</p>
                 <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 0h-4V4h4v2z"/></svg></span>
-            </a>
-            <a href="programme.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Programme &#10132;</h3>
-                <p>Our priorities for French citizens in German-speaking Switzerland.</p>
-                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
             </a>
             <a href="liens-utiles.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
                 <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Useful Links &#10132;</h3>

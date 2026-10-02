@@ -46,5 +46,6 @@ Personal site for Louis Portal, Conseiller des Français de l'Étranger (Swiss-G
 ## Other context
 
 - The homepage (`index.html`) has two cards only: Consulaire (→ `{lang}/elu.html`) and Startup/invest (→ `{lang}/startup.html`).
+- The consular section has 5 pages per language: `elu.html`, `elu_2021.html`, `programme.html`, `liens-utiles.html`, `asfe.html`. The hamburger menu lists all 5; the cards at the bottom of each page link to the 4 others. Keep both in sync when adding a page.
 - The campaign site for the 2026 election is a separate repo at `../consulaires2026/` (also part of `Websites/`). It links here via `Mandat en cours`.
 - The Activité section uses `toggleYearPhotos` (in `script.js`) to expand/collapse year blocks. Don't touch the badge SVG markup when generating new year-sections, the script reproduces it exactly.

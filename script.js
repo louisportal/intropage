@@ -13,6 +13,7 @@ function toggleLinksCategory(header) {
     const icon = header.querySelector('.links-category-toggle');
     content.classList.toggle('open');
     icon.classList.toggle('open');
+    header.classList.toggle('open');
 }
 
 // Toggle collapsible sections
@@ -26,6 +27,12 @@ function toggleSection(header) {
 
 // Load shared HTML fragments (data-include="filename.html")
 document.addEventListener('DOMContentLoaded', function() {
+    // Show the number of links on each Useful Links category
+    document.querySelectorAll('.links-category').forEach(function(cat) {
+        var count = cat.querySelector('.links-category-count');
+        if (count) count.textContent = cat.querySelectorAll('.link-block').length;
+    });
+
     // Load HTML includes
     document.querySelectorAll('[data-include]').forEach(function(el) {
         var file = el.getAttribute('data-include');

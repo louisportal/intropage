@@ -4,7 +4,7 @@
     <script src="../consent.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Portal - Votre élu</title>
+    <title>Louis Portal - Programme</title>
     <link rel="stylesheet" href="../styles.css?v=8">
 </head>
 <body>
@@ -12,17 +12,17 @@
     <header class="header" style="position:sticky; top:0; z-index:1000;">
         <div class="header-content">
             <div class="header-title">
-                <h1>Louis Portal</h1>
-                <p>Conseiller des Français de l'Étranger en Suisse alémanique et au Liechtenstein<br>Élu depuis 2021</p>
+                <h1>Programme</h1>
+                <p>Nos priorités pour les Français de Suisse alémanique et du Liechtenstein</p>
             </div>
-            <span class="scrolled-title">Louis Portal</span>
+            <span class="scrolled-title">Programme</span>
             <div class="header-controls">
                 <div class="lang-switcher">
                     <button class="lang-switcher-toggle">FR</button>
                     <div class="lang-switcher-menu">
-                        <a href="../fr/elu.html">FR</a>
-                        <a href="../en/elu.html">EN</a>
-                        <a href="../de/elu.html">DE</a>
+                        <a href="../fr/programme.html">FR</a>
+                        <a href="../en/programme.html">EN</a>
+                        <a href="../de/programme.html">DE</a>
                     </div>
                 </div>
 
@@ -47,44 +47,62 @@
 
     <div class="container">
 
-        <!-- SECTION 1: Votre élu consulaire -->
-        <div class="collapsible-section" id="quisuisje">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Votre élu consulaire</h2>
-                <p class="section-teaser">Louis Portal, votre représentant en Suisse alémanique</p>
-                <span class="toggle-icon open">+</span>
-            </div>
-            <div class="section-content open">
-                <div class="about-grid">
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                        <img src="../assets/Profils/1_Louis_Portal_Picture.jpg" alt="Portrait de Louis Portal" class="profile-photo" />
-                        <a href="mailto:louis.portal.consulaire@gmail.com" style="display:inline-flex; align-items:center; justify-content: center; gap:8px; padding:10px 20px; background:none; color:#23a9c6; text-decoration:none; border:2px solid #23a9c6; border-radius:6px; font-weight:600; font-size:0.95em; transition:all 0.2s ease; width: 100%; max-width: 250px; box-sizing: border-box;">
-                            <svg style="width:18px; height:18px;" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                            </svg>
-                            Contact
-                        </a>
-                    </div>
-                    <div class="about-content">
-                        <p>Originaire de Bordeaux, j'ai vécu à Paris, New York puis Zurich, où je me suis installé en 2014 pour finir mes études. Basé depuis douze ans en Suisse alémanique, j'y ai fondé une startup dans le digital et évolué pendant dix ans dans l'écosystème tech/capital-risque, avec lequel je collabore encore, représentant d'un club d'investisseur international pour la Suisse.</p>
-                        <p>Aujourd'hui dans le secteur aérien, je voyage régulièrement pour le travail, autant d'occasions d'échanger avec les élus consulaires de monde entier et de rester au contact des réalités des Français de l'Étranger.</p>
-                        <p>Engagé au sein de l'ASFE lors des dernières élections consulaires, et au contact de nombreuses associations françaises et francophones, j'ai été élu avec la conviction qu'à l'étranger, l'engagement doit dépasser les clivages partisans et rassembler tous les Français. Il est essentiel de rappeler que l'indépendance de l'ASFE est un atout majeur. Faire de la politique française est important, mais nous devons avant tout nous concentrer sur les réalités locales de notre pays d'accueil. Cela nous permet de répondre efficacement à vos besoins.</p>
-                    </div>
+        <div id="programme">
+            <div class="info-grid">
+                <div class="priority-card" style="background:#032149; color:#faf7f6;">
+                    <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">L'ASFE</h3>
+                    <p>Défendre, Soutenir et Accompagner les Français de l'Étranger - L'ASFE est le seul parti dont l'unique objectif est de protéger les intérêts des Français établis hors de France.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">1</span>
+                    <h3>Informer & Défendre</h3>
+                    <p>Défendre les droits et intérêts de la communauté via l'action de l'ASFE et la diffusion d'une information fiable et de qualité sur les sujets concernant les Français de l'étranger, notamment dans notre circonscription.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">2</span>
+                    <h3>Connecter</h3>
+                    <p>Favoriser l'intégration en Suisse et renforcer le lien avec la France grâce au réseau, aux échanges et aux initiatives locales.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">3</span>
+                    <h3>Accompagner</h3>
+                    <p>Soutenir celles et ceux qui en ont besoin et proposer des solutions concrètes d'entraide et de solidarité.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">4</span>
+                    <h3>Culture Francophone</h3>
+                    <p>Valoriser la langue française et soutenir le tissu associatif et culturel francophone.</p>
+                </div>
+                <div class="priority-card">
+                    <span class="priority-number">5</span>
+                    <h3>Développement Économique</h3>
+                    <p>Développer le potentiel économique en facilitant les échanges et les mises en relation entre entrepreneurs, talents, investisseurs, chambres de commerce et acteurs économiques.</p>
                 </div>
             </div>
         </div>
 
+        <a href="https://lepetitjournal.com/zurich/communaute/louis-portal-faire-simple-faire-utile-442174" target="_blank" rel="noopener noreferrer" class="press-card" aria-label="Lire l'interview de Louis Portal sur Le Petit Journal">
+            <span class="press-card-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 3H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H4V5h16v12zM6 8h6v2H6V8zm0 4h6v2H6v-2zm8-4h4v6h-4V8z"/></svg>
+            </span>
+            <span class="press-card-content">
+                <span class="press-card-eyebrow">Presse · Le Petit Journal</span>
+                <span class="press-card-title">Mon interview par Le Petit Journal</span>
+                <span class="press-card-sub">« Faire simple, faire utile »</span>
+            </span>
+            <span class="press-card-arrow" aria-hidden="true">&#10132;</span>
+        </a>
+
         <div class="info-grid two-col" style="margin-top:20px;">
+            <a href="elu.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
+                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Votre élu &#10132;</h3>
+                <p>Découvrez qui est votre représentant en Suisse alémanique.</p>
+                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-10a4 4 0 110 8 4 4 0 010-8z"/></svg></span>
+            </a>
             <a href="elu_2021.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
                 <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Mon activité &#10132;</h3>
                 <p>Découvrez notre activité consulaire depuis 2021.</p>
                 <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 0h-4V4h4v2z"/></svg></span>
-            </a>
-            <a href="programme.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
-                <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Programme &#10132;</h3>
-                <p>Nos priorités pour les Français de Suisse alémanique.</p>
-                <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
             </a>
             <a href="liens-utiles.html" class="priority-card has-icon" style="text-decoration:none; background:#032149; color:#faf7f6; width:100%; box-sizing:border-box;">
                 <h3 style="color:#23a9c6; margin-bottom:15px; font-size:1.2em;">Liens Utiles &#10132;</h3>

@@ -6,3 +6,8 @@ assets/Activité/_inbox/*
 !assets/Activité/_inbox/.gitkeep
 assets/Inovexus photos/_inbox/*
 !assets/Inovexus photos/_inbox/.gitkeep
+
+# Profile originals (site uses assets/Profils/webp/)
+assets/Profils/*.jpeg
+assets/Profils/*.jpg
+assets/Profils/*.png
